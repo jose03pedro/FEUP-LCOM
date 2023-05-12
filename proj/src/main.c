@@ -1,9 +1,8 @@
 #include <lcom/lcf.h>
-#include "controller/timer/timer.h"
-#include "controller/video/graphics.h"
-#include "controller/keyboard/keyboard.h"
-#include "controller/mouse/mouse.h"
-#include "controller/rtc/rtc.h"
+#include "devices/timer/timer.h"
+#include "devices/video/graphics.h"
+#include "devices/keyboard/keyboard.h"
+#include "devices/mouse/mouse.h"
 #include "model/model.h"
 #include "view/view.h"
 #include "config.h"
@@ -12,8 +11,8 @@ extern SystemState systemState;
 
 int (main)(int argc, char *argv[]) {
   lcf_set_language("EN-US");
-  lcf_trace_calls("/home/lcom/labs/Template/debug/trace.txt");
-  lcf_log_output("/home/lcom/labs/Template/debug/output.txt");
+  lcf_trace_calls("/home/lcom/labs/g2/proj/src/trace.txt");
+  lcf_log_output("/home/lcom/labs/g2/proj/src/output.txt");
   if (lcf_start(argc, argv)) return 1;
   lcf_cleanup();
   return 0;
@@ -37,14 +36,10 @@ int setup() {
   if (timer_subscribe_interrupts() != 0) return 1;
   if (keyboard_subscribe_interrupts() != 0) return 1;
   if (mouse_subscribe_interrupts() != 0) return 1;
-  if (rtc_subscribe_interrupts() != 0) return 1;
 
   // Ativar stream-mode e report de dados do rato
   if (mouse_write(ENABLE_STREAM_MODE) != 0) return 1;
   if (mouse_write(ENABLE_DATA_REPORT) != 0) return 1;
-
-  // Setup do Real Time Clock
-  rtc_setup();
 
   return 0;
 }
@@ -61,7 +56,6 @@ int teardown() {
   if (timer_unsubscribe_interrupts() != 0) return 1;
   if (keyboard_unsubscribe_interrupts() != 0) return 1;
   if (mouse_unsubscribe_interrupts() != 0) return 1;
-  if (rtc_unsubscribe_interrupts() != 0) return 1;
 
   // Desativar o report de dados do rato
   if (mouse_write(DISABLE_DATA_REPORT) != 0) return 1;
@@ -93,7 +87,6 @@ int (proj_main_loop)(int argc, char *argv[]) {
           if (msg.m_notify.interrupts & TIMER_MASK)    update_timer_state();
           if (msg.m_notify.interrupts & KEYBOARD_MASK) update_keyboard_state();
           if (msg.m_notify.interrupts & MOUSE_MASK)    update_mouse_state();
-          if (msg.m_notify.interrupts & RTC_MASK)      update_rtc_state();
         }
     }
   }
