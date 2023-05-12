@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "*.xpm": "c",
+        "config.h": "c"
+    }
+}

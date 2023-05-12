@@ -1,14 +1,16 @@
 #include <lcom/lcf.h>
-
 #include <lcom/lab3.h>
 
-#include "i8042.h"
-#include "kbc.h"
-#include "../lab2/timer.c"
 #include <stdbool.h>
 #include <stdint.h>
 
-extern int counter, keyboard_counter;
+#include "i8042.h"
+#include "keyboard.h"
+#include "kbc.c"
+
+
+extern uint32_t counter_KBC;
+extern int counter_TIMER;
 extern uint8_t scancode;
 
 int main(int argc, char *argv[]) {
@@ -35,78 +37,90 @@ int main(int argc, char *argv[]) {
   return 0;
 }
 
-int kbd_test_scan() {
-  
-  int ipc_status,r;
-  uint8_t keyboard_hook_id;
-  message msg;
-  uint8_t bytes[2];
 
-  if (kbc_subscribe_int(&keyboard_hook_id) != 0)
-    return 1;
+int(kbd_test_scan)() {
 
-  while(scancode != BREAK_ESC) {
-    if (r=driver_receive(ANY, &msg, &ipc_status) != 0) {
-      printf("driver_receive failed with: %d", r);
-      continue;
-    }
+    int ipc_status;
+    uint8_t irq_set;
+    message msg;
 
-    if (is_ipc_notify(ipc_status)) {
-      switch(_ENDPOINT_P(msg.m_source)){
-        case HARDWARE:
-          if (msg.m_notify.interrupts & keyboard_hook_id) {
-            kbc_ih();
-            if (scan_code == TWO_BYTES) {
-              bytes[i]=scancode;
-              i++;
-              continue;
-            }
-            bytes[i]=scancode;
-            kbd_print_scancode(ih_flag, (i+1), bytes);
-            i = 0;
+    if(keyboard_subscribe_interrupts(&irq_set) != 0) return 1;
 
-          }
-          break;
+    while(scancode != BREAK_ESC){ // a condição de paragem é obter um breakcode da tecla ESC
+
+        if( driver_receive(ANY, &msg, &ipc_status) != 0 ){
+            printf("Error");
+            continue;
         }
-        default: break;
-    }
-  }
 
-  kbc_unsubscribe_int();
-  kbc_print_no_sysinb(keyboard_counter);
+        if(is_ipc_notify(ipc_status)) {
+            switch(_ENDPOINT_P(msg.m_source)){
+                 case HARDWARE:
+                    if (msg.m_notify.interrupts & irq_set) {
+                        kbc_ih(); // aumenta o contador interno
+                        kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTES ? 2 : 1, &scancode);
+                    }
+            }
+        }
+    }
+
+  if (keyboard_unsubscribe_interrupts() != 0) return 1;
+  if (kbd_print_no_sysinb(counter_KBC) != 0) return 1;
+
   return 0;
 }
 
-int kbd_test_poll() {
+int(kbd_test_poll)() {
   
-  int i=0;
-  uint8_t bytes[2];
+    while (scancode != BREAK_ESC) { // a condição de paragem é obter um breakcode da tecla ESC
 
-  while(scancode != BREAK_ESC){
-    if(read_kbc_output(&scancode) != 0){
-      tickdelay(20000);
-      continue;
+        if (read_KBC_output(KBC_OUT_CMD, &scancode, 0) == 0) {
+            kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTES ? 2 : 1, &scancode);
+        }   
     }
-    if(scancode == TWO_BYTES){
-      bytes[i] = scancode;
-      i++;
-      continue;
-    }
-    bytes[i] = scancode;
-    kbd_print_scancode(!(scancode & BIT(7)),i+1,bytes);
-    i=0;
 
-  }
-
-  kbc_restore();
-  kbd_print_no_sysinb(keyboard_counter);
-
-  return 0;
+  // Restore interrupts
+  return keyboard_restore();
 }
 
-int kbd_test_timed_scan(uint8_t n) {
-  /* To be completed by the students */
-  printf("%s is not yet implemented!\n", __func__);
+int(kbd_test_timed_scan)(uint8_t n) {
 
-  return 1;
+    int ipc_status;
+    uint8_t irq_set_TIMER, irq_set_KBC;
+    message msg;
+
+    int seconds = 0;  // timer seconds
+
+    if (timer_subscribe_int(&irq_set_TIMER) != 0) return 1;
+    if (keyboard_subscribe_interrupts(&irq_set_KBC) != 0) return 1;
+
+    while (scancode != BREAK_ESC && seconds < n){
+
+        if( driver_receive(ANY, &msg, &ipc_status) != 0 ){
+            printf("Error");
+            continue;
+        }
+
+        if(is_ipc_notify(ipc_status)) {
+            switch(_ENDPOINT_P(msg.m_source)){
+                 case HARDWARE:
+                    if (msg.m_notify.interrupts & irq_set_KBC) {
+                        kbc_ih();
+                        kbd_print_scancode(!(scancode & MAKE_CODE), scancode == TWO_BYTES ? 2 : 1, &scancode);
+                        seconds = 0;
+                        counter_TIMER = 0;
+                    }
+                    if (msg.m_notify.interrupts & irq_set_TIMER) {
+                        timer_int_handler();
+                        if (counter_TIMER % 60 == 0) seconds++;
+                    }
+            }
+        }
+    }
+
+  if (timer_unsubscribe_int() != 0) return 1;
+  if (keyboard_unsubscribe_interrupts() != 0) return 1;
+  if (kbd_print_no_sysinb(counter_KBC) != 0) return 1;
+
+  return 0;
 }

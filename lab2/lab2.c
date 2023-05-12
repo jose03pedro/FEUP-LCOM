@@ -5,6 +5,7 @@
 #include <stdint.h>
 
 extern int counter;
+extern int hook_id;
 
 int main(int argc, char *argv[]) {
   // sets the language of LCF messages (can be either EN-US or PT-PT)
@@ -44,64 +45,39 @@ int(timer_test_time_base)(uint8_t timer, uint32_t freq) {
 
 int(timer_test_int)(uint8_t time) {
   
-  //ipc_status and msg are used to receive messages from the kerne
-  int ipc_status;
+  int ipc_status, r;
+  uint8_t irq_set;
   message msg;
 
-  //r is used to store the return value of driver_receive
-  int r;
-
-  uint8_t hook_id;
-  if(timer_subscribe_int(&hook_id)!=0) {
-    printf("Error subscribing timer\n");
-    return 1;
+  if(timer_subscribe_int(&irq_set) != 0) return 1;
+  
+  while(time > 0) { /* time  */
+     /* Get a request message. */
+     if ( (r = driver_receive(ANY, &msg, &ipc_status)) != 0 ) { 
+         printf("driver_receive failed with: %d", r);
+         continue;
+     }
+     if (is_ipc_notify(ipc_status)) { /* received notification */
+         switch (_ENDPOINT_P(msg.m_source)) {
+            case HARDWARE: /* hardware interrupt notification */                
+                if (msg.m_notify.interrupts & BIT(hook_id)) { /* subscribed interrupt */
+                   timer_int_handler(); 
+                   if(counter%60==0){
+                      timer_print_elapsed_time();
+                      time--;
+                   }
+                }
+              break;
+            default:
+              break; /* no other notifications expected: do nothing */    
+         }
+     } else { /* received a standard message, not a notification */
+         /* no standard messages expected: do nothing */
+     }
   }
 
-  //runs until the specified number of seconds (time) has passed
-  while (time) {
-
-    //is called to receive a message from the kernel
-    //endpoint: the identifier of the process that is waiting for the message. It can be a specific endpoint (task identifier) or the constant value ANY, meaning that the call will return the first message from any endpoint
-    //message_ptr: A pointer to a message structure, which will hold the received message
-    //ipc_status: A pointer to a variable that will hold the status of the IPC (Inter-Process Communication) operation
-    //when driver_receive is called, it will block the calling process until a message is received or an error occurs
-    
-    if ((r = driver_receive(ANY, &msg, &ipc_status)) != 0) {
-      printf("driver_receive failed with: %d", r);
-      continue;
-    }
-
-    //the ipc_status variable will hold the status of the IPC operation, indicating whether the message was a notification or a standard message
-    if (is_ipc_notify(ipc_status)) {
-
-      //msg.m_source contains the identifier of the sender of the message.
-      //the _ENDPOINT_P macro is used to extract the process endpoint number from the sender identifier
-      //this endpoint number is used to determine the type of message received, and the switch statement is used to handle the different types of messages
-      switch (_ENDPOINT_P(msg.m_source)) {
-        
-        //the only type of message being handled is a hardware interrupt notification
-        case HARDWARE:
-
-          //checks if the message was sent by the hardware interrupt that the timer is hooked to
-          if (msg.m_notify.interrupts & BIT(hook_id)) {
-            
-            //if so, timer_int_handler is called to handle the interrupt
-            timer_int_handler();
-            if (counter % 60 == 0) {
-              timer_print_elapsed_time();
-              time--;
-            }
-          }
-          break;
-        default:
-          break;
-      }
-    } 
-  }
-
-  timer_unsubscribe_int();
+  if (timer_unsubscribe_int() != 0) return 1;
   return 0;
- 
 }
 
 
