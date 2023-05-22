@@ -3,7 +3,7 @@
 #include <stdint.h>
 
 #ifndef BIT
-#  define BIT(n) (1 << (n))
+#define BIT(n) (1 << (n))
 #endif
 
 /**
