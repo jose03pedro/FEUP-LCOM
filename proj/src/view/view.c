@@ -8,12 +8,14 @@ uint32_t frame_buffer_size;
 int level1_draw_counter = 0;
 int level2_draw_counter = 0;
 int level3_draw_counter = 0;
+int level4_draw_counter = 0;
 Box ice_cubes[100];
 Box water_path[150];
 int water_counter = 0;
 Box finish_level1;
 Box finish_level2;
 Box finish_level3;
+Box finish_level4;
 extern int timer_interrupts;
 extern vbe_mode_info_t mode_info;
 extern MouseInfo mouse_info;
@@ -88,6 +90,9 @@ void draw_new_frame() {
                     break;
                 case LEVEL_3:
                     draw_game_level3();
+                    break;
+                case LEVEL_4:
+                    draw_game_level4();
                     break;
             }
             break;
@@ -211,14 +216,15 @@ void draw_game_level1() {
     }
 
     level1_draw_counter++;
-    check_fell_into_water(LEVEL_1);
+    check_fell_into_water();
 }
 
-void check_fell_into_water(GameLevel gameLevel) {
+void check_fell_into_water() {
     //check if player has fallen into the water
     for (int i = 0; i<150; i++) {
         if (water_path[i].top_left_x == playerPosition.x && water_path[i].top_left_y == playerPosition.y) {
             menuState = GAME;
+            gameLevel = LEVEL_1;
             level1_draw_counter = 0;
             level2_draw_counter = 0;
             level3_draw_counter = 0;
@@ -250,256 +256,32 @@ void ice_melt() {
 }
 
 void update_player_starting_position2() {
-    playerPosition.x = 177;
+    playerPosition.x = 537;
     playerPosition.y = 361;
-    copy.x = 177;
-    copy.y = 361;
 }
 
 void draw_game_level2() {
-
     memset(&ice_cubes, 0, sizeof(ice_cubes));
 
-    if (level2_draw_counter == 0) {
-        memset(&water_path, 0, sizeof(water_path));
-        update_player_starting_position2();
-    }
+    if (level2_draw_counter == 0) update_player_starting_position2();
+
+    int x_;
+    int y_;
 
     //draw level2 tag on the top left corner
     draw_sprite_xpm(level2_tag, 135, 32);
 
-    //draw level2 ice cubes
-    int x_ = 147;
-    int y_ = 331;
-    int ice_cube_counter = 0;
-    Box ic;
-    for (int y = 0; y < 3; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    x_ = 177;
-    y_ = 391;
-  
-    for (int x = 0; x < 6; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-
-    x_ = 177;
-    y_ = 331;
-  
-    for (int x = 0; x < 4; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-
-    x_ = 267;
-    y_ = 271;
-  
-    for (int y = 0; y < 2; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    x_ = 327;
-    y_ = 331;
-  
-    for (int y = 0; y < 2; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    x_ = 297;
-    y_ = 271;
-  
-    for (int x = 0; x < 6; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-
-    x_ = 357;
-    y_ = 331;
-  
-    for (int x = 0; x < 2; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-    
-    x_ = 387;
-    y_ = 361;
-  
-    for (int y = 0; y < 2; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    x_ = 417;
-    y_ = 391;
-  
-    for (int x = 0; x < 6; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-
-    x_ = 567;
-    y_ = 391;
-  
-    for (int y = 0; y < 6; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ -= 30;
-    }
-
-    ic.top_left_x = 537;
-    ic.top_left_y = 240;
-    ic.bot_right_x = 537+30;
-    ic.bot_right_y = 240+30;
-    ice_cubes[ice_cube_counter] = ic;
-    draw_sprite_xpm(ice_cube, 537, 240);
-    ice_cube_counter++;
-
-    x_ = 507;
-    y_ = 241;
-  
-    for (int y = 0; y < 4; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    x_ = 447;
-    y_ = 301;
-  
-    for (int y = 0; y < 2; y++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        y_ += 30;
-    }
-
-    ic.top_left_x = 477;
-    ic.top_left_y = 331;
-    ic.bot_right_x = 477+30;
-    ic.bot_right_y = 331+30;
-    ice_cubes[ice_cube_counter] = ic;
-    draw_sprite_xpm(ice_cube, 477, 331);
-    ice_cube_counter++;
-
-    //draw level2 path cubes
-    x_ = 177;
-    y_ = 361;
-    for (int x = 0; x < 5; x++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        x_ += 30;
-    }
-
-    draw_sprite_xpm(path_cube, 297, 331);
-
-    x_ = 297;
-    y_ = 301;
-    for (int x = 0; x < 5; x++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        x_ += 30;
-    }
-
-    draw_sprite_xpm(path_cube, 417, 331);
-
-    x_ = 417;
-    y_ = 361;
-    for (int x = 0; x < 5; x++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        x_ += 30;
-    }
-
-    x_ = 537;
-    y_ = 331;
-    for (int y = 0; y < 3; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ -= 30;
-    }
-
     //draw red cube
-    x_ = 537;
-    y_ = 271;
-    finish_level2.top_left_x = 537;
-    finish_level2.top_left_y = 271;
-    finish_level2.bot_right_x = 537+30;
-    finish_level2.bot_right_y = 271+30;
+    x_ = 237;
+    y_ = 241;
+    finish_level2.top_left_x = 237;
+    finish_level2.top_left_y = 241;
+    finish_level2.bot_right_x = 237+30;
+    finish_level2.bot_right_y = 241+30;
     draw_sprite_xpm(red_cube, x_, y_);
 
     //draw player
     draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
-
-    ice_melt();
 
     //check if player has completed the path
     if (playerPosition.x == finish_level2.top_left_x && playerPosition.y == finish_level2.top_left_y) {
@@ -507,31 +289,93 @@ void draw_game_level2() {
     }
 
     level2_draw_counter++;
-    check_fell_into_water(LEVEL_2);
-
 }
 
 void update_player_starting_position3() {
     playerPosition.x = 537;
-    playerPosition.y = 271;
-    copy.x = 537;
-    copy.y = 271;
+    playerPosition.y = 361;
 }
 
 void draw_game_level3() {
-
     memset(&ice_cubes, 0, sizeof(ice_cubes));
 
-    if (level3_draw_counter == 0){
-        memset(&water_path, 0, sizeof(water_path));
-        update_player_starting_position3();
-    } 
+    if (level3_draw_counter == 0) update_player_starting_position2();
 
-    //draw level3 ice cubes
-    int x_ = 177;
-    int y_ = 271;
+    int x_;
+    int y_;
+
+    //draw level3 tag on the top left corner
+    draw_sprite_xpm(level3_tag, 135, 32);
+
+    //draw red cube
+    x_ = 447;
+    y_ = 181;
+    finish_level3.top_left_x = 447;
+    finish_level3.top_left_y = 181;
+    finish_level3.bot_right_x = 447+30;
+    finish_level3.bot_right_y = 181+30;
+    draw_sprite_xpm(red_cube, x_, y_);
+
+    //draw player
+    draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
+
+    //check if player has completed the path
+    if (playerPosition.x == finish_level3.top_left_x && playerPosition.y == finish_level3.top_left_y) {
+        gameLevel = LEVEL_4;
+    }
+
+    level3_draw_counter++;
+
+}
+
+void update_player_starting_position4() {
+    playerPosition.x = 207;
+    playerPosition.y = 271;
+    copy.x = 207;
+    copy.y = 271;
+}
+
+void draw_game_level4() {
+    memset(&ice_cubes, 0, sizeof(ice_cubes));
+
+    if (level4_draw_counter == 0) update_player_starting_position4();
+
+    int x_;
+    int y_;
+
+    //draw level4 tag
+   // draw_sprite_xpm(level3_tag, 135, 32);
+    //ice cubes 
+    x_ = 177;
+    y_ = 301;
     int ice_cube_counter = 0;
     Box ic;
+    for (int x = 0; x < 3; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_+=30;
+    }
+    
+    x_ = 177;
+    y_ = 271;
+    for (int y = 0; y < 3; y++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        y_ -= 30;
+    }
+
+    x_ = 147;
+    y_ = 211;
     for (int y = 0; y < 5; y++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
@@ -540,11 +384,11 @@ void draw_game_level3() {
         ice_cubes[ice_cube_counter] = ic;
         draw_sprite_xpm(ice_cube, x_, y_);
         ice_cube_counter++;
-        y_ += 30;
+        y_ -= 30;
     }
 
     x_ = 177;
-    y_ = 421;
+    y_ = 91;
     for (int x = 0; x < 4; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
@@ -557,20 +401,7 @@ void draw_game_level3() {
     }
 
     x_ = 267;
-    y_ = 391;
-    for (int x = 0; x < 4; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ += 30;
-    }
-
-    x_ = 357;
-    y_ = 421;
+    y_ = 121;
     for (int x = 0; x < 8; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
@@ -582,8 +413,8 @@ void draw_game_level3() {
         x_ += 30;
     }
 
-    x_ = 447;
-    y_ = 391;
+    x_ = 267;
+    y_ = 151;
     for (int x = 0; x < 2; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
@@ -595,9 +426,35 @@ void draw_game_level3() {
         x_ += 30;
     }
 
-    x_ = 567;
-    y_ = 271;
-    for (int y = 0; y < 6; y++) {
+    x_ = 447;
+    y_ = 151;
+    for (int x = 0; x < 2; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_ += 30;
+    }
+
+    x_ = 477;
+    y_ = 91;
+    for (int x = 0; x < 5; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_ += 30;
+    }
+
+    x_ = 597;
+    y_ = 121;
+    for (int y = 0; y < 4; y++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
         ic.bot_right_x = x_+30;
@@ -609,8 +466,8 @@ void draw_game_level3() {
     }
 
     x_ = 567;
-    y_ = 241;
-    for (int x = 0; x < 3; x++) {
+    y_ = 211;
+    for (int y = 0; y < 4; y++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
         ic.bot_right_x = x_+30;
@@ -618,12 +475,12 @@ void draw_game_level3() {
         ice_cubes[ice_cube_counter] = ic;
         draw_sprite_xpm(ice_cube, x_, y_);
         ice_cube_counter++;
-        x_ -= 30;
+        y_ += 30;
     }
 
     x_ = 507;
-    y_ = 271;
-    for (int y = 0; y < 3; y++) {
+    y_ = 211;
+    for (int y = 0; y < 4; y++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
         ic.bot_right_x = x_+30;
@@ -635,43 +492,7 @@ void draw_game_level3() {
     }
 
     x_ = 477;
-    y_ = 331;
-    for (int x = 0; x < 5; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ -= 30;
-    }
-
-    x_ = 357;
-    y_ = 301;
-    for (int x = 0; x < 5; x++) {
-        ic.top_left_x = x_;
-        ic.top_left_y = y_;
-        ic.bot_right_x = x_+30;
-        ic.bot_right_y = y_+30;
-        ice_cubes[ice_cube_counter] = ic;
-        draw_sprite_xpm(ice_cube, x_, y_);
-        ice_cube_counter++;
-        x_ -= 30;
-    }
-
-    x_ = 237;
-    y_ = 271;
-    ic.top_left_x = x_;
-    ic.top_left_y = y_;
-    ic.bot_right_x = x_+30;
-    ic.bot_right_y = y_+30;
-    ice_cubes[ice_cube_counter] = ic;
-    draw_sprite_xpm(ice_cube, x_, y_);
-    ice_cube_counter++;
-
-    x_ = 237;
-    y_ = 241;
+    y_ = 211;
     for (int x = 0; x < 3; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
@@ -682,10 +503,23 @@ void draw_game_level3() {
         ice_cube_counter++;
         x_ -= 30;
     }
-
-    x_ = 267;
-    y_ = 331;
-    for (int x = 0; x < 2; x++) {
+    
+    x_ = 447;
+    y_ = 241;
+    for (int y = 0; y < 3; y++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        y_ += 30;
+    }
+    
+    x_ = 417;
+    y_ = 301;
+    for (int x = 0; x < 5; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
         ic.bot_right_x = x_+30;
@@ -696,103 +530,136 @@ void draw_game_level3() {
         x_ -= 30;
     }
 
-
-    //draw level3 tag on the top left corner
-    draw_sprite_xpm(level3_tag, 135, 32);
-    
-    //draw level3 path cubes
-    x_ = 537;
-    y_ = 271;
-    for (int y = 0; y < 5; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
-    }
-
-    x_ = 507;
-    y_ = 361;
-    for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
-    }
-
-    x_ = 447;
-    y_ = 361;
-    for (int x = 0; x < 2; x++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        x_ += 30;
-    }
-
-    x_ = 417;
-    y_ = 361;
-    for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
-    }
-
-    x_ = 387;
-    y_ = 361;
-    for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
-    }
-
     x_ = 237;
-    y_ = 361;
+    y_ = 271;
     for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
-    }
-
-    x_ = 207;
-    y_ = 301;
-    for (int y = 0; y < 4; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        y_ -= 30;
     }
 
     x_ = 297;
-    y_ = 331;
+    y_ = 271;
     for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        y_ -= 30;
     }
 
-    x_ = 327;
-    y_ = 331;
-    for (int y = 0; y < 2; y++) {
-        draw_sprite_xpm(path_cube, x_, y_);
-        y_ += 30;
+    x_ = 237;
+    y_ = 211;
+    for (int x = 0; x < 4; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_ += 30;
     }
 
-    x_ = 267;
-    y_ = 361;
-    draw_sprite_xpm(path_cube, x_, y_);
+    ic.top_left_x = 537;
+    ic.top_left_y = 301;
+    ic.bot_right_x = 537+30;
+    ic.bot_right_y = 301+30;
+    ice_cubes[ice_cube_counter] = ic;
+    draw_sprite_xpm(ice_cube, 537, 301);  
 
-    x_ = 357;
-    y_ = 361;
-    draw_sprite_xpm(path_cube, x_, y_);
-   
-    //draw red cube
+    ic.top_left_x = 537;
+    ic.top_left_y = 151;
+    ic.bot_right_x = 537+30;
+    ic.bot_right_y = 151+30;
+    ice_cubes[ice_cube_counter] = ic;
+    draw_sprite_xpm(ice_cube, 537, 151);
+
+    ic.top_left_x = 207;
+    ic.top_left_y = 151;
+    ic.bot_right_x = 207+30;
+    ic.bot_right_y = 151+30;
+    ice_cubes[ice_cube_counter] = ic;
+    draw_sprite_xpm(ice_cube, 207, 151);
+
+    // PATH CUBES
+    //playerPosition.x = 207;
+    //playerPosition.y = 271;
     x_ = 207;
     y_ = 271;
-    finish_level3.top_left_x =207;
-    finish_level3.top_left_y = 271;
-    finish_level3.bot_right_x = 207+30;
-    finish_level3.bot_right_y = 271+30;
+    for (int y = 0; y < 3; y++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        y_ -= 30;
+    }
+    x_ = 177;
+    y_ = 181;
+    for (int x = 0; x < 14; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+    x_ = 177;
+    y_ = 121;
+    for (int x = 0; x < 3; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+    x_ = 507;
+    y_ = 121;
+    for (int x = 0; x < 3; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+    draw_sprite_xpm(path_cube, 177, 151);
+    draw_sprite_xpm(path_cube, 507, 151);
+    draw_sprite_xpm(path_cube, 237, 151);
+    draw_sprite_xpm(path_cube, 567, 151);
+    x_ = 327;
+    y_ = 151;
+    for (int x = 0; x < 4; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+    draw_sprite_xpm(path_cube, 357, 211);
+    draw_sprite_xpm(path_cube, 387, 211);
+    x_ = 327;
+    y_ = 271;
+    for (int x = 0; x < 4; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        draw_sprite_xpm(path_cube, x_, y_-30);
+        x_ += 30;
+    }
+    draw_sprite_xpm(path_cube, 537, 241);
+    draw_sprite_xpm(path_cube, 537, 211);
+    //cubo vermelho
+
+    x_ = 537;
+    y_ = 271;
+    finish_level4.top_left_x = 507;
+    finish_level4.top_left_y = 451;
+    finish_level4.bot_right_x = 507+30;
+    finish_level4.bot_right_y = 451+30;
     draw_sprite_xpm(red_cube, x_, y_);
 
-    //draw player
+    //player
     draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
 
     ice_melt();
 
     //check if player has completed the path
-    if (playerPosition.x == finish_level3.top_left_x && playerPosition.y == finish_level3.top_left_y) {
-        menuState = END;
+    if (playerPosition.x == finish_level1.top_left_x && playerPosition.y == finish_level1.top_left_y) {
+        //gameLevel = LEVEL_5;
     }
 
-    level3_draw_counter++;
-    check_fell_into_water(LEVEL_3);
+    level4_draw_counter++;
+    
 }
 
 void draw_finish_menu() {
