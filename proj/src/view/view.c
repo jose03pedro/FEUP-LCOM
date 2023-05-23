@@ -338,7 +338,10 @@ void update_player_starting_position4() {
 void draw_game_level4() {
     memset(&ice_cubes, 0, sizeof(ice_cubes));
 
-    if (level4_draw_counter == 0) update_player_starting_position4();
+    if (level4_draw_counter == 0){
+        memset(&water_path, 0, sizeof(water_path));
+        update_player_starting_position4();
+    } 
 
     int x_;
     int y_;
@@ -654,7 +657,7 @@ void draw_game_level4() {
     ice_melt();
 
     //check if player has completed the path
-    if (playerPosition.x == finish_level1.top_left_x && playerPosition.y == finish_level1.top_left_y) {
+    if (playerPosition.x == finish_level4.top_left_x && playerPosition.y == finish_level4.top_left_y) {
         //gameLevel = LEVEL_5;
     }
 
