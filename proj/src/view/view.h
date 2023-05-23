@@ -27,6 +27,8 @@ void update_player_starting_position2();
 void draw_game_level2();
 void update_player_starting_position3();
 void draw_game_level3();
+void update_player_starting_position4();
+void draw_game_level4();
 void draw_finish_menu();
 void draw_mouse();
 void swap_buffers();

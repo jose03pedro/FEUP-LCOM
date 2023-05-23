@@ -11,6 +11,7 @@ extern vbe_mode_info_t mode_info;
 extern int level1_draw_counter;
 extern int level2_draw_counter;
 extern int level3_draw_counter;
+extern int level4_draw_counter;
 extern Box ice_cubes[100];
 
 // Objetos a construir e manipular com a mudança de estados
@@ -96,6 +97,7 @@ void update_keyboard_state() {
             level1_draw_counter = 0;
             level2_draw_counter = 0;
             level3_draw_counter = 0;
+            level4_draw_counter = 0;
             break;
         case G_KEY:
             menuState = GAME;
@@ -103,6 +105,7 @@ void update_keyboard_state() {
             level1_draw_counter = 0;
             level2_draw_counter = 0;
             level3_draw_counter = 0;
+            level4_draw_counter = 0;
             break;
         case E_KEY:
             menuState = END;
@@ -187,6 +190,7 @@ void update_start_button_state() {
             level1_draw_counter = 0;
             level2_draw_counter = 0;
             level3_draw_counter = 0;
+            level4_draw_counter = 0;
             }
         }
         if (menuState == END) {
