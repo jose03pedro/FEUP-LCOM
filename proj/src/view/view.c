@@ -233,6 +233,7 @@ void check_fell_into_water(GameLevel gameLevel) {
             level2_draw_counter = 0;
             level3_draw_counter = 0;
             level4_draw_counter = 0;
+            level6_draw_counter = 0;
             break; 
         }
     }
@@ -1315,9 +1316,35 @@ void draw_game_level6(){
         x_ -= 30;
     }
 
+    x_ = 597;
+    y_ = 241;
+    for (int x = 0; x < 2; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_ -= 30;
+    }
+
     x_ = 507;
     y_ = 271;
     for (int x = 0; x < 11; x++) {
+        ic.top_left_x = x_;
+        ic.top_left_y = y_;
+        ic.bot_right_x = x_+30;
+        ic.bot_right_y = y_+30;
+        ice_cubes[ice_cube_counter] = ic;
+        draw_sprite_xpm(ice_cube, x_, y_);
+        ice_cube_counter++;
+        x_ -= 30;
+    }
+
+    x_ = 597;
+    y_ = 271;
+    for (int x = 0; x < 2; x++) {
         ic.top_left_x = x_;
         ic.top_left_y = y_;
         ic.bot_right_x = x_+30;
@@ -1354,7 +1381,7 @@ void draw_game_level6(){
         x_ -= 30;
     }
 
-    x_ = 447;
+    x_ = 417;
     y_ = 331;
     for (int x = 0; x < 2; x++) {
         ic.top_left_x = x_;
@@ -1379,6 +1406,72 @@ void draw_game_level6(){
         ice_cube_counter++;
         x_ -= 30;
     }
+
+    //draw path cubes
+
+    x_ = 177;
+    y_ = 151;
+    for (int x = 0; x < 13; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 177;
+    y_ = 181;
+    for (int y = 0; y < 6; y++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        y_ += 30;
+    }
+
+    x_ = 327;
+    y_ = 211;
+    for (int x = 0; x < 11; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 177;
+    y_ = 361;
+    for (int x = 0; x < 16; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 357;
+    y_ = 391;
+    for (int x = 0; x < 6; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 267;
+    y_ = 331;
+    for (int x = 0; x < 4; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 447;
+    y_ = 331;
+    for (int x = 0; x < 2; x++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        x_ += 30;
+    }
+
+    x_ = 627;
+    y_ = 241;
+    for (int y = 0; y < 4; y++) {
+        draw_sprite_xpm(path_cube, x_, y_);
+        y_ += 30;
+    }
+
+    x_ = 537;
+    y_ = 241;
+    draw_sprite_xpm(path_cube, x_, y_);
+
+    x_ = 537;
+    y_ = 181;
+    draw_sprite_xpm(path_cube, x_, y_);
 
     //draw red cube
 
