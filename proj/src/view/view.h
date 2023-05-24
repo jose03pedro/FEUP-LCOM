@@ -21,6 +21,7 @@ void draw_initial_menu();
 void draw_game_menu();
 void check_fell_into_water();
 void ice_melt();
+bool check_all_ice_melted();
 void update_player_starting_position1();
 void draw_game_level1();
 void update_player_starting_position2();
