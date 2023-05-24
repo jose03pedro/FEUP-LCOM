@@ -1,5 +1,6 @@
 #ifndef _LCOM_I8254_H_
 #define _LCOM_I8254_H_
+#define IRQ_line 0
 
 #include <lcom/lcf.h>
 
