@@ -1,6 +1,5 @@
 #include "model.h"
 
-// Variáveis externas importantes à construção e manipulação do modelo
 extern uint8_t scancode;
 extern uint8_t byte_index;
 SystemState systemState = RUNNING;
@@ -16,7 +15,6 @@ extern int level5_draw_counter;
 extern int level6_draw_counter;
 extern Box ice_cubes[100];
 
-// Objetos a construir e manipular com a mudança de estados
 Sprite *mouse;
 Sprite *start_screen;
 Sprite *start_button;
@@ -37,10 +35,8 @@ Sprite *finish_button;
 PlayerPosition playerPosition;
 PlayerPosition copy;
 
-// Contador de interrupções do timer
 int timer_interrupts = 0;
 
-// Criação dos objetos via XPM e via comum
 void setup_sprites() {
   mouse = create_sprite_xpm((xpm_map_t) mouse_xpm);
   start_screen = create_sprite_xpm((xpm_map_t) thin_ice_start_xpm);
@@ -59,7 +55,6 @@ void setup_sprites() {
   finish_button = create_sprite_xpm((xpm_map_t) finish_button_xpm);
 }
 
-// É boa prática antes de acabar o programa libertar a memória alocada
 void destroy_sprites() {
   destroy_sprite(mouse);
   destroy_sprite(start_screen);
@@ -78,17 +73,12 @@ void destroy_sprites() {
   destroy_sprite(finish_button);
 }
 
-// Na altura da interrupção há troca dos buffers e incremento do contador
 void update_timer_state() {
   if (DOUBLE_BUFFER)
     swap_buffers();
   timer_interrupts++;
 }
 
-// Sempre que uma nova tecla é pressionada há avaliação do scancode.
-// No caso do Template o teclado influencia:
-// - o systemState: se Q for pressionado, leva ao fim do programa
-// - o menuState: se H, G, E forem pressionados, leva a um dos menus (start, game, end) disponíveis
 void update_keyboard_state() {
   (kbc_ih)();
   switch (scancode) {
@@ -181,9 +171,6 @@ void update_keyboard_state() {
   draw_new_frame();
 }
 
-// Sempre que há um novo pacote completo do rato
-// - muda o seu estado interno (x, y, left_pressed, right_pressed) - mouse_sync_info();
-// - pode mudar o estado do botão por baixo dele - update_buttons_state();
 void update_mouse_state() {
   (mouse_ih)();
   mouse_sync_bytes();

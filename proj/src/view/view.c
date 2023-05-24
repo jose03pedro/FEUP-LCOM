@@ -1,6 +1,5 @@
 #include "view.h"
 
-// Variáveis externas importantes à visualização do modelo e dos seus estados
 uint8_t *main_frame_buffer;
 uint8_t *secondary_frame_buffer;
 uint8_t *drawing_frame_buffer;
@@ -14,6 +13,7 @@ int level6_draw_counter = 0;
 Box ice_cubes[150];
 Box water_path[150];
 int water_counter = 0;
+int path_counter = 0;
 Box finish_level1;
 Box finish_level2;
 Box finish_level3;
@@ -26,7 +26,6 @@ extern MouseInfo mouse_info;
 extern MenuState menuState;
 extern GameLevel gameLevel;
 
-// Objetos
 extern Sprite *mouse;
 extern Sprite *start_screen;
 extern Sprite *start_button;
@@ -46,10 +45,6 @@ extern Sprite *finish_button;
 extern PlayerPosition playerPosition;
 extern PlayerPosition copy;
 
-// Alocação de memória ao(s) buffer(s)
-// Se houver só um buffer, esse é o principal
-// Se houver double buffering, há um secundário a alocar a mesma quantidade de memória que serve
-// exclusivamente para o desenho
 int set_frame_buffers(uint16_t mode) {
   if (set_frame_buffer(mode, &main_frame_buffer))
     return 1;
@@ -64,22 +59,10 @@ int set_frame_buffers(uint16_t mode) {
   return 0;
 }
 
-// Double buffering
-// Cópia para o frame buffer principal do frame construído desde a última atualização
-// Otimizaçṍes:
-// A) como o swap é uma operação muito frequente, é melhor não estar  a calcular frame_buffer_size sempre.
-// Assim opta-se por uma variável global, que é constante ao longo da execução e calculada 1 vez na linha 30.
-// Poupa-se (frequência * (2 multiplicações + 1 soma + 1 divisão)) operações por cada segundo.
-// B) só vale a pena dar display do RTC quando passa um segundo
 void swap_buffers() {
   memcpy(main_frame_buffer, secondary_frame_buffer, frame_buffer_size);
 }
 
-// A construção de um novo frame é baseado:
-// - no estado atual do modelo (menuState, mouse_info, mode_info, buttonX->pressed...);
-// - no Algoritmo do Pintor - https://pt.wikipedia.org/wiki/Algoritmo_do_pintor
-// A ideia é colocar no buffer primeiro o plano mais longe do observador (a cor do fundo) e só depois
-// os objetos em cima, no caso do cursor e / ou dos botões
 void draw_new_frame() {
   switch (menuState) {
     case START:
@@ -138,6 +121,61 @@ void draw_game_menu() {
   draw_rectangle(687, 60, 1, 452, 0x77bbff, drawing_frame_buffer);
 }
 
+void check_fell_into_water() {
+  // check if player has fallen into the water
+  for (int i = 0; i < 150; i++) {
+    if (water_path[i].top_left_x == playerPosition.x && water_path[i].top_left_y == playerPosition.y) {
+      draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
+      menuState = GAME;
+      level1_draw_counter = 0;
+      level2_draw_counter = 0;
+      level3_draw_counter = 0;
+      level4_draw_counter = 0;
+      level5_draw_counter = 0;
+      level6_draw_counter = 0;
+      break;
+    }
+  }
+}
+
+void ice_melt() {
+  // checking if player moved and ice melted
+  if (playerPosition.x != copy.x || playerPosition.y != copy.y) {
+    Box wt;
+    wt.top_left_x = copy.x;
+    wt.top_left_y = copy.y;
+    wt.bot_right_x = copy.x + 30;
+    wt.bot_right_y = copy.y + 30;
+    water_path[water_counter] = wt;
+    water_counter++;
+  }
+
+  for (int i = 0; i < 150; i++) {
+    if (water_path[i].top_left_x > 0 && water_path[i].top_left_y < 600) {
+      draw_sprite_xpm(water, water_path[i].top_left_x, water_path[i].top_left_y);
+    }
+  }
+
+  copy.x = playerPosition.x;
+  copy.y = playerPosition.y;
+}
+
+bool check_all_ice_melted() {
+  // check if player has melted all ice
+  printf("water: %d blocks counted, path: %d blocks counted\n", water_counter, path_counter);
+  if (water_counter != path_counter) {
+    menuState = GAME;
+    level1_draw_counter = 0;
+    level2_draw_counter = 0;
+    level3_draw_counter = 0;
+    level4_draw_counter = 0;
+    level5_draw_counter = 0;
+    level6_draw_counter = 0;
+    return false;
+  }
+  return true;
+}
+
 void update_player_starting_position1() {
   playerPosition.x = 537;
   playerPosition.y = 361;
@@ -147,10 +185,12 @@ void update_player_starting_position1() {
 
 void draw_game_level1() {
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level1_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position1();
+    water_counter = 0;
   }
 
   // draw level1 tag on the top left corner
@@ -205,6 +245,7 @@ void draw_game_level1() {
   y_ = 361;
   for (int x = 0; x < 13; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
@@ -216,6 +257,7 @@ void draw_game_level1() {
   finish_level1.bot_right_x = 177 + 30;
   finish_level1.bot_right_y = 361 + 30;
   draw_sprite_xpm(red_cube, x_, y_);
+  path_counter--;
 
   // draw player
   draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
@@ -223,48 +265,18 @@ void draw_game_level1() {
   ice_melt();
 
   // check if player has completed the path
+  // check if player has completed the path
   if (playerPosition.x == finish_level1.top_left_x && playerPosition.y == finish_level1.top_left_y) {
-    gameLevel = LEVEL_2;
+    if (check_all_ice_melted()) {
+      gameLevel = LEVEL_2;
+    }
+    else {
+      return;
+    }
   }
 
   level1_draw_counter++;
-  check_fell_into_water(LEVEL_1);
-}
-
-void check_fell_into_water(GameLevel gameLevel) {
-  // check if player has fallen into the water
-  for (int i = 0; i < 150; i++) {
-    if (water_path[i].top_left_x == playerPosition.x && water_path[i].top_left_y == playerPosition.y) {
-      menuState = GAME;
-      level1_draw_counter = 0;
-      level2_draw_counter = 0;
-      level3_draw_counter = 0;
-      level4_draw_counter = 0;
-      break;
-    }
-  }
-}
-
-void ice_melt() {
-  // checking if player moved and ice melted
-  if (playerPosition.x != copy.x || playerPosition.y != copy.y) {
-    Box wt;
-    wt.top_left_x = copy.x;
-    wt.top_left_y = copy.y;
-    wt.bot_right_x = copy.x + 30;
-    wt.bot_right_y = copy.y + 30;
-    water_path[water_counter] = wt;
-    water_counter++;
-  }
-
-  for (int i = 0; i < 150; i++) {
-    if (water_path[i].top_left_x > 0 && water_path[i].top_left_y < 600) {
-      draw_sprite_xpm(water, water_path[i].top_left_x, water_path[i].top_left_y);
-    }
-  }
-
-  copy.x = playerPosition.x;
-  copy.y = playerPosition.y;
+  check_fell_into_water();
 }
 
 void update_player_starting_position2() {
@@ -275,12 +287,13 @@ void update_player_starting_position2() {
 }
 
 void draw_game_level2() {
-
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level2_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position2();
+    water_counter = 0;
   }
 
   // draw level2 tag on the top left corner
@@ -477,24 +490,29 @@ void draw_game_level2() {
   y_ = 361;
   for (int x = 0; x < 5; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
   draw_sprite_xpm(path_cube, 297, 331);
+  path_counter++;
 
   x_ = 297;
   y_ = 301;
   for (int x = 0; x < 5; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
   draw_sprite_xpm(path_cube, 417, 331);
+  path_counter++;
 
   x_ = 417;
   y_ = 361;
   for (int x = 0; x < 5; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
@@ -502,6 +520,7 @@ void draw_game_level2() {
   y_ = 331;
   for (int y = 0; y < 3; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ -= 30;
   }
 
@@ -513,6 +532,7 @@ void draw_game_level2() {
   finish_level2.bot_right_x = 537 + 30;
   finish_level2.bot_right_y = 271 + 30;
   draw_sprite_xpm(red_cube, x_, y_);
+  path_counter--;
 
   // draw player
   draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
@@ -520,12 +540,18 @@ void draw_game_level2() {
   ice_melt();
 
   // check if player has completed the path
+  // check if player has completed the path
   if (playerPosition.x == finish_level2.top_left_x && playerPosition.y == finish_level2.top_left_y) {
-    gameLevel = LEVEL_3;
+    if (check_all_ice_melted()) {
+      gameLevel = LEVEL_3;
+    }
+    else {
+      return;
+    }
   }
 
   level2_draw_counter++;
-  check_fell_into_water(LEVEL_2);
+  check_fell_into_water();
 }
 
 void update_player_starting_position3() {
@@ -536,12 +562,13 @@ void update_player_starting_position3() {
 }
 
 void draw_game_level3() {
-
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level3_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position3();
+    water_counter = 0;
   }
 
   // draw level3 ice cubes
@@ -721,6 +748,7 @@ void draw_game_level3() {
   y_ = 271;
   for (int y = 0; y < 5; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -728,6 +756,7 @@ void draw_game_level3() {
   y_ = 361;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -735,6 +764,7 @@ void draw_game_level3() {
   y_ = 361;
   for (int x = 0; x < 2; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
@@ -742,6 +772,7 @@ void draw_game_level3() {
   y_ = 361;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -749,6 +780,7 @@ void draw_game_level3() {
   y_ = 361;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -756,13 +788,15 @@ void draw_game_level3() {
   y_ = 361;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
   x_ = 207;
-  y_ = 301;
-  for (int y = 0; y < 4; y++) {
+  y_ = 271;
+  for (int y = 0; y < 5; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -770,6 +804,7 @@ void draw_game_level3() {
   y_ = 331;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
@@ -777,16 +812,19 @@ void draw_game_level3() {
   y_ = 331;
   for (int y = 0; y < 2; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ += 30;
   }
 
   x_ = 267;
   y_ = 361;
   draw_sprite_xpm(path_cube, x_, y_);
+  path_counter++;
 
   x_ = 357;
   y_ = 361;
   draw_sprite_xpm(path_cube, x_, y_);
+  path_counter++;
 
   // draw red cube
   x_ = 207;
@@ -796,6 +834,7 @@ void draw_game_level3() {
   finish_level3.bot_right_x = 207 + 30;
   finish_level3.bot_right_y = 271 + 30;
   draw_sprite_xpm(red_cube, x_, y_);
+  path_counter--;
 
   // draw player
   draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
@@ -804,11 +843,16 @@ void draw_game_level3() {
 
   // check if player has completed the path
   if (playerPosition.x == finish_level3.top_left_x && playerPosition.y == finish_level3.top_left_y) {
-    gameLevel = LEVEL_4;
+    if (check_all_ice_melted()) {
+      gameLevel = LEVEL_4;
+    }
+    else {
+      return;
+    }
   }
 
   level3_draw_counter++;
-  check_fell_into_water(LEVEL_3);
+  check_fell_into_water();
 }
 
 void update_player_starting_position4() {
@@ -820,10 +864,12 @@ void update_player_starting_position4() {
 
 void draw_game_level4() {
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level4_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position4();
+    water_counter = 0;
   }
 
   int x_;
@@ -1085,51 +1131,81 @@ void draw_game_level4() {
   // playerPosition.y = 271;
   x_ = 207;
   y_ = 271;
+
   for (int y = 0; y < 3; y++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     y_ -= 30;
   }
+
   x_ = 177;
   y_ = 181;
+
   for (int x = 0; x < 14; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
+
   x_ = 177;
   y_ = 121;
+
   for (int x = 0; x < 3; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
+
   x_ = 507;
   y_ = 121;
+
   for (int x = 0; x < 3; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
+
   draw_sprite_xpm(path_cube, 177, 151);
+  path_counter++;
   draw_sprite_xpm(path_cube, 507, 151);
+  path_counter++;
   draw_sprite_xpm(path_cube, 237, 151);
+  path_counter++;
   draw_sprite_xpm(path_cube, 567, 151);
+  path_counter++;
+
   x_ = 327;
   y_ = 151;
+
   for (int x = 0; x < 4; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
+
   draw_sprite_xpm(path_cube, 357, 211);
+  path_counter++;
   draw_sprite_xpm(path_cube, 387, 211);
+  path_counter++;
+
   x_ = 327;
   y_ = 271;
   for (int x = 0; x < 4; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     draw_sprite_xpm(path_cube, x_, y_ - 30);
+    path_counter++;
     x_ += 30;
   }
-  draw_sprite_xpm(path_cube, 537, 241);
-  draw_sprite_xpm(path_cube, 537, 211);
-  // cubo vermelho
 
+  draw_sprite_xpm(path_cube, 537, 271);
+  path_counter++;
+  draw_sprite_xpm(path_cube, 537, 241);
+  path_counter++;
+  draw_sprite_xpm(path_cube, 537, 211);
+  path_counter++;
+
+  // cubo vermelho
   x_ = 537;
   y_ = 271;
   finish_level4.top_left_x = 537;
@@ -1137,6 +1213,7 @@ void draw_game_level4() {
   finish_level4.bot_right_x = 537 + 30;
   finish_level4.bot_right_y = 271 + 30;
   draw_sprite_xpm(red_cube, x_, y_);
+  path_counter--;
 
   // player
   draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
@@ -1145,11 +1222,16 @@ void draw_game_level4() {
 
   // check if player has completed the path
   if (playerPosition.x == finish_level4.top_left_x && playerPosition.y == finish_level4.top_left_y) {
-    gameLevel = LEVEL_5;
+    if (check_all_ice_melted()) {
+      gameLevel = LEVEL_5;
+    }
+    else {
+      return;
+    }
   }
 
   level4_draw_counter++;
-  check_fell_into_water(LEVEL_4);
+  check_fell_into_water();
 }
 
 void update_player_starting_position5() {
@@ -1161,13 +1243,15 @@ void update_player_starting_position5() {
 
 void draw_game_level5() {
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level5_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position5();
+    water_counter = 0;
   }
 
-  draw_sprite_xpm(level2_tag, 135, 32);
+  // draw_sprite_xpm(level2_tag, 135, 32);
 
   int x_ = 147;
   int y_ = 331;
@@ -1299,6 +1383,7 @@ void draw_game_level5() {
 
   for (int x = 0; x < 15; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
@@ -1306,6 +1391,7 @@ void draw_game_level5() {
   y_ = 391;
   for (int x = 0; x < 12; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
@@ -1313,16 +1399,19 @@ void draw_game_level5() {
   y_ = 331;
   for (int x = 0; x < 13; x++) {
     draw_sprite_xpm(path_cube, x_, y_);
+    path_counter++;
     x_ += 30;
   }
 
   x_ = 537;
   y_ = 271;
   draw_sprite_xpm(path_cube, x_, y_);
+  path_counter++;
 
   x_ = 537;
   y_ = 301;
   draw_sprite_xpm(path_cube, x_, y_);
+  path_counter++;
 
   // draw red cube
   x_ = 177;
@@ -1332,6 +1421,7 @@ void draw_game_level5() {
   finish_level5.bot_right_x = 177 + 30;
   finish_level5.bot_right_y = 361 + 30;
   draw_sprite_xpm(red_cube, x_, y_);
+  path_counter--;
 
   // draw player
   draw_sprite_xpm(player, playerPosition.x, playerPosition.y);
@@ -1340,11 +1430,16 @@ void draw_game_level5() {
 
   // check if player has completed the path
   if (playerPosition.x == finish_level5.top_left_x && playerPosition.y == finish_level5.top_left_y) {
-    gameLevel = LEVEL_6;
+    if (check_all_ice_melted()) {
+      gameLevel = LEVEL_6;
+    }
+    else {
+      return;
+    }
   }
 
   level5_draw_counter++;
-  check_fell_into_water(LEVEL_5);
+  check_fell_into_water();
 }
 
 void update_player_starting_position6() {
@@ -1355,19 +1450,20 @@ void update_player_starting_position6() {
 }
 
 void draw_game_level6() {
-
   memset(&ice_cubes, 0, sizeof(ice_cubes));
+  path_counter = 0;
 
   if (level6_draw_counter == 0) {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position6();
+    water_counter = 0;
   }
 
   int x_;
   int y_;
 
   // draw level6 tag
-  //  draw_sprite_xpm(level6_tag, 135, 32);
+  // draw_sprite_xpm(level6_tag, 135, 32);
 
   // ice cubes
   x_ = 147;
@@ -1594,11 +1690,11 @@ void draw_game_level6() {
 
   // check if player has completed the path
   if (playerPosition.x == finish_level6.top_left_x && playerPosition.y == finish_level6.top_left_y) {
-    // gameLevel = LEVEL_7;
+    menuState = END;
   }
 
   level6_draw_counter++;
-  check_fell_into_water(LEVEL_6);
+  check_fell_into_water();
 }
 
 void draw_finish_menu() {
@@ -1606,8 +1702,6 @@ void draw_finish_menu() {
   draw_sprite_xpm(finish_button, 340, 467);
 }
 
-// O cursor mode ter dois estados:
-// - "normal", quando está no menu de início ou de fim
 void draw_mouse() {
   switch (menuState) {
     case START:
@@ -1619,9 +1713,6 @@ void draw_mouse() {
   }
 }
 
-// A função recebe um objeto Sprite proveniente de um XPM e mostra-o nas coordenadas (x, y)
-// Usa as cores dinamicamente alocadas na altura da construção
-// A função ignora a cor transparente do XPM para não modificar o fundo quando não é preciso
 int draw_sprite_xpm(Sprite *sprite, int x, int y) {
   uint16_t height = sprite->height;
   uint16_t width = sprite->width;
