@@ -13,7 +13,7 @@ extern int level3_draw_counter;
 extern int level4_draw_counter;
 extern int level5_draw_counter;
 extern int level6_draw_counter;
-extern Box ice_cubes[100];
+extern Box ice_cubes[250];
 
 Sprite *mouse;
 Sprite *start_screen;
@@ -115,7 +115,7 @@ void update_keyboard_state() {
     case A_KEY:
       if (menuState == GAME) {
         bool check = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 250; i++) {
           if (ice_cubes[i].top_left_x == playerPosition.x - 30 && ice_cubes[i].top_left_y == playerPosition.y) {
             check = false;
             break;
@@ -129,7 +129,7 @@ void update_keyboard_state() {
     case W_KEY:
       if (menuState == GAME) {
         bool check = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 250; i++) {
           if (ice_cubes[i].top_left_x == playerPosition.x && ice_cubes[i].top_left_y == playerPosition.y - 30) {
             check = false;
             break;
@@ -142,7 +142,7 @@ void update_keyboard_state() {
     case S_KEY:
       if (menuState == GAME) {
         bool check = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 250; i++) {
           if (ice_cubes[i].top_left_x == playerPosition.x && ice_cubes[i].top_left_y == playerPosition.y + 30) {
             check = false;
             break;
@@ -155,7 +155,7 @@ void update_keyboard_state() {
     case D_KEY:
       if (menuState == GAME) {
         bool check = true;
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < 250; i++) {
           if (ice_cubes[i].top_left_x == playerPosition.x + 30 && ice_cubes[i].top_left_y == playerPosition.y) {
             check = false;
             break;
