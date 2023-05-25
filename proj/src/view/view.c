@@ -12,6 +12,8 @@ int level5_draw_counter = 0;
 int level6_draw_counter = 0;
 Box ice_cubes[250];
 Box water_path[250];
+Box lock_cube;
+bool key_check;
 int water_counter = 0;
 int path_counter = 0;
 Box finish_level1;
@@ -41,6 +43,8 @@ extern Sprite *level2_tag;
 extern Sprite *level3_tag;
 extern Sprite *end_screen;
 extern Sprite *finish_button;
+extern Sprite *lock;
+extern Sprite *key;
 
 extern PlayerPosition playerPosition;
 extern PlayerPosition copy;
@@ -1457,6 +1461,11 @@ void draw_game_level6() {
     memset(&water_path, 0, sizeof(water_path));
     update_player_starting_position6();
     water_counter = 0;
+    key_check = false;
+    lock_cube.top_left_x = 477;
+    lock_cube.top_left_y = 211;
+    lock_cube.bot_right_x = 477 + 30;
+    lock_cube.bot_right_y = 211 + 30;
   }
 
   int x_;
@@ -1783,6 +1792,20 @@ void draw_game_level6() {
   y_ = 181;
   draw_sprite_xpm(path_cube, x_, y_);
   path_counter++;
+
+  // check if player is on top of the key
+  if (playerPosition.x == 177 && playerPosition.y == 211) {
+    key_check = true;
+  }
+
+  // check if player has picked key
+  if (!key_check) {
+    draw_sprite_xpm(key, 177, 211);
+    draw_sprite_xpm(lock, 477, 211);
+  }
+  else {
+    memset(&lock_cube, 0, sizeof(lock_cube));
+  }
 
   // draw red cube
   x_ = 297;

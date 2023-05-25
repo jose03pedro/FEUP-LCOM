@@ -14,6 +14,7 @@ extern int level4_draw_counter;
 extern int level5_draw_counter;
 extern int level6_draw_counter;
 extern Box ice_cubes[250];
+extern Box lock_cube;
 
 Sprite *mouse;
 Sprite *start_screen;
@@ -30,6 +31,8 @@ Sprite *level2_tag;
 Sprite *level3_tag;
 Sprite *end_screen;
 Sprite *finish_button;
+Sprite *lock;
+Sprite *key;
 
 // Posição do Jogador
 PlayerPosition playerPosition;
@@ -53,6 +56,8 @@ void setup_sprites() {
   level3_tag = create_sprite_xpm((xpm_map_t) level3_xpm);
   end_screen = create_sprite_xpm((xpm_map_t) end_screen_xpm);
   finish_button = create_sprite_xpm((xpm_map_t) finish_button_xpm);
+  lock = create_sprite_xpm((xpm_map_t) lock_xpm);
+  key = create_sprite_xpm((xpm_map_t) key_xpm);
 }
 
 void destroy_sprites() {
@@ -121,6 +126,9 @@ void update_keyboard_state() {
             break;
           }
         }
+        if (lock_cube.top_left_x == playerPosition.x - 30 && lock_cube.top_left_y == playerPosition.y) {
+          check = false;
+        }
         if (check) {
           playerPosition.x -= 30;
         }
@@ -135,6 +143,9 @@ void update_keyboard_state() {
             break;
           }
         }
+        if (lock_cube.top_left_x == playerPosition.x && lock_cube.top_left_y == playerPosition.y - 30) {
+          check = false;
+        }
         if (check)
           playerPosition.y -= 30;
       }
@@ -148,6 +159,9 @@ void update_keyboard_state() {
             break;
           }
         }
+        if (lock_cube.top_left_x == playerPosition.x && lock_cube.top_left_y == playerPosition.y + 30) {
+          check = false;
+        }
         if (check)
           playerPosition.y += 30;
       }
@@ -160,6 +174,9 @@ void update_keyboard_state() {
             check = false;
             break;
           }
+        }
+        if (lock_cube.top_left_x == playerPosition.x + 30 && lock_cube.top_left_y == playerPosition.y) {
+          check = false;
         }
         if (check)
           playerPosition.x += 30;
