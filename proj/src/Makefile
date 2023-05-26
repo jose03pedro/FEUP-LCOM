@@ -20,3 +20,5 @@ CFLAGS += -pedantic -D __LCOM_OPTIMIZED__ -O2
 DPADD += ${LIBLCF}
 LDADD += -Wall -llcf -lxpm -llm
 .include <minix.lcom.mk>
+
+
