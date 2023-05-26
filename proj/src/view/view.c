@@ -10,6 +10,10 @@ int level3_draw_counter = 0;
 int level4_draw_counter = 0;
 int level5_draw_counter = 0;
 int level6_draw_counter = 0;
+int level7_draw_counter = 0;
+int level8_draw_counter = 0;
+int level9_draw_counter = 0;
+int level10_draw_counter = 0;
 Box ice_cubes[250];
 Box water_path[250];
 Box lock_cube;
@@ -41,6 +45,13 @@ extern Sprite *path_cube;
 extern Sprite *level1_tag;
 extern Sprite *level2_tag;
 extern Sprite *level3_tag;
+extern Sprite *level4_tag;
+extern Sprite *level5_tag;
+extern Sprite *level6_tag;
+extern Sprite *level7_tag;
+extern Sprite *level8_tag;
+extern Sprite *level9_tag;
+extern Sprite *level10_tag;
 extern Sprite *end_screen;
 extern Sprite *finish_button;
 extern Sprite *lock;
@@ -93,6 +104,14 @@ void draw_new_frame() {
         case LEVEL_6:
           draw_game_level6();
           break;
+        case LEVEL_7:
+          break;
+        case LEVEL_8:
+          break;
+        case LEVEL_9:
+          break;
+        case LEVEL_10:
+          break;
       }
       break;
     case END:
@@ -137,6 +156,10 @@ void check_fell_into_water() {
       level4_draw_counter = 0;
       level5_draw_counter = 0;
       level6_draw_counter = 0;
+      level7_draw_counter = 0;
+      level8_draw_counter = 0;
+      level9_draw_counter = 0;
+      level10_draw_counter = 0;
       break;
     }
   }
@@ -175,6 +198,10 @@ bool check_all_ice_melted() {
     level4_draw_counter = 0;
     level5_draw_counter = 0;
     level6_draw_counter = 0;
+    level7_draw_counter = 0;
+    level8_draw_counter = 0;
+    level9_draw_counter = 0;
+    level10_draw_counter = 0;
     return false;
   }
   return true;
@@ -880,7 +907,7 @@ void draw_game_level4() {
   int y_;
 
   // draw level4 tag
-  // draw_sprite_xpm(level3_tag, 135, 32);
+  draw_sprite_xpm(level4_tag, 135, 32);
 
   // ice cubes
   x_ = 177;
@@ -1255,7 +1282,8 @@ void draw_game_level5() {
     water_counter = 0;
   }
 
-  // draw_sprite_xpm(level2_tag, 135, 32);
+  // draw level 5 tag
+  draw_sprite_xpm(level5_tag, 135, 32);
 
   int x_ = 147;
   int y_ = 331;
@@ -1472,7 +1500,7 @@ void draw_game_level6() {
   int y_;
 
   // draw level6 tag
-  // draw_sprite_xpm(level6_tag, 135, 32);
+  draw_sprite_xpm(level6_tag, 135, 32);
 
   // ice cubes
   x_ = 147;
