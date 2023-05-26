@@ -14,6 +14,7 @@ extern int level3_draw_counter;
 extern int level4_draw_counter;
 extern int level6_draw_counter;
 extern int level8_draw_counter;
+extern int level9_draw_counter;
 extern Box ice_cubes[100];
 
 // Objetos a construir e manipular com a mudança de estados
@@ -101,6 +102,8 @@ void update_keyboard_state() {
             level3_draw_counter = 0;
             level4_draw_counter = 0;
             level6_draw_counter = 0;
+            level8_draw_counter = 0;
+            level9_draw_counter = 0;
             break;
         case G_KEY:
             menuState = GAME;
@@ -111,6 +114,7 @@ void update_keyboard_state() {
             level4_draw_counter = 0;
             level6_draw_counter = 0;
             level8_draw_counter = 0;
+            level9_draw_counter = 0;
             break;
         case E_KEY:
             menuState = END;
@@ -120,6 +124,7 @@ void update_keyboard_state() {
             level4_draw_counter = 0;
             level6_draw_counter = 0;
             level8_draw_counter = 0;
+            level9_draw_counter = 0;
         case A_KEY:
             if (menuState == GAME) {
                 bool check = true;
@@ -203,6 +208,7 @@ void update_start_button_state() {
             level4_draw_counter = 0;
             level6_draw_counter = 0;
             level8_draw_counter = 0;
+            level9_draw_counter = 0;
             }
         }
         if (menuState == END) {
