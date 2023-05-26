@@ -34,6 +34,8 @@ void update_player_starting_position5();
 void draw_game_level5();
 void update_player_starting_position6();
 void draw_game_level6();
+void update_player_starting_position10();
+void draw_game_level10();
 void draw_finish_menu();
 void draw_mouse();
 void swap_buffers();

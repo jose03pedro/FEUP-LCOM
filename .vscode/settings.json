@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "*.xpm": "c"
+        "*.xpm": "c",
+        "graphics.h": "c"
     }
 }
