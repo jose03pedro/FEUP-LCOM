@@ -13,6 +13,7 @@ extern Box lock_cube;
 Sprite_t *mouse;
 Sprite_t *start_screen;
 Sprite_t *start_button;
+Sprite_t *quit_button;
 Sprite_t *game_screen;
 Sprite_t *background_cube;
 Sprite_t *ice_cube;
@@ -45,6 +46,7 @@ void sprites_creation() {
   mouse = sprite_create((xpm_map_t) mouse_xpm);
   start_screen = sprite_create((xpm_map_t) thin_ice_start_xpm);
   start_button = sprite_create((xpm_map_t) start_button_xpm);
+  quit_button = sprite_create((xpm_map_t) quit_button_xpm);
   background_cube = sprite_create((xpm_map_t) background_cube_xpm);
   game_screen = sprite_create((xpm_map_t) thin_ice_game_xpm);
   ice_cube = sprite_create((xpm_map_t) ice_cube_xpm);
@@ -178,11 +180,15 @@ void update_mouse_state() {
 void update_start_and_finish_button_state() {
   if (mouse_info.left_click) {
     if (menuState == START) {
-      if (mouse_info.x >= 340 && mouse_info.x <= 465 && mouse_info.y >= 476 && mouse_info.y <= 518) {
+      if (mouse_info.x >= 260 && mouse_info.x <= 385 && mouse_info.y >= 485 && mouse_info.y <= 524) {
         start_button->is_clicked = 1;
         menuState = GAME;
         gameLevel = LEVEL_1;
         reset_all_draw_counters();
+      }
+      if (mouse_info.x >= 415 && mouse_info.x <= 540 && mouse_info.y >= 485 && mouse_info.y <= 524) {
+        quit_button->is_clicked = 1;
+        gameState = EXIT;
       }
     }
     if (menuState == FINISH) {
@@ -195,6 +201,7 @@ void update_start_and_finish_button_state() {
   }
   else {
     start_button->is_clicked = 0;
+    quit_button->is_clicked = 0;
     finish_button->is_clicked = 0;
   }
 }

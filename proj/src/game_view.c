@@ -28,6 +28,7 @@ extern GameLevel gameLevel;
 extern Sprite_t *mouse;
 extern Sprite_t *start_screen;
 extern Sprite_t *start_button;
+extern Sprite_t *quit_button;
 extern Sprite_t *game_screen;
 extern Sprite_t *background_cube;
 extern Sprite_t *water;
@@ -104,7 +105,8 @@ void draw_new_frame() {
 
 void draw_initial_menu() {
   draw_sprite(start_screen, 0, 0);
-  draw_sprite(start_button, 340, 479);
+  draw_sprite(start_button, 260, 485);
+  draw_sprite(quit_button, 415, 485);
 }
 
 void draw_game_menu() {

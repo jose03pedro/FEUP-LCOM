@@ -25,6 +25,7 @@
 #include "xpm/mouse.xpm"
 #include "xpm/path_cube.xpm"
 #include "xpm/player.xpm"
+#include "xpm/quit_button.xpm"
 #include "xpm/red_cube.xpm"
 #include "xpm/start_button.xpm"
 #include "xpm/thin_ice_game.xpm"
