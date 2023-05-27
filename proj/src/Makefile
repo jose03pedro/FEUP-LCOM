@@ -14,11 +14,9 @@ PROG=proj
 SRCS = 	main.c timer.c utils.c graphics.c KBC.c keyboard.c mouse.c sprite.c model.c view.c 
 
 # Flags de compilação
-CFLAGS += -pedantic -D __LCOM_OPTIMIZED__ -O2
+CFLAGS += -D __LCOM_OPTIMIZED__
 
 # Dependências
 DPADD += ${LIBLCF}
 LDADD += -Wall -llcf -lxpm -llm
 .include <minix.lcom.mk>
-
-

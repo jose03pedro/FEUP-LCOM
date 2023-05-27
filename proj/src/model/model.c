@@ -13,8 +13,10 @@ extern int level3_draw_counter;
 extern int level4_draw_counter;
 extern int level5_draw_counter;
 extern int level6_draw_counter;
+extern int level7_draw_counter;
 extern int level8_draw_counter;
 extern int level9_draw_counter;
+extern int level10_draw_counter;
 extern Box ice_cubes[250];
 extern Box lock_cube;
 
@@ -31,6 +33,13 @@ Sprite *path_cube;
 Sprite *level1_tag;
 Sprite *level2_tag;
 Sprite *level3_tag;
+Sprite *level4_tag;
+Sprite *level5_tag;
+Sprite *level6_tag;
+Sprite *level7_tag;
+Sprite *level8_tag;
+Sprite *level9_tag;
+Sprite *level10_tag;
 Sprite *end_screen;
 Sprite *finish_button;
 Sprite *lock;
@@ -56,6 +65,13 @@ void setup_sprites() {
   level1_tag = create_sprite_xpm((xpm_map_t) level1_xpm);
   level2_tag = create_sprite_xpm((xpm_map_t) level2_xpm);
   level3_tag = create_sprite_xpm((xpm_map_t) level3_xpm);
+  level4_tag = create_sprite_xpm((xpm_map_t) level4_xpm);
+  level5_tag = create_sprite_xpm((xpm_map_t) level5_xpm);
+  level6_tag = create_sprite_xpm((xpm_map_t) level6_xpm);
+  level7_tag = create_sprite_xpm((xpm_map_t) level7_xpm);
+  level8_tag = create_sprite_xpm((xpm_map_t) level8_xpm);
+  level9_tag = create_sprite_xpm((xpm_map_t) level9_xpm);
+  level10_tag = create_sprite_xpm((xpm_map_t) level10_xpm);
   end_screen = create_sprite_xpm((xpm_map_t) end_screen_xpm);
   finish_button = create_sprite_xpm((xpm_map_t) finish_button_xpm);
   lock = create_sprite_xpm((xpm_map_t) lock_xpm);
@@ -76,8 +92,17 @@ void destroy_sprites() {
   destroy_sprite(level1_tag);
   destroy_sprite(level2_tag);
   destroy_sprite(level3_tag);
+  destroy_sprite(level4_tag);
+  destroy_sprite(level5_tag);
+  destroy_sprite(level6_tag);
+  destroy_sprite(level7_tag);
+  destroy_sprite(level8_tag);
+  destroy_sprite(level9_tag);
+  destroy_sprite(level10_tag);
   destroy_sprite(end_screen);
   destroy_sprite(finish_button);
+  destroy_sprite(lock);
+  destroy_sprite(key);
 }
 
 void update_timer_state() {
@@ -100,20 +125,24 @@ void update_keyboard_state() {
       level4_draw_counter = 0;
       level5_draw_counter = 0;
       level6_draw_counter = 0;
+      level7_draw_counter = 0;
       level8_draw_counter = 0;
       level9_draw_counter = 0;
+      level10_draw_counter = 0;
       break;
     case G_KEY:
       menuState = GAME;
-      gameLevel = LEVEL_9;
+      gameLevel = LEVEL_1;
       level1_draw_counter = 0;
       level2_draw_counter = 0;
       level3_draw_counter = 0;
       level4_draw_counter = 0;
       level5_draw_counter = 0;
       level6_draw_counter = 0;
+      level7_draw_counter = 0;
       level8_draw_counter = 0;
       level9_draw_counter = 0;
+      level10_draw_counter = 0;
       break;
     case E_KEY:
       menuState = END;
@@ -123,8 +152,10 @@ void update_keyboard_state() {
       level4_draw_counter = 0;
       level5_draw_counter = 0;
       level6_draw_counter = 0;
+      level7_draw_counter = 0;
       level8_draw_counter = 0;
       level9_draw_counter = 0;
+      level10_draw_counter = 0;
     case A_KEY:
       if (menuState == GAME) {
         bool check = true;
@@ -220,8 +251,10 @@ void update_start_button_state() {
         level4_draw_counter = 0;
         level5_draw_counter = 0;
         level6_draw_counter = 0;
+        level7_draw_counter = 0;
         level8_draw_counter = 0;
         level9_draw_counter = 0;
+        level10_draw_counter = 0;
       }
     }
     if (menuState == END) {

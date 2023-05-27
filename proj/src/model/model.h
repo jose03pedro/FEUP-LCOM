@@ -13,8 +13,15 @@
 #include "xpm/ice_cube.xpm"
 #include "xpm/key.xpm"
 #include "xpm/level1.xpm"
+#include "xpm/level10.xpm"
 #include "xpm/level2.xpm"
 #include "xpm/level3.xpm"
+#include "xpm/level4.xpm"
+#include "xpm/level5.xpm"
+#include "xpm/level6.xpm"
+#include "xpm/level7.xpm"
+#include "xpm/level8.xpm"
+#include "xpm/level9.xpm"
 #include "xpm/lock.xpm"
 #include "xpm/mouse.xpm"
 #include "xpm/path_cube.xpm"
@@ -39,15 +46,16 @@ typedef enum {
 } MenuState;
 
 typedef enum {
-    LEVEL_1,
-    LEVEL_2,
-    LEVEL_3, 
-    LEVEL_4,
-    LEVEL_5, 
-    LEVEL_6,
-    LEVEL_7
-    LEVEL_8,
-    LEVEL_9
+  LEVEL_1,
+  LEVEL_2,
+  LEVEL_3,
+  LEVEL_4,
+  LEVEL_5,
+  LEVEL_6,
+  LEVEL_7,
+  LEVEL_8,
+  LEVEL_9,
+  LEVEL_10
 } GameLevel;
 
 typedef struct {
