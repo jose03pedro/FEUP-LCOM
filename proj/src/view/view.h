@@ -34,6 +34,8 @@ void update_player_starting_position5();
 void draw_game_level5();
 void update_player_starting_position6();
 void draw_game_level6();
+void update_player_starting_position7();
+void draw_game_level7();
 void update_player_starting_position8();
 void draw_game_level8();
 void update_player_starting_position9();
