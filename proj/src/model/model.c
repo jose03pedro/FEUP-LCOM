@@ -105,7 +105,7 @@ void update_keyboard_state() {
       break;
     case G_KEY:
       menuState = GAME;
-      gameLevel = LEVEL_1;
+      gameLevel = LEVEL_9;
       level1_draw_counter = 0;
       level2_draw_counter = 0;
       level3_draw_counter = 0;
