@@ -22,13 +22,13 @@
 #define WAIT_KBC 20000
 #define MAX_ATTEMPS 10
 
-#define Q_KEY 16
-#define W_KEY 17
-#define E_KEY 18
-#define A_KEY 30
-#define S_KEY 31
-#define D_KEY 32
-#define G_KEY 34
-#define H_KEY 35
+#define Q 16
+#define W 17
+#define E 18
+#define A 30
+#define S 31
+#define D 32
+#define G 34
+#define H 35
 
 #endif
