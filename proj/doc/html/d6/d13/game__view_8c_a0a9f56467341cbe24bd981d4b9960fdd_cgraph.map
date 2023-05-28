@@ -1,0 +1,7 @@
+<map id="draw_game_menu" name="draw_game_menu">
+<area shape="rect" id="node1" title="Desenha a interface do jogo, a &quot;consola&quot; e o background." alt="" coords="5,22,148,49"/>
+<area shape="rect" id="node2" href="$d5/d95/graphics_8c.html#aaa521edac9abebe26567c6421b0480ab" title=" " alt="" coords="373,22,459,49"/>
+<area shape="rect" id="node4" href="$d5/d95/graphics_8c.html#a985c2ca86c8f87d6dbc5956e34f45faa" title=" " alt="" coords="196,22,319,49"/>
+<area shape="rect" id="node5" href="$d6/d13/game__view_8c.html#a910edcc4bb172eeff97842287bf7bc2a" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="367,73,465,100"/>
+<area shape="rect" id="node3" href="$d5/d95/graphics_8c.html#a950e17209d152e8a40ec064a0b201b25" title=" " alt="" coords="513,48,605,74"/>
+</map>

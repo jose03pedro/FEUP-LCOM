@@ -69,46 +69,46 @@ $(function() {
 <div class="title">i8042.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_I8042_MOUSE_H_</span></div>
+<a href="../../d3/d5c/mouse_2i8042_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_I8042_MOUSE_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _LCOM_I8042_MOUSE_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define IRQ_KEYBOARD 1</span></div>
-<div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#define IRQ_MOUSE 12</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a8092843c014fad609c1b01a4604a44a3">    4</a></span>&#160;<span class="preprocessor">#define IRQ_KEYBOARD 1</span></div>
+<div class="line"><a name="l00005"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a32ffe73ffc337fbec467ea02948591af">    5</a></span>&#160;<span class="preprocessor">#define IRQ_MOUSE 12</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160; </div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define BREAK_ESC 0x81</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define MAKE_CODE BIT(7)</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define TWO_BYTES 0xE0</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#define ENABLE_INT BIT(0)</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a82218ef5fdf988f42e5056a0da2f9fb5">    7</a></span>&#160;<span class="preprocessor">#define BREAK_ESC 0x81</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a5573533027e427e3a11b4daa75621598">    8</a></span>&#160;<span class="preprocessor">#define MAKE_CODE BIT(7)</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#ab427e6926fcc47eb1c02c1f78162b6f6">    9</a></span>&#160;<span class="preprocessor">#define TWO_BYTES 0xE0</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a34326f1c6bfccd8b9084c5ae2b4918a1">   10</a></span>&#160;<span class="preprocessor">#define ENABLE_INT BIT(0)</span></div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define TIMEOUT_ERROR BIT(6)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define PARITY_ERROR BIT(7)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define FULL_OUT_BUFFER BIT(0)</span></div>
-<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#define FULL_IN_BUFFER BIT(1)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#aefc48d416c882f06edaf6d01779d4d74">   12</a></span>&#160;<span class="preprocessor">#define TIMEOUT_ERROR BIT(6)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a81d2ca6759f3f3bf04556b7558aea6bc">   13</a></span>&#160;<span class="preprocessor">#define PARITY_ERROR BIT(7)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a10313c9dfee4ce9cb293f84b50d14889">   14</a></span>&#160;<span class="preprocessor">#define FULL_OUT_BUFFER BIT(0)</span></div>
+<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a7eb083dcc1b2aecf91bd8c9108e17b37">   15</a></span>&#160;<span class="preprocessor">#define FULL_IN_BUFFER BIT(1)</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define KBC_STATUS_REG 0x64</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define KBC_IN_CMD 0x64</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define KBC_OUT_CMD 0x60</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define KBC_READ_CMD 0x20</span></div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="preprocessor">#define KBC_WRITE_CMD 0x60</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a0b4e336aad52f96e65dd212f76675d8d">   17</a></span>&#160;<span class="preprocessor">#define KBC_STATUS_REG 0x64</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a445f67cfdfb7046efc77f7df5d9835e2">   18</a></span>&#160;<span class="preprocessor">#define KBC_IN_CMD 0x64</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#ade9c0b4f31cee479afed8b824fff02a0">   19</a></span>&#160;<span class="preprocessor">#define KBC_OUT_CMD 0x60</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a595a5cad2d3c793963da50865b2c1b47">   20</a></span>&#160;<span class="preprocessor">#define KBC_READ_CMD 0x20</span></div>
+<div class="line"><a name="l00021"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#aaa62a6987753a109d2f7a609ce8b7334">   21</a></span>&#160;<span class="preprocessor">#define KBC_WRITE_CMD 0x60</span></div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define WAIT_KBC 20000</span></div>
-<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#define MAX_ATTEMPS 10</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#aa554763d6a066605edecacdea834da9b">   23</a></span>&#160;<span class="preprocessor">#define WAIT_KBC 20000</span></div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a8ca6d466a780b24900c3e94a5798230f">   24</a></span>&#160;<span class="preprocessor">#define MAX_ATTEMPS 10</span></div>
 <div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define MOUSE_LB BIT(0)</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define MOUSE_RB BIT(1)</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define MOUSE_MB BIT(2)</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define FIRST_BYTE BIT(3)</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define MOUSE_X_SIGNAL BIT(4)</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define MOUSE_Y_SIGNAL BIT(5)</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define MOUSE_X_OVERFLOW BIT(6)</span></div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;<span class="preprocessor">#define MOUSE_Y_OVERFLOW BIT(7)</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#define DISABLE_DATA_REPORT 0xF5</span></div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;<span class="preprocessor">#define ENABLE_DATA_REPORT 0xF4</span></div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="preprocessor">#define ENABLE_STREAM_MODE 0xEA</span></div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;<span class="preprocessor">#define MOUSE_READ_DATA 0xEB</span></div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;<span class="preprocessor">#define WRITE_BYTE_MOUSE 0xD4</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a81c0f94add844b0761bd142f7f708431">   26</a></span>&#160;<span class="preprocessor">#define MOUSE_LB BIT(0)</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a5f47c1d60579c8691054c939c1d7c20e">   27</a></span>&#160;<span class="preprocessor">#define MOUSE_RB BIT(1)</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a5a934eaadd3536aabe6df0adf6728e8e">   28</a></span>&#160;<span class="preprocessor">#define MOUSE_MB BIT(2)</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a73d6572224ad0ac84a8587615cef947c">   29</a></span>&#160;<span class="preprocessor">#define FIRST_BYTE BIT(3)</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a726368c7d58dac5edc608a58e2e92660">   30</a></span>&#160;<span class="preprocessor">#define MOUSE_X_SIGNAL BIT(4)</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a4b664cf12fa3048513e4c8b856aefd65">   31</a></span>&#160;<span class="preprocessor">#define MOUSE_Y_SIGNAL BIT(5)</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a39f0e19085186976faee23616a2f48b5">   32</a></span>&#160;<span class="preprocessor">#define MOUSE_X_OVERFLOW BIT(6)</span></div>
+<div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a056e214bb9df1114c547e8e712b7619d">   33</a></span>&#160;<span class="preprocessor">#define MOUSE_Y_OVERFLOW BIT(7)</span></div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#ad374b510092499b5961d3771abf9c66e">   34</a></span>&#160;<span class="preprocessor">#define DISABLE_DATA_REPORT 0xF5</span></div>
+<div class="line"><a name="l00035"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a1c22608f41bd715500d0333001079a8a">   35</a></span>&#160;<span class="preprocessor">#define ENABLE_DATA_REPORT 0xF4</span></div>
+<div class="line"><a name="l00036"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a273372321eef8063b96317d47a3853cc">   36</a></span>&#160;<span class="preprocessor">#define ENABLE_STREAM_MODE 0xEA</span></div>
+<div class="line"><a name="l00037"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a6065e2718e2c8e4a5b5d005cba836cbc">   37</a></span>&#160;<span class="preprocessor">#define MOUSE_READ_DATA 0xEB</span></div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a805da0759dba314e6339d8999c44824c">   38</a></span>&#160;<span class="preprocessor">#define WRITE_BYTE_MOUSE 0xD4</span></div>
 <div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160; </div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;<span class="preprocessor">#define ACK 0xFA</span></div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="../../d3/d5c/mouse_2i8042_8h.html#a6f6489887e08bff4887d0bc5dcf214d8">   40</a></span>&#160;<span class="preprocessor">#define ACK 0xFA</span></div>
 <div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160; </div>
 <div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->

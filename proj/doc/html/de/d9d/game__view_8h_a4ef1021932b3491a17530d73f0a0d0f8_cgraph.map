@@ -1,0 +1,5 @@
+<map id="draw_finish_menu" name="draw_finish_menu">
+<area shape="rect" id="node1" title="Desenha o menu final." alt="" coords="5,5,145,32"/>
+<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#a910edcc4bb172eeff97842287bf7bc2a" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="193,5,292,32"/>
+<area shape="rect" id="node3" href="$d5/d95/graphics_8c.html#a950e17209d152e8a40ec064a0b201b25" title=" " alt="" coords="340,5,432,32"/>
+</map>

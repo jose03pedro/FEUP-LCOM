@@ -1,0 +1,111 @@
+\hypertarget{mouse_2KBC_8h}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/devices/mouse/\+K\+BC.h File Reference}
+\label{mouse_2KBC_8h}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/mouse/KBC.h@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/mouse/KBC.h}}
+{\ttfamily \#include \char`\"{}i8042.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+Include dependency graph for K\+B\+C.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=323pt]{d3/dfb/mouse_2KBC_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{db/d17/mouse_2KBC_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{mouse_2KBC_8h_ac024af91b156e4fc61ee3886b891de21}{read\+\_\+\+K\+B\+C\+\_\+status}} (uint8\+\_\+t $\ast$status)
+\begin{DoxyCompactList}\small\item\em lê o byte de status do controlador do teclado e armazena o valor lido \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_2KBC_8h_ac7f264677f62648ac34476a46980af2f}{read\+\_\+\+K\+B\+C\+\_\+output}} (uint8\+\_\+t port, uint8\+\_\+t $\ast$output, uint8\+\_\+t \mbox{\hyperlink{game__view_8c_aed9dcb6fe6a02a58ed3d98a053e5cc94}{mouse}})
+\begin{DoxyCompactList}\small\item\em lê o byte de saída do controlador do teclado na porta especificada em port, armazenando o valor lido em output \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{mouse_2KBC_8h_a857a8745f434feea0a348596994d952f}{write\+\_\+\+K\+B\+C\+\_\+command}} (uint8\+\_\+t port, uint8\+\_\+t control)
+\begin{DoxyCompactList}\small\item\em escreve um byte de comando no controlador do teclado \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{mouse_2KBC_8h_ac7f264677f62648ac34476a46980af2f}\label{mouse_2KBC_8h_ac7f264677f62648ac34476a46980af2f}} 
+\index{KBC.h@{KBC.h}!read\_KBC\_output@{read\_KBC\_output}}
+\index{read\_KBC\_output@{read\_KBC\_output}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{read\_KBC\_output()}{read\_KBC\_output()}}
+{\footnotesize\ttfamily int() read\+\_\+\+K\+B\+C\+\_\+output (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t $\ast$}]{output,  }\item[{uint8\+\_\+t}]{mouse }\end{DoxyParamCaption})}
+
+
+
+lê o byte de saída do controlador do teclado na porta especificada em port, armazenando o valor lido em output 
+
+lê o byte de saída do controlador do teclado na porta especificada em port, armazenando o valor lido em output Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=316pt]{d8/d4b/mouse_2KBC_8h_ac7f264677f62648ac34476a46980af2f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4b/mouse_2KBC_8h_ac7f264677f62648ac34476a46980af2f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mouse_2KBC_8h_ac024af91b156e4fc61ee3886b891de21}\label{mouse_2KBC_8h_ac024af91b156e4fc61ee3886b891de21}} 
+\index{KBC.h@{KBC.h}!read\_KBC\_status@{read\_KBC\_status}}
+\index{read\_KBC\_status@{read\_KBC\_status}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{read\_KBC\_status()}{read\_KBC\_status()}}
+{\footnotesize\ttfamily int() read\+\_\+\+K\+B\+C\+\_\+status (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{status }\end{DoxyParamCaption})}
+
+
+
+lê o byte de status do controlador do teclado e armazena o valor lido 
+
+lê o byte de status do controlador do teclado e armazena o valor lido Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{d8/d4b/mouse_2KBC_8h_ac024af91b156e4fc61ee3886b891de21_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4b/mouse_2KBC_8h_ac024af91b156e4fc61ee3886b891de21_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{mouse_2KBC_8h_a857a8745f434feea0a348596994d952f}\label{mouse_2KBC_8h_a857a8745f434feea0a348596994d952f}} 
+\index{KBC.h@{KBC.h}!write\_KBC\_command@{write\_KBC\_command}}
+\index{write\_KBC\_command@{write\_KBC\_command}!KBC.h@{KBC.h}}
+\doxysubsubsection{\texorpdfstring{write\_KBC\_command()}{write\_KBC\_command()}}
+{\footnotesize\ttfamily int() write\+\_\+\+K\+B\+C\+\_\+command (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{port,  }\item[{uint8\+\_\+t}]{control }\end{DoxyParamCaption})}
+
+
+
+escreve um byte de comando no controlador do teclado 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=336pt]{d8/d4b/mouse_2KBC_8h_a857a8745f434feea0a348596994d952f_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d4b/mouse_2KBC_8h_a857a8745f434feea0a348596994d952f_icgraph}
+\end{center}
+\end{figure}

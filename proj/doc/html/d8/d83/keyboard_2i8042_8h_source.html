@@ -69,38 +69,38 @@ $(function() {
 <div class="title">i8042.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_I8042_KEY_H_</span></div>
+<a href="../../d8/d83/keyboard_2i8042_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_I8042_KEY_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _LCOM_I8042_KEY_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#define IRQ_KEYBOARD 1</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a8092843c014fad609c1b01a4604a44a3">    4</a></span>&#160;<span class="preprocessor">#define IRQ_KEYBOARD 1</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160; </div>
-<div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#define BREAK_ESC 0x81</span></div>
-<div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="preprocessor">#define MAKE_CODE BIT(7)</span></div>
-<div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="preprocessor">#define TWO_BYTES 0xE0</span></div>
-<div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define ENABLE_INT BIT(0)</span></div>
+<div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a82218ef5fdf988f42e5056a0da2f9fb5">    6</a></span>&#160;<span class="preprocessor">#define BREAK_ESC 0x81</span></div>
+<div class="line"><a name="l00007"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a5573533027e427e3a11b4daa75621598">    7</a></span>&#160;<span class="preprocessor">#define MAKE_CODE BIT(7)</span></div>
+<div class="line"><a name="l00008"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#ab427e6926fcc47eb1c02c1f78162b6f6">    8</a></span>&#160;<span class="preprocessor">#define TWO_BYTES 0xE0</span></div>
+<div class="line"><a name="l00009"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a34326f1c6bfccd8b9084c5ae2b4918a1">    9</a></span>&#160;<span class="preprocessor">#define ENABLE_INT BIT(0)</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#define TIMEOUT_ERROR BIT(6)</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#define PARITY_ERROR BIT(7)</span></div>
-<div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#define FULL_OUT_BUFFER BIT(0)</span></div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#define FULL_IN_BUFFER BIT(1)</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#aefc48d416c882f06edaf6d01779d4d74">   11</a></span>&#160;<span class="preprocessor">#define TIMEOUT_ERROR BIT(6)</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a81d2ca6759f3f3bf04556b7558aea6bc">   12</a></span>&#160;<span class="preprocessor">#define PARITY_ERROR BIT(7)</span></div>
+<div class="line"><a name="l00013"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a10313c9dfee4ce9cb293f84b50d14889">   13</a></span>&#160;<span class="preprocessor">#define FULL_OUT_BUFFER BIT(0)</span></div>
+<div class="line"><a name="l00014"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a7eb083dcc1b2aecf91bd8c9108e17b37">   14</a></span>&#160;<span class="preprocessor">#define FULL_IN_BUFFER BIT(1)</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;<span class="preprocessor">#define KBC_STATUS_REG 0x64</span></div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="preprocessor">#define KBC_IN_CMD 0x64</span></div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;<span class="preprocessor">#define KBC_OUT_CMD 0x60</span></div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;<span class="preprocessor">#define KBC_READ_CMD 0x20</span></div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="preprocessor">#define KBC_WRITE_CMD 0x60</span></div>
+<div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a0b4e336aad52f96e65dd212f76675d8d">   16</a></span>&#160;<span class="preprocessor">#define KBC_STATUS_REG 0x64</span></div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a445f67cfdfb7046efc77f7df5d9835e2">   17</a></span>&#160;<span class="preprocessor">#define KBC_IN_CMD 0x64</span></div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#ade9c0b4f31cee479afed8b824fff02a0">   18</a></span>&#160;<span class="preprocessor">#define KBC_OUT_CMD 0x60</span></div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a595a5cad2d3c793963da50865b2c1b47">   19</a></span>&#160;<span class="preprocessor">#define KBC_READ_CMD 0x20</span></div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#aaa62a6987753a109d2f7a609ce8b7334">   20</a></span>&#160;<span class="preprocessor">#define KBC_WRITE_CMD 0x60</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160; </div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;<span class="preprocessor">#define WAIT_KBC 20000</span></div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="preprocessor">#define MAX_ATTEMPS 10</span></div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#aa554763d6a066605edecacdea834da9b">   22</a></span>&#160;<span class="preprocessor">#define WAIT_KBC 20000</span></div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a8ca6d466a780b24900c3e94a5798230f">   23</a></span>&#160;<span class="preprocessor">#define MAX_ATTEMPS 10</span></div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;<span class="preprocessor">#define Q 16</span></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="preprocessor">#define W 17</span></div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="preprocessor">#define E 18</span></div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="preprocessor">#define A 30</span></div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;<span class="preprocessor">#define S 31</span></div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="preprocessor">#define D 32</span></div>
-<div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;<span class="preprocessor">#define G 34</span></div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;<span class="preprocessor">#define H 35</span></div>
+<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#acbcee443d6d55cb8600b3f240f5cf907">   25</a></span>&#160;<span class="preprocessor">#define Q 16</span></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a649b8f01fd6c0f47ff3cbddaeba63bfb">   26</a></span>&#160;<span class="preprocessor">#define W 17</span></div>
+<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a07484107e6d9fdf38b53edf631d6511d">   27</a></span>&#160;<span class="preprocessor">#define E 18</span></div>
+<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#a955f504eccf76b4eb2489c0adab03121">   28</a></span>&#160;<span class="preprocessor">#define A 30</span></div>
+<div class="line"><a name="l00029"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#af933676109efed7ab34cea71d748a517">   29</a></span>&#160;<span class="preprocessor">#define S 31</span></div>
+<div class="line"><a name="l00030"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#af316c33cc298530f245e8b55330e86b5">   30</a></span>&#160;<span class="preprocessor">#define D 32</span></div>
+<div class="line"><a name="l00031"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#aed9ea78689ecce0b7264c02c7f8a9a54">   31</a></span>&#160;<span class="preprocessor">#define G 34</span></div>
+<div class="line"><a name="l00032"></a><span class="lineno"><a class="line" href="../../d8/d83/keyboard_2i8042_8h.html#abec92cc72a096640b821b8cd56a02495">   32</a></span>&#160;<span class="preprocessor">#define H 35</span></div>
 <div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160; </div>
 <div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->

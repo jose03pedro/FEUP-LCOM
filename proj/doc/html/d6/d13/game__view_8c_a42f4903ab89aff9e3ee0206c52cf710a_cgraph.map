@@ -1,0 +1,5 @@
+<map id="draw_mouse" name="draw_mouse">
+<area shape="rect" id="node1" title="Desenha o cursor do rato onde necessário." alt="" coords="5,5,111,32"/>
+<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#a910edcc4bb172eeff97842287bf7bc2a" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="159,5,257,32"/>
+<area shape="rect" id="node3" href="$d5/d95/graphics_8c.html#a950e17209d152e8a40ec064a0b201b25" title=" " alt="" coords="305,5,397,32"/>
+</map>

@@ -1,0 +1,386 @@
+\hypertarget{game__view_8h}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/game\+\_\+view.h File Reference}
+\label{game__view_8h}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/game\_view.h@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/game\_view.h}}
+{\ttfamily \#include \char`\"{}devices/mouse/mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/video/graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level1.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level10.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level2.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level3.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level4.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level5.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level6.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level7.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level8.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+levels/level9.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+logic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+Include dependency graph for game\+\_\+view.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d8/d8e/game__view_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dc/dab/game__view_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structBox}{Box}}
+\begin{DoxyCompactList}\small\item\em Define os limites de uma caixa, utilizado nos blocos que têm uma função no jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{game__view_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}{set\+\_\+frame\+\_\+buffers}} (uint16\+\_\+t mode)
+\begin{DoxyCompactList}\small\item\em Aloca memória ao buffer. No caso de double buffer, o buffer secundário tem a mesma dimensão de memória. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a8fe6fe827e29e6b0cb98cda00dc38355}{draw\+\_\+new\+\_\+frame}} ()
+\begin{DoxyCompactList}\small\item\em Verifica que nível / menu deve ser desenhado consoante game\+State e menu\+State e chama as funções necess+arias para o desenhar. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a2e293823f22abda1c98f45d8035282d8}{draw\+\_\+initial\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Desenha o menu inicial e os botões relevantes. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a0a9f56467341cbe24bd981d4b9960fdd}{draw\+\_\+game\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Desenha a interface do jogo, a \char`\"{}consola\char`\"{} e o background. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_abbb45b46288699ac3dce129f05485945}{check\+\_\+fell\+\_\+into\+\_\+water}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o player caiu na água e reinicia o nível se for o caso. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_af453fa436e0fceaf2b2c66e44cd08018}{ice\+\_\+melt}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o player se moveu e transforma a posição anterior em água. \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{game__view_8h_ab400af2c6453538c1ae1ede7c886f735}{check\+\_\+all\+\_\+ice\+\_\+melted}} ()
+\begin{DoxyCompactList}\small\item\em Compara os counters, verificando se o player derreteu todo o gelo para poder passar de nível. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_ae451b0ef24ecd01c99cb69b87d9cd6c4}{reset\+\_\+all\+\_\+draw\+\_\+counters}} ()
+\begin{DoxyCompactList}\small\item\em Põe os valores de todos os draw\+\_\+counters a 0. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a4ef1021932b3491a17530d73f0a0d0f8}{draw\+\_\+finish\+\_\+menu}} ()
+\begin{DoxyCompactList}\small\item\em Desenha o menu final. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a42f4903ab89aff9e3ee0206c52cf710a}{draw\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Desenha o cursor do rato onde necessário. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__view_8h_a0d157d997329169f936545f9985e334b}{swap\+\_\+buffers}} ()
+\item 
+int \mbox{\hyperlink{game__view_8h_a910edcc4bb172eeff97842287bf7bc2a}{draw\+\_\+sprite}} (\mbox{\hyperlink{structSprite__t}{Sprite\+\_\+t}} $\ast$sprite, int x, int y)
+\begin{DoxyCompactList}\small\item\em Desenha uma determinada sprite nas coordenadas (x, y). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game__view_8h_ab400af2c6453538c1ae1ede7c886f735}\label{game__view_8h_ab400af2c6453538c1ae1ede7c886f735}} 
+\index{game\_view.h@{game\_view.h}!check\_all\_ice\_melted@{check\_all\_ice\_melted}}
+\index{check\_all\_ice\_melted@{check\_all\_ice\_melted}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{check\_all\_ice\_melted()}{check\_all\_ice\_melted()}}
+{\footnotesize\ttfamily bool check\+\_\+all\+\_\+ice\+\_\+melted (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Compara os counters, verificando se o player derreteu todo o gelo para poder passar de nível. 
+
+\begin{DoxyReturn}{Returns}
+true 
+
+false 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_ab400af2c6453538c1ae1ede7c886f735_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_ab400af2c6453538c1ae1ede7c886f735_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_abbb45b46288699ac3dce129f05485945}\label{game__view_8h_abbb45b46288699ac3dce129f05485945}} 
+\index{game\_view.h@{game\_view.h}!check\_fell\_into\_water@{check\_fell\_into\_water}}
+\index{check\_fell\_into\_water@{check\_fell\_into\_water}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{check\_fell\_into\_water()}{check\_fell\_into\_water()}}
+{\footnotesize\ttfamily void check\+\_\+fell\+\_\+into\+\_\+water (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o player caiu na água e reinicia o nível se for o caso. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_abbb45b46288699ac3dce129f05485945_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_abbb45b46288699ac3dce129f05485945_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a4ef1021932b3491a17530d73f0a0d0f8}\label{game__view_8h_a4ef1021932b3491a17530d73f0a0d0f8}} 
+\index{game\_view.h@{game\_view.h}!draw\_finish\_menu@{draw\_finish\_menu}}
+\index{draw\_finish\_menu@{draw\_finish\_menu}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_finish\_menu()}{draw\_finish\_menu()}}
+{\footnotesize\ttfamily void draw\+\_\+finish\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desenha o menu final. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a4ef1021932b3491a17530d73f0a0d0f8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a4ef1021932b3491a17530d73f0a0d0f8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a0a9f56467341cbe24bd981d4b9960fdd}\label{game__view_8h_a0a9f56467341cbe24bd981d4b9960fdd}} 
+\index{game\_view.h@{game\_view.h}!draw\_game\_menu@{draw\_game\_menu}}
+\index{draw\_game\_menu@{draw\_game\_menu}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_game\_menu()}{draw\_game\_menu()}}
+{\footnotesize\ttfamily void draw\+\_\+game\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desenha a interface do jogo, a \char`\"{}consola\char`\"{} e o background. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a0a9f56467341cbe24bd981d4b9960fdd_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a0a9f56467341cbe24bd981d4b9960fdd_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a2e293823f22abda1c98f45d8035282d8}\label{game__view_8h_a2e293823f22abda1c98f45d8035282d8}} 
+\index{game\_view.h@{game\_view.h}!draw\_initial\_menu@{draw\_initial\_menu}}
+\index{draw\_initial\_menu@{draw\_initial\_menu}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_initial\_menu()}{draw\_initial\_menu()}}
+{\footnotesize\ttfamily void draw\+\_\+initial\+\_\+menu (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desenha o menu inicial e os botões relevantes. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a2e293823f22abda1c98f45d8035282d8_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a2e293823f22abda1c98f45d8035282d8_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a42f4903ab89aff9e3ee0206c52cf710a}\label{game__view_8h_a42f4903ab89aff9e3ee0206c52cf710a}} 
+\index{game\_view.h@{game\_view.h}!draw\_mouse@{draw\_mouse}}
+\index{draw\_mouse@{draw\_mouse}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_mouse()}{draw\_mouse()}}
+{\footnotesize\ttfamily void draw\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Desenha o cursor do rato onde necessário. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a42f4903ab89aff9e3ee0206c52cf710a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a42f4903ab89aff9e3ee0206c52cf710a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a8fe6fe827e29e6b0cb98cda00dc38355}\label{game__view_8h_a8fe6fe827e29e6b0cb98cda00dc38355}} 
+\index{game\_view.h@{game\_view.h}!draw\_new\_frame@{draw\_new\_frame}}
+\index{draw\_new\_frame@{draw\_new\_frame}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_new\_frame()}{draw\_new\_frame()}}
+{\footnotesize\ttfamily void draw\+\_\+new\+\_\+frame (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica que nível / menu deve ser desenhado consoante game\+State e menu\+State e chama as funções necess+arias para o desenhar. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=550pt]{de/d9d/game__view_8h_a8fe6fe827e29e6b0cb98cda00dc38355_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a8fe6fe827e29e6b0cb98cda00dc38355_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a910edcc4bb172eeff97842287bf7bc2a}\label{game__view_8h_a910edcc4bb172eeff97842287bf7bc2a}} 
+\index{game\_view.h@{game\_view.h}!draw\_sprite@{draw\_sprite}}
+\index{draw\_sprite@{draw\_sprite}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{draw\_sprite()}{draw\_sprite()}}
+{\footnotesize\ttfamily int draw\+\_\+sprite (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{structSprite__t}{Sprite\+\_\+t}} $\ast$}]{sprite,  }\item[{int}]{x,  }\item[{int}]{y }\end{DoxyParamCaption})}
+
+
+
+Desenha uma determinada sprite nas coordenadas (x, y). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sprite} & \\
+\hline
+{\em x} & \\
+\hline
+{\em y} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=259pt]{de/d9d/game__view_8h_a910edcc4bb172eeff97842287bf7bc2a_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a910edcc4bb172eeff97842287bf7bc2a_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_af453fa436e0fceaf2b2c66e44cd08018}\label{game__view_8h_af453fa436e0fceaf2b2c66e44cd08018}} 
+\index{game\_view.h@{game\_view.h}!ice\_melt@{ice\_melt}}
+\index{ice\_melt@{ice\_melt}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{ice\_melt()}{ice\_melt()}}
+{\footnotesize\ttfamily void ice\+\_\+melt (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o player se moveu e transforma a posição anterior em água. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_af453fa436e0fceaf2b2c66e44cd08018_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_af453fa436e0fceaf2b2c66e44cd08018_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_ae451b0ef24ecd01c99cb69b87d9cd6c4}\label{game__view_8h_ae451b0ef24ecd01c99cb69b87d9cd6c4}} 
+\index{game\_view.h@{game\_view.h}!reset\_all\_draw\_counters@{reset\_all\_draw\_counters}}
+\index{reset\_all\_draw\_counters@{reset\_all\_draw\_counters}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{reset\_all\_draw\_counters()}{reset\_all\_draw\_counters()}}
+{\footnotesize\ttfamily void reset\+\_\+all\+\_\+draw\+\_\+counters (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Põe os valores de todos os draw\+\_\+counters a 0. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_ae451b0ef24ecd01c99cb69b87d9cd6c4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}\label{game__view_8h_a3ad9f04212e7602618a0dd7ad4afbd4e}} 
+\index{game\_view.h@{game\_view.h}!set\_frame\_buffers@{set\_frame\_buffers}}
+\index{set\_frame\_buffers@{set\_frame\_buffers}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{set\_frame\_buffers()}{set\_frame\_buffers()}}
+{\footnotesize\ttfamily int set\+\_\+frame\+\_\+buffers (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+
+
+Aloca memória ao buffer. No caso de double buffer, o buffer secundário tem a mesma dimensão de memória. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em mode} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+int 
+\end{DoxyReturn}
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=321pt]{de/d9d/game__view_8h_a3ad9f04212e7602618a0dd7ad4afbd4e_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a3ad9f04212e7602618a0dd7ad4afbd4e_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__view_8h_a0d157d997329169f936545f9985e334b}\label{game__view_8h_a0d157d997329169f936545f9985e334b}} 
+\index{game\_view.h@{game\_view.h}!swap\_buffers@{swap\_buffers}}
+\index{swap\_buffers@{swap\_buffers}!game\_view.h@{game\_view.h}}
+\doxysubsubsection{\texorpdfstring{swap\_buffers()}{swap\_buffers()}}
+{\footnotesize\ttfamily void swap\+\_\+buffers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{de/d9d/game__view_8h_a0d157d997329169f936545f9985e334b_icgraph}
+\end{center}
+\end{figure}

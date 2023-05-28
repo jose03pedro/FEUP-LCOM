@@ -1,0 +1,6 @@
+<map id="check_fell_into_water" name="check_fell_into_water">
+<area shape="rect" id="node1" title="Verifica se o player caiu na água e reinicia o nível se for o caso." alt="" coords="5,31,169,57"/>
+<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#a910edcc4bb172eeff97842287bf7bc2a" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="258,5,357,32"/>
+<area shape="rect" id="node4" href="$d6/d13/game__view_8c.html#ae451b0ef24ecd01c99cb69b87d9cd6c4" title="Põe os valores de todos os draw_counters a 0." alt="" coords="217,56,397,83"/>
+<area shape="rect" id="node3" href="$d5/d95/graphics_8c.html#a950e17209d152e8a40ec064a0b201b25" title=" " alt="" coords="445,5,537,32"/>
+</map>

@@ -1,0 +1,5 @@
+<map id="read_KBC_output" name="read_KBC_output">
+<area shape="rect" id="node1" title="lê o byte de saída do controlador do teclado na porta especificada em port, armazenando o valor lido ..." alt="" coords="5,31,140,57"/>
+<area shape="rect" id="node2" href="$dd/dd8/keyboard_2KBC_8c.html#ac024af91b156e4fc61ee3886b891de21" title="lê o byte de status do controlador do teclado e armazena o valor lido no local apontado por *status" alt="" coords="188,5,320,32"/>
+<area shape="rect" id="node3" href="$d3/d91/utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="205,56,303,83"/>
+</map>

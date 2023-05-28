@@ -69,19 +69,34 @@ $(function() {
 <div class="title">KBC.h</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_KBC_KEY_H_</span></div>
+<a href="../../d1/d98/keyboard_2KBC_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="preprocessor">#ifndef _LCOM_KBC_KEY_H_</span></div>
 <div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;<span class="preprocessor">#define _LCOM_KBC_KEY_H_</span></div>
 <div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160; </div>
-<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;i8042.h&quot;</span></div>
+<div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d8/d83/keyboard_2i8042_8h.html">i8042.h</a>&quot;</span></div>
 <div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;<span class="preprocessor">#include &lt;lcom/lcf.h&gt;</span></div>
 <div class="line"><a name="l00006"></a><span class="lineno">    6</span>&#160;<span class="preprocessor">#include &lt;minix/sysutil.h&gt;</span></div>
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;int(read_KBC_status)(uint8_t *status);</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;int(read_KBC_output)(uint8_t port, uint8_t *output, uint8_t mouse);</div>
-<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;int(write_KBC_command)(uint8_t port, uint8_t cmd);</div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;int(<a class="code" href="../../d1/d98/keyboard_2KBC_8h.html#ac024af91b156e4fc61ee3886b891de21">read_KBC_status</a>)(uint8_t *status);</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;int(<a class="code" href="../../d1/d98/keyboard_2KBC_8h.html#ac7f264677f62648ac34476a46980af2f">read_KBC_output</a>)(uint8_t port, uint8_t *output, uint8_t <a class="code" href="../../db/daa/game__logic_8c.html#aed9dcb6fe6a02a58ed3d98a053e5cc94">mouse</a>);</div>
+<div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;int(<a class="code" href="../../d1/d98/keyboard_2KBC_8h.html#a7224f311722eefe1604c2276ae462213">write_KBC_command</a>)(uint8_t port, uint8_t cmd);</div>
 <div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
 <div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;<span class="preprocessor">#endif</span></div>
 </div><!-- fragment --></div><!-- contents -->
+<div class="ttc" id="autils_8c_html_a79a031a8611f5b2d6afa4158e92b0fb4"><div class="ttname"><a href="../../d3/d91/utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4">util_sys_inb</a></div><div class="ttdeci">int() util_sys_inb(int port, uint8_t *value)</div><div class="ttdef"><b>Definition:</b> utils.c:14</div></div>
+<div class="ttc" id="akeyboard_2i8042_8h_html"><div class="ttname"><a href="../../d8/d83/keyboard_2i8042_8h.html">i8042.h</a></div></div>
+<div class="ttc" id="akeyboard_2KBC_8c_html_a7224f311722eefe1604c2276ae462213"><div class="ttname"><a href="../../dd/dd8/keyboard_2KBC_8c.html#a7224f311722eefe1604c2276ae462213">write_KBC_command</a></div><div class="ttdeci">int() write_KBC_command(uint8_t port, uint8_t cmd)</div><div class="ttdoc">escreve um byte de comando no controlador do teclado</div><div class="ttdef"><b>Definition:</b> KBC.c:30</div></div>
+<div class="ttc" id="akeyboard_2KBC_8c_html_ac024af91b156e4fc61ee3886b891de21"><div class="ttname"><a href="../../dd/dd8/keyboard_2KBC_8c.html#ac024af91b156e4fc61ee3886b891de21">read_KBC_status</a></div><div class="ttdeci">int() read_KBC_status(uint8_t *status)</div><div class="ttdoc">lê o byte de status do controlador do teclado e armazena o valor lido no local apontado por *status</div><div class="ttdef"><b>Definition:</b> KBC.c:3</div></div>
+<div class="ttc" id="agame__logic_8c_html_aed9dcb6fe6a02a58ed3d98a053e5cc94"><div class="ttname"><a href="../../db/daa/game__logic_8c.html#aed9dcb6fe6a02a58ed3d98a053e5cc94">mouse</a></div><div class="ttdeci">Sprite_t * mouse</div><div class="ttdef"><b>Definition:</b> game_logic.c:23</div></div>
+<div class="ttc" id="akeyboard_2i8042_8h_html_a0b4e336aad52f96e65dd212f76675d8d"><div class="ttname"><a href="../../d8/d83/keyboard_2i8042_8h.html#a0b4e336aad52f96e65dd212f76675d8d">KBC_STATUS_REG</a></div><div class="ttdeci">#define KBC_STATUS_REG</div><div class="ttdef"><b>Definition:</b> i8042.h:16</div></div>
+<div class="ttc" id="akeyboard_2KBC_8h_html_a7224f311722eefe1604c2276ae462213"><div class="ttname"><a href="../../d1/d98/keyboard_2KBC_8h.html#a7224f311722eefe1604c2276ae462213">write_KBC_command</a></div><div class="ttdeci">int() write_KBC_command(uint8_t port, uint8_t cmd)</div><div class="ttdoc">escreve um byte de comando no controlador do teclado</div><div class="ttdef"><b>Definition:</b> KBC.c:30</div></div>
+<div class="ttc" id="akeyboard_2i8042_8h_html_aa554763d6a066605edecacdea834da9b"><div class="ttname"><a href="../../d8/d83/keyboard_2i8042_8h.html#aa554763d6a066605edecacdea834da9b">WAIT_KBC</a></div><div class="ttdeci">#define WAIT_KBC</div><div class="ttdef"><b>Definition:</b> i8042.h:22</div></div>
+<div class="ttc" id="amouse_2KBC_8h_html"><div class="ttname"><a href="../../d8/d4b/mouse_2KBC_8h.html">KBC.h</a></div></div>
+<div class="ttc" id="akeyboard_2KBC_8h_html_ac024af91b156e4fc61ee3886b891de21"><div class="ttname"><a href="../../d1/d98/keyboard_2KBC_8h.html#ac024af91b156e4fc61ee3886b891de21">read_KBC_status</a></div><div class="ttdeci">int() read_KBC_status(uint8_t *status)</div><div class="ttdoc">lê o byte de status do controlador do teclado e armazena o valor lido no local apontado por *status</div><div class="ttdef"><b>Definition:</b> KBC.c:3</div></div>
+<div class="ttc" id="akeyboard_2KBC_8c_html_a52ac1bb096b341741d01d49dd38c0cd4"><div class="ttname"><a href="../../dd/dd8/keyboard_2KBC_8c.html#a52ac1bb096b341741d01d49dd38c0cd4">read_KBC_output</a></div><div class="ttdeci">int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse)</div><div class="ttdoc">lê o byte de saída do controlador na porta port</div><div class="ttdef"><b>Definition:</b> KBC.c:7</div></div>
+<div class="ttc" id="akeyboard_2i8042_8h_html_a7eb083dcc1b2aecf91bd8c9108e17b37"><div class="ttname"><a href="../../d8/d83/keyboard_2i8042_8h.html#a7eb083dcc1b2aecf91bd8c9108e17b37">FULL_IN_BUFFER</a></div><div class="ttdeci">#define FULL_IN_BUFFER</div><div class="ttdef"><b>Definition:</b> i8042.h:14</div></div>
+<div class="ttc" id="akeyboard_2KBC_8h_html"><div class="ttname"><a href="../../d1/d98/keyboard_2KBC_8h.html">KBC.h</a></div></div>
+<div class="ttc" id="akeyboard_2i8042_8h_html_a8ca6d466a780b24900c3e94a5798230f"><div class="ttname"><a href="../../d8/d83/keyboard_2i8042_8h.html#a8ca6d466a780b24900c3e94a5798230f">MAX_ATTEMPS</a></div><div class="ttdeci">#define MAX_ATTEMPS</div><div class="ttdef"><b>Definition:</b> i8042.h:23</div></div>
+<div class="ttc" id="akeyboard_2KBC_8h_html_ac7f264677f62648ac34476a46980af2f"><div class="ttname"><a href="../../d1/d98/keyboard_2KBC_8h.html#ac7f264677f62648ac34476a46980af2f">read_KBC_output</a></div><div class="ttdeci">int() read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse)</div><div class="ttdoc">lê o byte de saída do controlador na porta port</div><div class="ttdef"><b>Definition:</b> KBC.c:7</div></div>
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
 Generated by &#160;<a href="http://www.doxygen.org/index.html">
