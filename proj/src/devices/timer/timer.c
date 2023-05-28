@@ -9,10 +9,10 @@ int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
   if (freq > TIMER_FREQ || freq < 19)
     return 1;
 
-  uint8_t controlWord;
-  timer_get_conf(timer, &controlWord);
+  uint8_t control;
+  timer_get_conf(timer, &control);
 
-  controlWord = (controlWord & 0x0F) | TIMER_LSB_MSB;
+  control = (control & 0x0F) | TIMER_LSB_MSB;
 
   uint32_t initialValue = TIMER_FREQ / freq;
   uint8_t MSB, LSB;
@@ -22,22 +22,22 @@ int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
   uint8_t selectedTimer;
   switch (timer) {
     case 0:
-      controlWord |= TIMER_SEL0;
+      control |= TIMER_SEL0;
       selectedTimer = TIMER_0;
       break;
     case 1:
-      controlWord |= TIMER_SEL1;
+      control |= TIMER_SEL1;
       selectedTimer = TIMER_1;
       break;
     case 2:
-      controlWord |= TIMER_SEL2;
+      control |= TIMER_SEL2;
       selectedTimer = TIMER_2;
       break;
     default:
       return 1;
   }
 
-  sys_outb(TIMER_CTRL, controlWord);
+  sys_outb(TIMER_CTRL, control);
   sys_outb(selectedTimer, LSB);
   sys_outb(selectedTimer, MSB);
 
@@ -50,7 +50,7 @@ int(timer_subscribe_interrupts)() {
 
 int(timer_unsubscribe_interrupts)() {
   if (sys_irqrmpolicy(&timer_hook_id) != 0)
-    return 1; // desligar as interrupções
+    return 1;
   return 0;
 }
 

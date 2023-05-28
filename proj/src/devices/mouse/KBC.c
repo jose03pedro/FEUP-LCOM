@@ -14,16 +14,7 @@ int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
     if ((status & BIT(0)) != 0) {
       util_sys_inb(port, output);
 
-      if (!mouse && (status & BIT(5))) {
-        return 1;
-      }
-      if (mouse && !(status & BIT(5))) {
-        return 1;
-      }
-      if ((status & BIT(7)) != 0) {
-        return 1;
-      }
-      if ((status & BIT(6)) != 0) {
+      if ((!mouse && (status & BIT(5))) || (mouse && !(status & BIT(5))) || ((status & BIT(7)) != 0) || ((status & BIT(6)) != 0)) {
         return 1;
       }
 
@@ -35,7 +26,7 @@ int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
   return 1;
 }
 
-int(write_KBC_command)(uint8_t port, uint8_t commandByte) {
+int(write_KBC_command)(uint8_t port, uint8_t control) {
 
   uint8_t status;
   uint8_t attemps = MAX_ATTEMPS;
@@ -44,7 +35,7 @@ int(write_KBC_command)(uint8_t port, uint8_t commandByte) {
     read_KBC_status(&status);
 
     if ((status & FULL_IN_BUFFER) == 0) {
-      sys_outb(port, commandByte);
+      sys_outb(port, control);
       return 0;
     }
 
