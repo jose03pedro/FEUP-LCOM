@@ -1,0 +1,341 @@
+\hypertarget{game__logic_8h}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/game\+\_\+logic.h File Reference}
+\label{game__logic_8h}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/game\_logic.h@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/game\_logic.h}}
+{\ttfamily \#include \char`\"{}X\+P\+Ms/background\+\_\+cube.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/end\+\_\+screen.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/finish\+\_\+button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/ice\+\_\+cube.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/key.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level1.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level10.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level2.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level3.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level4.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level5.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level6.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level7.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level8.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/level9.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/lock.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/mouse.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/path\+\_\+cube.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/player.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/quit\+\_\+button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/red\+\_\+cube.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/start\+\_\+button.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/thin\+\_\+ice\+\_\+game.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/thin\+\_\+ice\+\_\+start.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}X\+P\+Ms/water.\+xpm\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/keyboard/\+K\+B\+C.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/mouse/mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/video/graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+view.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}sprite.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+Include dependency graph for game\+\_\+logic.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/dac/game__logic_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/db8/game__logic_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structPlayerPosition}{Player\+Position}}
+\begin{DoxyCompactList}\small\item\em Define as coordenadas do player. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{game__logic_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}{M\+O\+DE}}~0x115
+\item 
+\#define \mbox{\hyperlink{game__logic_8h_ac92ca5ab87034a348decad7ee8d4bd1b}{F\+PS}}~60
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \{ \mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a1061be6c3fb88d32829cba6f6b2be304}{R\+U\+N\+N\+I\+NG}}, 
+\mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a7a10b5d68d31711288e1fe0fa17dbf4f}{E\+X\+IT}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define se o jogo está a correr. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}} \{ \mbox{\hyperlink{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2}{S\+T\+A\+RT}}, 
+\mbox{\hyperlink{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2ad50cf309d7568040619ed26ee6835a84}{G\+A\+ME}}, 
+\mbox{\hyperlink{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a8b9af67858708d770f017e4aae85900d}{F\+I\+N\+I\+SH}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define o menu em que o jogo se encontra. \end{DoxyCompactList}\item 
+enum \mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948}{Game\+Level}} \{ \newline
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a07fe07f1ff57b320269c9e11dee7d3d3}{L\+E\+V\+E\+L\+\_\+1}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a205eff243b7d649055f9138a24963d20}{L\+E\+V\+E\+L\+\_\+2}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948adf832959eb2d6b3227c12e80bf25c5fb}{L\+E\+V\+E\+L\+\_\+3}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a553a90eef526f8db7b3d15a324b12327}{L\+E\+V\+E\+L\+\_\+4}}, 
+\newline
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a8007c9aa627f039efeeb652c7eb45d8f}{L\+E\+V\+E\+L\+\_\+5}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a1e329ee1e9f10a70ad3bf3e2f9af083b}{L\+E\+V\+E\+L\+\_\+6}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948ac3d7cc6acce22149ee5e5f5764c02f96}{L\+E\+V\+E\+L\+\_\+7}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948afeb57eb6fcd1e362dd390e208d77c514}{L\+E\+V\+E\+L\+\_\+8}}, 
+\newline
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948aa12216aaf6cecd2a9ed79709c08de63f}{L\+E\+V\+E\+L\+\_\+9}}, 
+\mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a41eec4b56095dc09eb141d9eb8043c17}{L\+E\+V\+E\+L\+\_\+10}}
+ \}
+\begin{DoxyCompactList}\small\item\em Define o nível em que o jogo se encontra. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{game__logic_8h_a3dbbef8766f0ce676f34b8b4f1bf3485}{update\+\_\+timer}} ()
+\begin{DoxyCompactList}\small\item\em Incrementa o counter das interrupções do timer e dá swap aos buffers. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a83b1742f41d6e701033e0dd6f113c411}{update\+\_\+keyboard}} ()
+\begin{DoxyCompactList}\small\item\em Gere os inputs do teclado e atribui funcionalidade às teclas. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_ab5fa7e7da1851578789c26ec9d71448b}{update\+\_\+mouse}} ()
+\begin{DoxyCompactList}\small\item\em Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e verificar se clicou em algo relevante. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a11cf569aa58454df924992deb9aed066}{update\+\_\+start\+\_\+and\+\_\+finish\+\_\+button}} ()
+\begin{DoxyCompactList}\small\item\em Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado do jogo consoante o botão. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{game__logic_8h_a916dad050566e529d5efb4f453bafbd2}{sprites\+\_\+creation}} ()
+\begin{DoxyCompactList}\small\item\em Cria as todas as sprites necessárias para o jogo. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{game__logic_8h_ac92ca5ab87034a348decad7ee8d4bd1b}\label{game__logic_8h_ac92ca5ab87034a348decad7ee8d4bd1b}} 
+\index{game\_logic.h@{game\_logic.h}!FPS@{FPS}}
+\index{FPS@{FPS}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{FPS}{FPS}}
+{\footnotesize\ttfamily \#define F\+PS~60}
+
+\mbox{\Hypertarget{game__logic_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}\label{game__logic_8h_ab8c52c1b4c021ed3e6b6b677bd2ac019}} 
+\index{game\_logic.h@{game\_logic.h}!MODE@{MODE}}
+\index{MODE@{MODE}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{MODE}{MODE}}
+{\footnotesize\ttfamily \#define M\+O\+DE~0x115}
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948}} 
+\index{game\_logic.h@{game\_logic.h}!GameLevel@{GameLevel}}
+\index{GameLevel@{GameLevel}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{GameLevel}{GameLevel}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948}{Game\+Level}}}
+
+
+
+Define o nível em que o jogo se encontra. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_1@{LEVEL\_1}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_1@{LEVEL\_1}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a07fe07f1ff57b320269c9e11dee7d3d3}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a07fe07f1ff57b320269c9e11dee7d3d3}} 
+L\+E\+V\+E\+L\+\_\+1&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_2@{LEVEL\_2}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_2@{LEVEL\_2}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a205eff243b7d649055f9138a24963d20}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a205eff243b7d649055f9138a24963d20}} 
+L\+E\+V\+E\+L\+\_\+2&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_3@{LEVEL\_3}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_3@{LEVEL\_3}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948adf832959eb2d6b3227c12e80bf25c5fb}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948adf832959eb2d6b3227c12e80bf25c5fb}} 
+L\+E\+V\+E\+L\+\_\+3&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_4@{LEVEL\_4}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_4@{LEVEL\_4}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a553a90eef526f8db7b3d15a324b12327}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a553a90eef526f8db7b3d15a324b12327}} 
+L\+E\+V\+E\+L\+\_\+4&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_5@{LEVEL\_5}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_5@{LEVEL\_5}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a8007c9aa627f039efeeb652c7eb45d8f}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a8007c9aa627f039efeeb652c7eb45d8f}} 
+L\+E\+V\+E\+L\+\_\+5&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_6@{LEVEL\_6}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_6@{LEVEL\_6}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a1e329ee1e9f10a70ad3bf3e2f9af083b}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a1e329ee1e9f10a70ad3bf3e2f9af083b}} 
+L\+E\+V\+E\+L\+\_\+6&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_7@{LEVEL\_7}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_7@{LEVEL\_7}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948ac3d7cc6acce22149ee5e5f5764c02f96}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948ac3d7cc6acce22149ee5e5f5764c02f96}} 
+L\+E\+V\+E\+L\+\_\+7&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_8@{LEVEL\_8}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_8@{LEVEL\_8}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948afeb57eb6fcd1e362dd390e208d77c514}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948afeb57eb6fcd1e362dd390e208d77c514}} 
+L\+E\+V\+E\+L\+\_\+8&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_9@{LEVEL\_9}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_9@{LEVEL\_9}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948aa12216aaf6cecd2a9ed79709c08de63f}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948aa12216aaf6cecd2a9ed79709c08de63f}} 
+L\+E\+V\+E\+L\+\_\+9&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{LEVEL\_10@{LEVEL\_10}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!LEVEL\_10@{LEVEL\_10}}}\mbox{\Hypertarget{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a41eec4b56095dc09eb141d9eb8043c17}\label{game__logic_8h_a9d2c8df557e927eceec042cd07a5a948a41eec4b56095dc09eb141d9eb8043c17}} 
+L\+E\+V\+E\+L\+\_\+10&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}\label{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}} 
+\index{game\_logic.h@{game\_logic.h}!GameState@{GameState}}
+\index{GameState@{GameState}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{GameState}{GameState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}}}
+
+
+
+Define se o jogo está a correr. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{RUNNING@{RUNNING}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!RUNNING@{RUNNING}}}\mbox{\Hypertarget{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a1061be6c3fb88d32829cba6f6b2be304}\label{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a1061be6c3fb88d32829cba6f6b2be304}} 
+R\+U\+N\+N\+I\+NG&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{EXIT@{EXIT}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!EXIT@{EXIT}}}\mbox{\Hypertarget{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a7a10b5d68d31711288e1fe0fa17dbf4f}\label{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285a7a10b5d68d31711288e1fe0fa17dbf4f}} 
+E\+X\+IT&\\
+\hline
+
+\end{DoxyEnumFields}
+\mbox{\Hypertarget{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2}\label{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2}} 
+\index{game\_logic.h@{game\_logic.h}!MenuState@{MenuState}}
+\index{MenuState@{MenuState}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{MenuState}{MenuState}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2}{Menu\+State}}}
+
+
+
+Define o menu em que o jogo se encontra. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{START@{START}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!START@{START}}}\mbox{\Hypertarget{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2}\label{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a13d000b4d7dc70d90239b7430d1eb6b2}} 
+S\+T\+A\+RT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{GAME@{GAME}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!GAME@{GAME}}}\mbox{\Hypertarget{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2ad50cf309d7568040619ed26ee6835a84}\label{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2ad50cf309d7568040619ed26ee6835a84}} 
+G\+A\+ME&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{FINISH@{FINISH}!game\_logic.h@{game\_logic.h}}\index{game\_logic.h@{game\_logic.h}!FINISH@{FINISH}}}\mbox{\Hypertarget{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a8b9af67858708d770f017e4aae85900d}\label{game__logic_8h_aa3041ae4242c0dd57a126d17505443b2a8b9af67858708d770f017e4aae85900d}} 
+F\+I\+N\+I\+SH&\\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{game__logic_8h_a916dad050566e529d5efb4f453bafbd2}\label{game__logic_8h_a916dad050566e529d5efb4f453bafbd2}} 
+\index{game\_logic.h@{game\_logic.h}!sprites\_creation@{sprites\_creation}}
+\index{sprites\_creation@{sprites\_creation}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{sprites\_creation()}{sprites\_creation()}}
+{\footnotesize\ttfamily void sprites\+\_\+creation (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Cria as todas as sprites necessárias para o jogo. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=291pt]{d0/dd5/game__logic_8h_a916dad050566e529d5efb4f453bafbd2_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/game__logic_8h_a916dad050566e529d5efb4f453bafbd2_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__logic_8h_a83b1742f41d6e701033e0dd6f113c411}\label{game__logic_8h_a83b1742f41d6e701033e0dd6f113c411}} 
+\index{game\_logic.h@{game\_logic.h}!update\_keyboard@{update\_keyboard}}
+\index{update\_keyboard@{update\_keyboard}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{update\_keyboard()}{update\_keyboard()}}
+{\footnotesize\ttfamily void update\+\_\+keyboard (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gere os inputs do teclado e atribui funcionalidade às teclas. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/game__logic_8h_a83b1742f41d6e701033e0dd6f113c411_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=309pt]{d0/dd5/game__logic_8h_a83b1742f41d6e701033e0dd6f113c411_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__logic_8h_ab5fa7e7da1851578789c26ec9d71448b}\label{game__logic_8h_ab5fa7e7da1851578789c26ec9d71448b}} 
+\index{game\_logic.h@{game\_logic.h}!update\_mouse@{update\_mouse}}
+\index{update\_mouse@{update\_mouse}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{update\_mouse()}{update\_mouse()}}
+{\footnotesize\ttfamily void update\+\_\+mouse (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e verificar se clicou em algo relevante. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/game__logic_8h_ab5fa7e7da1851578789c26ec9d71448b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=297pt]{d0/dd5/game__logic_8h_ab5fa7e7da1851578789c26ec9d71448b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__logic_8h_a11cf569aa58454df924992deb9aed066}\label{game__logic_8h_a11cf569aa58454df924992deb9aed066}} 
+\index{game\_logic.h@{game\_logic.h}!update\_start\_and\_finish\_button@{update\_start\_and\_finish\_button}}
+\index{update\_start\_and\_finish\_button@{update\_start\_and\_finish\_button}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{update\_start\_and\_finish\_button()}{update\_start\_and\_finish\_button()}}
+{\footnotesize\ttfamily void update\+\_\+start\+\_\+and\+\_\+finish\+\_\+button (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado do jogo consoante o botão. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/game__logic_8h_a11cf569aa58454df924992deb9aed066_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/dd5/game__logic_8h_a11cf569aa58454df924992deb9aed066_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{game__logic_8h_a3dbbef8766f0ce676f34b8b4f1bf3485}\label{game__logic_8h_a3dbbef8766f0ce676f34b8b4f1bf3485}} 
+\index{game\_logic.h@{game\_logic.h}!update\_timer@{update\_timer}}
+\index{update\_timer@{update\_timer}!game\_logic.h@{game\_logic.h}}
+\doxysubsubsection{\texorpdfstring{update\_timer()}{update\_timer()}}
+{\footnotesize\ttfamily void update\+\_\+timer (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Incrementa o counter das interrupções do timer e dá swap aos buffers. 
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{d0/dd5/game__logic_8h_a3dbbef8766f0ce676f34b8b4f1bf3485_icgraph}
+\end{center}
+\end{figure}

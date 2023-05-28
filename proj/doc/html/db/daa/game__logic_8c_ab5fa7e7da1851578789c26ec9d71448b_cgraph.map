@@ -1,0 +1,41 @@
+<map id="update_mouse" name="update_mouse">
+<area shape="rect" id="node1" title="Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e ver..." alt="" coords="5,1689,124,1716"/>
+<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#a8b080253e2713cfa1885ba783bcd74cd" title="Verifica que frame deve ser desenhado consoante gameState e menuState e chama as funções necessárias ..." alt="" coords="191,845,330,872"/>
+<area shape="rect" id="node35" href="$db/d9f/mouse_8c.html#a210374b50462acdedab00df64d5cea3c" title=" " alt="" coords="218,1689,303,1716"/>
+<area shape="rect" id="node37" href="$db/d9f/mouse_8c.html#a8d6ee7592c47e8f3830a140c1c36587d" title=" " alt="" coords="187,1740,334,1767"/>
+<area shape="rect" id="node38" href="$db/d9f/mouse_8c.html#aa832040dd305ba3a8401cc3a4e6a4cc4" title=" " alt="" coords="193,1791,328,1817"/>
+<area shape="rect" id="node39" href="$db/daa/game__logic_8c.html#a11cf569aa58454df924992deb9aed066" title="Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado ..." alt="" coords="172,1623,349,1665"/>
+<area shape="rect" id="node3" href="$d6/d13/game__view_8c.html#a4ef1021932b3491a17530d73f0a0d0f8" title="Desenha o menu final." alt="" coords="643,259,783,285"/>
+<area shape="rect" id="node6" href="$d6/d13/game__view_8c.html#a5556c75a7744b553f8833122711570fb" title="Desenha a interface do jogo, a &quot;consola&quot; e o background." alt="" coords="397,83,579,109"/>
+<area shape="rect" id="node9" href="$d0/dcc/level1_8c.html#a48a644eda39ecbc838bc1d7a435b1f0c" title="Desenha os componentes do nível 1." alt="" coords="415,693,561,720"/>
+<area shape="rect" id="node15" href="$d8/d80/level10_8c.html#a81bcfb6adc83520864710f0a4ad28bdf" title="Desenha os componentes do nível 10." alt="" coords="411,947,565,973"/>
+<area shape="rect" id="node17" href="$d1/d55/level2_8c.html#a391d11e4e714b45e2d491fddce5d565f" title="Desenha os componentes do nível 2." alt="" coords="415,997,561,1024"/>
+<area shape="rect" id="node19" href="$d5/de8/level3_8c.html#a874b0bf5611d6c6fa2fb9c7df7b331e6" title="Desenha os componentes do nível 3." alt="" coords="415,1048,561,1075"/>
+<area shape="rect" id="node21" href="$dd/d38/level4_8c.html#aef5323f12872de43333121323e60b439" title="Desenha os componentes do nível 4." alt="" coords="415,1099,561,1125"/>
+<area shape="rect" id="node23" href="$d0/d15/level5_8c.html#ace2b429537a09b3bd7f15fd9f628d79e" title="Desenha os componentes do nível 5." alt="" coords="415,1149,561,1176"/>
+<area shape="rect" id="node25" href="$d4/dfe/level6_8c.html#a0d17e01f609ead229aca8da5de31e224" title="Desenha os componentes do nível 6." alt="" coords="415,744,561,771"/>
+<area shape="rect" id="node27" href="$d8/da0/level7_8c.html#ad90765dd1273916d82bcf0d6f80c04aa" title="Desenha os componentes do nível 7." alt="" coords="415,795,561,821"/>
+<area shape="rect" id="node29" href="$d8/dad/level8_8c.html#ae44ab1ad35c51ceed3fec7487b845aa0" title="Desenha os componentes do nível 8." alt="" coords="415,845,561,872"/>
+<area shape="rect" id="node31" href="$d3/dd5/level9_8c.html#a4eda2c4b08d3d04297f9e6aaf88c48e3" title="Desenha os componentes do nível 9." alt="" coords="415,896,561,923"/>
+<area shape="rect" id="node33" href="$d6/d13/game__view_8c.html#a2e293823f22abda1c98f45d8035282d8" title="Desenha o menu inicial e os botões relevantes." alt="" coords="417,181,559,208"/>
+<area shape="rect" id="node34" href="$d6/d13/game__view_8c.html#a42f4903ab89aff9e3ee0206c52cf710a" title="Desenha o cursor do rato onde necessário." alt="" coords="435,328,541,355"/>
+<area shape="rect" id="node4" href="$d6/d13/game__view_8c.html#aca3c0042abd086d8fc9843e36cf9fc73" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="887,661,986,688"/>
+<area shape="rect" id="node5" href="$d5/d95/graphics_8c.html#afc7e1d0de42aa26d28b9b784872cf34f" title=" " alt="" coords="1075,359,1167,385"/>
+<area shape="rect" id="node7" href="$d5/d95/graphics_8c.html#a49b5adeeae9da1f379d3f76475b5bdf7" title=" " alt="" coords="858,56,1015,83"/>
+<area shape="rect" id="node8" href="$d5/d95/graphics_8c.html#a292287bd8831fe69de798596d026613b" title=" " alt="" coords="651,5,774,32"/>
+<area shape="rect" id="node10" href="$d6/d13/game__view_8c.html#ab400af2c6453538c1ae1ede7c886f735" title="Compara o water_counter e o path_counter, verificando se o player derreteu todo o gelo para poder pas..." alt="" coords="631,997,794,1024"/>
+<area shape="rect" id="node12" href="$d6/d13/game__view_8c.html#abbb45b46288699ac3dce129f05485945" title="Verifica se o player caiu na água e reinicia o nível se for o caso." alt="" coords="631,947,795,973"/>
+<area shape="rect" id="node13" href="$d6/d13/game__view_8c.html#af453fa436e0fceaf2b2c66e44cd08018" title="Verifica se o player se moveu e transforma a posição anterior em água." alt="" coords="673,896,752,923"/>
+<area shape="rect" id="node14" href="$d0/dcc/level1_8c.html#acfff57a7a416add8b45ad64312246f2d" title="Atualiza a posição do player para o nível." alt="" coords="627,361,799,402"/>
+<area shape="rect" id="node11" href="$d6/d13/game__view_8c.html#ae451b0ef24ecd01c99cb69b87d9cd6c4" title="Põe os valores de todos os draw_counters a 0." alt="" coords="847,997,1027,1024"/>
+<area shape="rect" id="node16" href="$d8/d80/level10_8c.html#a65fe28b7e804c33a7168c6049369c69f" title="Atualiza a posição do player para o nível." alt="" coords="627,1099,799,1141"/>
+<area shape="rect" id="node18" href="$d0/dcc/level1_8c.html#a92584630c011b0dc78310e1df01fb36b" title="Atualiza a posição do player para o nível." alt="" coords="627,1217,799,1258"/>
+<area shape="rect" id="node20" href="$d5/de8/level3_8c.html#ae7c6c54b6de2bee8d606c72e42a32121" title="Atualiza a posição do player para o nível." alt="" coords="627,1334,799,1375"/>
+<area shape="rect" id="node22" href="$dd/d38/level4_8c.html#a3a2b0d3b2447abc17eed9067e4308939" title="Atualiza a posição do player para o nível." alt="" coords="627,1451,799,1493"/>
+<area shape="rect" id="node24" href="$d0/d15/level5_8c.html#a5cc905cacbc6681c4edd3c98b2d1b988" title="Atualiza a posição do player para o nível." alt="" coords="627,1569,799,1610"/>
+<area shape="rect" id="node26" href="$d4/dfe/level6_8c.html#a62ba22a7598bc486c161c04027d79f87" title="Atualiza a posição do player para o nível." alt="" coords="627,478,799,519"/>
+<area shape="rect" id="node28" href="$d8/da0/level7_8c.html#a42d3c36faddf3147ffaff36d25019cdb" title="Atualiza a posição do player para o nível." alt="" coords="627,595,799,637"/>
+<area shape="rect" id="node30" href="$d8/dad/level8_8c.html#a3af5e9162754215e214c8a273ff2560a" title="Atualiza a posição do player para o nível." alt="" coords="627,713,799,754"/>
+<area shape="rect" id="node32" href="$d3/dd5/level9_8c.html#a1aba0268f146914f320a4863a5e0f718" title="Atualiza a posição do player para o nível." alt="" coords="627,830,799,871"/>
+<area shape="rect" id="node36" href="$dd/dd8/keyboard_2KBC_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title=" " alt="" coords="421,1689,555,1716"/>
+</map>

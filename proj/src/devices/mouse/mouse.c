@@ -1,3 +1,13 @@
+/**
+ * @file mouse.c
+ * @author
+ * @brief 
+ * @version 0.1
+ * @date 2023-05-28
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "mouse.h"
 
 int hook_id_mouse = 2;

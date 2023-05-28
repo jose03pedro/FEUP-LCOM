@@ -1,0 +1,17 @@
+<map id="ice_melt" name="ice_melt">
+<area shape="rect" id="node1" title="Verifica se o player se moveu e transforma a posição anterior em água." alt="" coords="747,233,825,260"/>
+<area shape="rect" id="node2" href="$dd/d89/level1_8h.html#a48a644eda39ecbc838bc1d7a435b1f0c" title="Desenha os componentes do nível 1." alt="" coords="549,5,695,32"/>
+<area shape="rect" id="node7" href="$d0/d0e/level10_8h.html#a81bcfb6adc83520864710f0a4ad28bdf" title="Desenha os componentes do nível 10." alt="" coords="545,56,699,83"/>
+<area shape="rect" id="node8" href="$df/d9a/level2_8h.html#a391d11e4e714b45e2d491fddce5d565f" title="Desenha os componentes do nível 2." alt="" coords="549,107,695,133"/>
+<area shape="rect" id="node9" href="$d3/d16/level3_8h.html#a874b0bf5611d6c6fa2fb9c7df7b331e6" title="Desenha os componentes do nível 3." alt="" coords="549,157,695,184"/>
+<area shape="rect" id="node10" href="$d4/d5a/level4_8h.html#aef5323f12872de43333121323e60b439" title="Desenha os componentes do nível 4." alt="" coords="549,208,695,235"/>
+<area shape="rect" id="node11" href="$de/d53/level5_8h.html#ace2b429537a09b3bd7f15fd9f628d79e" title="Desenha os componentes do nível 5." alt="" coords="549,259,695,285"/>
+<area shape="rect" id="node12" href="$dd/d6c/level6_8h.html#a0d17e01f609ead229aca8da5de31e224" title="Desenha os componentes do nível 6." alt="" coords="549,309,695,336"/>
+<area shape="rect" id="node13" href="$d7/d0c/level7_8h.html#ad90765dd1273916d82bcf0d6f80c04aa" title="Desenha os componentes do nível 7." alt="" coords="549,360,695,387"/>
+<area shape="rect" id="node14" href="$d6/d3d/level8_8h.html#ae44ab1ad35c51ceed3fec7487b845aa0" title="Desenha os componentes do nível 8." alt="" coords="549,411,695,437"/>
+<area shape="rect" id="node15" href="$d7/d17/level9_8h.html#a4eda2c4b08d3d04297f9e6aaf88c48e3" title="Desenha os componentes do nível 9." alt="" coords="549,461,695,488"/>
+<area shape="rect" id="node3" href="$de/d9d/game__view_8h.html#a8b080253e2713cfa1885ba783bcd74cd" title="Verifica que frame deve ser desenhado consoante gameState e menuState e chama as funções necessárias ..." alt="" coords="359,233,497,260"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="The main loop of the game." alt="" coords="5,233,128,260"/>
+<area shape="rect" id="node5" href="$d0/dd5/game__logic_8h.html#a83b1742f41d6e701033e0dd6f113c411" title="Gere os inputs do teclado e atribui funcionalidade às teclas." alt="" coords="176,233,311,260"/>
+<area shape="rect" id="node6" href="$d0/dd5/game__logic_8h.html#ab5fa7e7da1851578789c26ec9d71448b" title="Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e ver..." alt="" coords="184,284,303,311"/>
+</map>

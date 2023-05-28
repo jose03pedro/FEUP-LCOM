@@ -1,0 +1,4 @@
+<map id="draw_sprite" name="draw_sprite">
+<area shape="rect" id="node1" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="5,5,104,32"/>
+<area shape="rect" id="node2" href="$d5/d95/graphics_8c.html#afc7e1d0de42aa26d28b9b784872cf34f" title=" " alt="" coords="152,5,244,32"/>
+</map>

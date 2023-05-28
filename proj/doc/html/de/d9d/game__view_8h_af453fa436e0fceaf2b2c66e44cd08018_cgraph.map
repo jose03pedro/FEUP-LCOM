@@ -1,0 +1,5 @@
+<map id="ice_melt" name="ice_melt">
+<area shape="rect" id="node1" title="Verifica se o player se moveu e transforma a posição anterior em água." alt="" coords="5,5,84,32"/>
+<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#aca3c0042abd086d8fc9843e36cf9fc73" title="Desenha uma determinada sprite nas coordenadas (x, y)." alt="" coords="132,5,231,32"/>
+<area shape="rect" id="node3" href="$d5/d95/graphics_8c.html#afc7e1d0de42aa26d28b9b784872cf34f" title=" " alt="" coords="279,5,371,32"/>
+</map>

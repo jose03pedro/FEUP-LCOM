@@ -1,3 +1,13 @@
+/**
+ * @file sprite.c
+ * @author your name (you@domain.com)
+ * @brief 
+ * @version 0.1
+ * @date 2023-05-28
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "sprite.h"
 
 Sprite_t *sprite_create(xpm_map_t sprite) {

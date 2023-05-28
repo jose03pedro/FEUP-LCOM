@@ -1,0 +1,136 @@
+\hypertarget{graphics_8h}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/devices/video/graphics.h File Reference}
+\label{graphics_8h}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/video/graphics.h@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/video/graphics.h}}
+{\ttfamily \#include \char`\"{}V\+B\+E.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+Include dependency graph for graphics.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=225pt]{d1/d21/graphics_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d1/dc0/graphics_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{graphics_8h_aa2ac3ebc7870950bab4c0fc90f113155}{set\+\_\+graphic\+\_\+mode}} (uint16\+\_\+t mode)
+\item 
+int() \mbox{\hyperlink{graphics_8h_a452b878e36ce453d16a9775edf4df777}{set\+\_\+fb}} (uint16\+\_\+t mode, uint8\+\_\+t $\ast$$\ast$fb)
+\item 
+int() \mbox{\hyperlink{graphics_8h_afc7e1d0de42aa26d28b9b784872cf34f}{draw\+\_\+pixel}} (uint16\+\_\+t x, uint16\+\_\+t y, uint32\+\_\+t color, uint8\+\_\+t $\ast$fb)
+\item 
+int() \mbox{\hyperlink{graphics_8h_a49b5adeeae9da1f379d3f76475b5bdf7}{draw\+\_\+horizontal\+\_\+line}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t len, uint32\+\_\+t color, uint8\+\_\+t $\ast$fb)
+\item 
+int() \mbox{\hyperlink{graphics_8h_a292287bd8831fe69de798596d026613b}{draw\+\_\+rectangle}} (uint16\+\_\+t x, uint16\+\_\+t y, uint16\+\_\+t width, uint16\+\_\+t height, uint32\+\_\+t color, uint8\+\_\+t $\ast$fb)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+vbe\+\_\+mode\+\_\+info\+\_\+t \mbox{\hyperlink{graphics_8h_a9fcc2243068f8e628648febc0909c509}{mode\+\_\+info}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{graphics_8h_a49b5adeeae9da1f379d3f76475b5bdf7}\label{graphics_8h_a49b5adeeae9da1f379d3f76475b5bdf7}} 
+\index{graphics.h@{graphics.h}!draw\_horizontal\_line@{draw\_horizontal\_line}}
+\index{draw\_horizontal\_line@{draw\_horizontal\_line}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{draw\_horizontal\_line()}{draw\_horizontal\_line()}}
+{\footnotesize\ttfamily int() draw\+\_\+horizontal\+\_\+line (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{len,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t $\ast$}]{fb }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{d7/d04/graphics_8h_a49b5adeeae9da1f379d3f76475b5bdf7_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_a49b5adeeae9da1f379d3f76475b5bdf7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_afc7e1d0de42aa26d28b9b784872cf34f}\label{graphics_8h_afc7e1d0de42aa26d28b9b784872cf34f}} 
+\index{graphics.h@{graphics.h}!draw\_pixel@{draw\_pixel}}
+\index{draw\_pixel@{draw\_pixel}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{draw\_pixel()}{draw\_pixel()}}
+{\footnotesize\ttfamily int() draw\+\_\+pixel (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t $\ast$}]{fb }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_afc7e1d0de42aa26d28b9b784872cf34f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_a292287bd8831fe69de798596d026613b}\label{graphics_8h_a292287bd8831fe69de798596d026613b}} 
+\index{graphics.h@{graphics.h}!draw\_rectangle@{draw\_rectangle}}
+\index{draw\_rectangle@{draw\_rectangle}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{draw\_rectangle()}{draw\_rectangle()}}
+{\footnotesize\ttfamily int() draw\+\_\+rectangle (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{x,  }\item[{uint16\+\_\+t}]{y,  }\item[{uint16\+\_\+t}]{width,  }\item[{uint16\+\_\+t}]{height,  }\item[{uint32\+\_\+t}]{color,  }\item[{uint8\+\_\+t $\ast$}]{fb }\end{DoxyParamCaption})}
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_a292287bd8831fe69de798596d026613b_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_a292287bd8831fe69de798596d026613b_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_a452b878e36ce453d16a9775edf4df777}\label{graphics_8h_a452b878e36ce453d16a9775edf4df777}} 
+\index{graphics.h@{graphics.h}!set\_fb@{set\_fb}}
+\index{set\_fb@{set\_fb}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{set\_fb()}{set\_fb()}}
+{\footnotesize\ttfamily int() set\+\_\+fb (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode,  }\item[{uint8\+\_\+t $\ast$$\ast$}]{fb }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_a452b878e36ce453d16a9775edf4df777_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{graphics_8h_aa2ac3ebc7870950bab4c0fc90f113155}\label{graphics_8h_aa2ac3ebc7870950bab4c0fc90f113155}} 
+\index{graphics.h@{graphics.h}!set\_graphic\_mode@{set\_graphic\_mode}}
+\index{set\_graphic\_mode@{set\_graphic\_mode}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{set\_graphic\_mode()}{set\_graphic\_mode()}}
+{\footnotesize\ttfamily int() set\+\_\+graphic\+\_\+mode (\begin{DoxyParamCaption}\item[{uint16\+\_\+t}]{mode }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d7/d04/graphics_8h_aa2ac3ebc7870950bab4c0fc90f113155_icgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{graphics_8h_a9fcc2243068f8e628648febc0909c509}\label{graphics_8h_a9fcc2243068f8e628648febc0909c509}} 
+\index{graphics.h@{graphics.h}!mode\_info@{mode\_info}}
+\index{mode\_info@{mode\_info}!graphics.h@{graphics.h}}
+\doxysubsubsection{\texorpdfstring{mode\_info}{mode\_info}}
+{\footnotesize\ttfamily vbe\+\_\+mode\+\_\+info\+\_\+t mode\+\_\+info}
+

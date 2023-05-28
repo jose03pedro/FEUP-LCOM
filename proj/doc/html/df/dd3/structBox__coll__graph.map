@@ -1,0 +1,3 @@
+<map id="Box" name="Box">
+<area shape="rect" id="node1" title="Define os limites de uma caixa, utilizado nos blocos que têm uma função no jogo." alt="" coords="5,5,116,127"/>
+</map>

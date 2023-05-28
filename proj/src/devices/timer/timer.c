@@ -1,3 +1,13 @@
+/**
+ * @file timer.c
+ * @author
+ * @brief 
+ * @version 0.1
+ * @date 2023-05-28
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "timer.h"
 #include <lcom/lcf.h>
 #include <stdint.h>
