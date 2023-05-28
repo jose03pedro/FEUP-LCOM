@@ -36,7 +36,7 @@
 
 #define MODE 0x115
 #define FPS 60
-#define DOUBLE_BUFFER_ACTIVATED 1
+
 /**
  * @brief Define se o jogo está a correr.
  *
@@ -105,6 +105,7 @@ void update_mouse();
  *
  */
 void update_start_and_finish_button();
+
 /**
  * @brief Cria as todas as sprites necessárias para o jogo.
  *

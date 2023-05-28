@@ -35,12 +35,12 @@ typedef struct {
  * @param mode
  * @return int
  */
-int set_frame_buffers(uint16_t mode);
+void set_frame_buffers(uint16_t mode);
 /**
  * @brief Verifica que frame deve ser desenhado consoante gameState e menuState e chama as funções necessárias para o desenhar.
  *
  */
-void draw_new_frame();
+void draw_new_screen();
 /**
  * @brief Desenha o menu inicial e os botões relevantes.
  *
@@ -50,7 +50,7 @@ void draw_initial_menu();
  * @brief Desenha a interface do jogo, a "consola" e o background.
  *
  */
-void draw_game_menu();
+void draw_game_background();
 /**
  * @brief Verifica se o player caiu na água e reinicia o nível se for o caso.
  *
@@ -91,6 +91,6 @@ void draw_mouse();
  * @param y
  * @return int
  */
-int draw_sprite(Sprite_t *sp, int x, int y);
+void draw_sprite(Sprite_t *sp, int x, int y);
 
 #endif

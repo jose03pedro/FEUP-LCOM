@@ -3,7 +3,6 @@
 
 #define IRQ_KEYBOARD 1
 
-#define BREAK_ESC 0x81
 #define MAKE_CODE BIT(7)
 #define TWO_BYTES 0xE0
 #define ENABLE_INT BIT(0)

@@ -156,7 +156,6 @@ void ice_melt() {
 
 bool check_all_ice_melted() {
   // check if player has melted all ice
-  // printf("water: %d blocks counted, path: %d blocks counted\n", water_counter, path_counter);
   if (water_counter != path_counter) {
     menuState = GAME;
     reset_all_draw_counters();

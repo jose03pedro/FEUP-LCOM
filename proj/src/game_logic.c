@@ -95,9 +95,9 @@ void update_keyboard() {
       gameLevel = LEVEL_1;
       reset_all_draw_counters();
       break;
-    /*case E:  used while developing the game, the player should need to actually beat all levels to reach this screen
+    case E:
       menuState = FINISH;
-      reset_all_draw_counters(); */
+      reset_all_draw_counters();
     case A:
       if (menuState == GAME) {
         bool check = true;

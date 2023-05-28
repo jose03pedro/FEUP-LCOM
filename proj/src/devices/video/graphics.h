@@ -1,5 +1,5 @@
-#ifndef _SRC_GRAPHICS_H
-#define _SRC_GRAPHICS_H
+#ifndef _SRC_GRAPHICS_H_
+#define _SRC_GRAPHICS_H_
 
 #include "VBE.h"
 #include <lcom/lcf.h>

@@ -18,6 +18,10 @@ int(main)(int argc, char *argv[]) {
   return 0;
 }
 
+/**
+ * @brief Calls all the functions needed to set up the environment for the game to run.
+ *
+ */
 int init() {
   timer_set_frequency(TIMER, FPS);
   set_frame_buffers(MODE);
@@ -30,6 +34,10 @@ int init() {
   return mouse_write(ENABLE_DATA_REPORT);
 }
 
+/**
+ * @brief Calls all the functions needed to stop execution. Exits minix graphic mode, and unsubscribes interrupts.
+ *
+ */
 int die() {
   vg_exit();
   timer_unsubscribe_interrupts();
@@ -38,6 +46,10 @@ int die() {
   return mouse_write(DISABLE_DATA_REPORT);
 }
 
+/**
+ * @brief The main loop of the game.
+ *
+ */
 int(proj_main_loop)(int argc, char *argv[]) {
   init();
   draw_new_screen();
