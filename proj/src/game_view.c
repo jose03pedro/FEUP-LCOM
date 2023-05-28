@@ -2,7 +2,6 @@
 
 uint8_t *main_fb;
 uint8_t *secondary_fb;
-uint8_t *drawing_fb;
 uint32_t fb_size;
 extern int level1_draw_counter;
 extern int level2_draw_counter;
@@ -44,7 +43,6 @@ void set_frame_buffers(uint16_t mode) {
   set_fb(mode, &main_fb);
   fb_size = mode_info.XResolution * mode_info.YResolution * ((mode_info.BitsPerPixel + 7) / 8);
   secondary_fb = (uint8_t *) malloc(fb_size); // double buffer for better performance
-  drawing_fb = secondary_fb;
 }
 
 void draw_mouse() {
@@ -108,8 +106,8 @@ void draw_game_background() {
   draw_sprite(game_screen, 0, 0);
   int x_ = 117;
   int y_ = 61;
-  draw_horizontal_line(117, 60, 571, 0x77bbff, drawing_fb);
-  draw_rectangle(116, 60, 1, 452, 0x77bbff, drawing_fb);
+  draw_horizontal_line(117, 60, 571, 0x77bbff, secondary_fb);
+  draw_rectangle(116, 60, 1, 452, 0x77bbff, secondary_fb);
   for (int y = 0; y < 15; y++) {
     for (int x = 0; x < 19; x++) {
       draw_sprite(background_cube, x_, y_);
@@ -118,8 +116,8 @@ void draw_game_background() {
     x_ = 117;
     y_ += 30;
   }
-  draw_horizontal_line(117, 511, 571, 0x77bbff, drawing_fb);
-  draw_rectangle(687, 60, 1, 452, 0x77bbff, drawing_fb);
+  draw_horizontal_line(117, 511, 571, 0x77bbff, secondary_fb);
+  draw_rectangle(687, 60, 1, 452, 0x77bbff, secondary_fb);
 }
 
 void check_fell_into_water() {
@@ -192,7 +190,7 @@ void draw_sprite(Sprite_t *sp, int x, int y) {
   for (int h_ = 0; h_ < height; h_++) {
     for (int w_ = 0; w_ < width; w_++) {
       color = sp->colors[w_ + h_ * width];
-      draw_pixel(x + w_, y + h_, color, drawing_fb);
+      draw_pixel(x + w_, y + h_, color, secondary_fb);
     }
   }
 }
