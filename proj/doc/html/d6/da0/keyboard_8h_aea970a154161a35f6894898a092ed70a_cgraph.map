@@ -1,4 +1,0 @@
-<map id="kbc_ih" name="kbc_ih">
-<area shape="rect" id="node1" title="interrupt handler" alt="" coords="5,5,69,32"/>
-<area shape="rect" id="node2" href="$dd/dd8/keyboard_2KBC_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title="lê o byte de saída do controlador na porta port" alt="" coords="117,5,252,32"/>
-</map>

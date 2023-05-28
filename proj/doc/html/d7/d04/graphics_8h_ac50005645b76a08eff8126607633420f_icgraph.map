@@ -1,6 +1,0 @@
-<map id="set_frame_buffer" name="set_frame_buffer">
-<area shape="rect" id="node1" title=" " alt="" coords="455,5,588,32"/>
-<area shape="rect" id="node2" href="$de/d9d/game__view_8h.html#a3ad9f04212e7602618a0dd7ad4afbd4e" title="Aloca memória ao buffer. No caso de double buffer, o buffer secundário tem a mesma dimensão de memóri..." alt="" coords="267,5,407,32"/>
-<area shape="rect" id="node3" href="$d0/d29/main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="176,5,219,32"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,5,128,32"/>
-</map>

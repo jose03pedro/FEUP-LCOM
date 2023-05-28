@@ -1,8 +1,0 @@
-<map id="write_KBC_command" name="write_KBC_command">
-<area shape="rect" id="node1" title="escreve um byte de comando no controlador do teclado" alt="" coords="449,31,611,57"/>
-<area shape="rect" id="node2" href="$d6/da0/keyboard_8h.html#a58017421d19bb2004825d339ebb600fa" title=" " alt="" coords="267,5,401,32"/>
-<area shape="rect" id="node3" href="$dc/ded/mouse_8h.html#a6e47b03ed89aa760792292a19d5c1c3d" title=" " alt="" coords="281,56,387,83"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#abe328439e72153db31a7467b12f139bf" title=" " alt="" coords="176,31,219,57"/>
-<area shape="rect" id="node6" href="$d0/d29/main_8c.html#a05848de25ac2dbec233935058a1d24b4" title=" " alt="" coords="176,81,219,108"/>
-<area shape="rect" id="node5" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,128,83"/>
-</map>

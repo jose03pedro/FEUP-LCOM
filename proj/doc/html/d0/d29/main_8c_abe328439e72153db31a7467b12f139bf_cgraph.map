@@ -1,9 +1,0 @@
-<map id="die" name="die">
-<area shape="rect" id="node1" title=" " alt="" coords="5,97,48,123"/>
-<area shape="rect" id="node2" href="$de/dbd/keyboard_8c.html#a97f07efdc4bf5955236db1b8f111daf6" title="Desativa interrupções." alt="" coords="123,5,290,47"/>
-<area shape="rect" id="node3" href="$db/d9f/mouse_8c.html#adaf9bbdd3ddda1b50021f21c37df1c9c" title="Desativa interrupções." alt="" coords="96,71,317,98"/>
-<area shape="rect" id="node4" href="$db/d9f/mouse_8c.html#a6e47b03ed89aa760792292a19d5c1c3d" title=" " alt="" coords="153,122,260,149"/>
-<area shape="rect" id="node7" href="$df/d41/timer_8c.html#a34c22ebdcbc43e47f0ad8406704d3610" title="Desligar as interrupções." alt="" coords="101,173,313,199"/>
-<area shape="rect" id="node5" href="$d3/d91/utils_8c.html#a79a031a8611f5b2d6afa4158e92b0fb4" title=" " alt="" coords="397,97,495,123"/>
-<area shape="rect" id="node6" href="$dd/dd8/keyboard_2KBC_8c.html#a7224f311722eefe1604c2276ae462213" title="escreve um byte de comando no controlador do teclado" alt="" coords="365,147,527,174"/>
-</map>

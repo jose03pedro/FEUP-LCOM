@@ -1,4 +1,0 @@
-<map id="write_KBC_command" name="write_KBC_command">
-<area shape="rect" id="node1" title="escreve um byte de comando no controlador do teclado" alt="" coords="5,5,167,32"/>
-<area shape="rect" id="node2" href="$dd/dd8/keyboard_2KBC_8c.html#ac024af91b156e4fc61ee3886b891de21" title="lê o byte de status do controlador do teclado e armazena o valor lido no local apontado por *status" alt="" coords="215,5,347,32"/>
-</map>

@@ -1,5 +1,0 @@
-<map id="keyboard_restore" name="keyboard_restore">
-<area shape="rect" id="node1" title=" " alt="" coords="5,31,140,57"/>
-<area shape="rect" id="node2" href="$dd/dd8/keyboard_2KBC_8c.html#a52ac1bb096b341741d01d49dd38c0cd4" title="lê o byte de saída do controlador na porta port" alt="" coords="201,5,336,32"/>
-<area shape="rect" id="node3" href="$dd/dd8/keyboard_2KBC_8c.html#a7224f311722eefe1604c2276ae462213" title="escreve um byte de comando no controlador do teclado" alt="" coords="188,56,349,83"/>
-</map>

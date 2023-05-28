@@ -1,4 +1,0 @@
-<map id="update_start_and_finish_button_state" name="update_start_and_finish_button_state">
-<area shape="rect" id="node1" title="Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado ..." alt="" coords="5,5,183,47"/>
-<area shape="rect" id="node2" href="$d6/d13/game__view_8c.html#ae451b0ef24ecd01c99cb69b87d9cd6c4" title="Põe os valores de todos os draw_counters a 0." alt="" coords="231,13,411,39"/>
-</map>

@@ -1,9 +1,0 @@
-<map id="read_KBC_output" name="read_KBC_output">
-<area shape="rect" id="node1" title="lê o byte de saída do controlador do teclado na porta especificada em port, armazenando o valor lido ..." alt="" coords="581,56,716,83"/>
-<area shape="rect" id="node2" href="$d6/da0/keyboard_8h.html#aea970a154161a35f6894898a092ed70a" title="interrupt handler" alt="" coords="434,5,498,32"/>
-<area shape="rect" id="node5" href="$d6/da0/keyboard_8h.html#a58017421d19bb2004825d339ebb600fa" title=" " alt="" coords="399,56,533,83"/>
-<area shape="rect" id="node6" href="$dc/ded/mouse_8h.html#a210374b50462acdedab00df64d5cea3c" title="Interrupt handler." alt="" coords="423,107,509,133"/>
-<area shape="rect" id="node3" href="$d0/dd5/game__logic_8h.html#aacf177f660c44528fc3926b3cd69fb88" title="Gere os inputs do teclado e atribui funcionalidade às teclas." alt="" coords="176,19,351,45"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,56,128,83"/>
-<area shape="rect" id="node7" href="$d0/dd5/game__logic_8h.html#aa577e78e2462033d486b5d8fa64c7bec" title="Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e ver..." alt="" coords="184,81,343,108"/>
-</map>

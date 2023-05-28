@@ -1,8 +1,0 @@
-<map id="update_player_starting_position6" name="update_player_starting_position6">
-<area shape="rect" id="node1" title="Atualiza a posição do player para o nível." alt="" coords="775,17,947,58"/>
-<area shape="rect" id="node2" href="$dd/d6c/level6_8h.html#a0d17e01f609ead229aca8da5de31e224" title="Desenha os componentes do nível 6." alt="" coords="581,24,727,51"/>
-<area shape="rect" id="node3" href="$de/d9d/game__view_8h.html#a8fe6fe827e29e6b0cb98cda00dc38355" title="Verifica que nível / menu deve ser desenhado consoante gameState e menuState e chama as funções neces..." alt="" coords="399,24,533,51"/>
-<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title=" " alt="" coords="5,24,128,51"/>
-<area shape="rect" id="node5" href="$d0/dd5/game__logic_8h.html#aacf177f660c44528fc3926b3cd69fb88" title="Gere os inputs do teclado e atribui funcionalidade às teclas." alt="" coords="176,24,351,51"/>
-<area shape="rect" id="node6" href="$d0/dd5/game__logic_8h.html#aa577e78e2462033d486b5d8fa64c7bec" title="Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e ver..." alt="" coords="184,75,343,101"/>
-</map>

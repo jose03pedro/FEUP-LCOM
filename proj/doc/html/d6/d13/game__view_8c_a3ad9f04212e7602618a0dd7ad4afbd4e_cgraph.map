@@ -1,4 +1,0 @@
-<map id="set_frame_buffers" name="set_frame_buffers">
-<area shape="rect" id="node1" title="Aloca memória ao buffer. No caso de double buffer, o buffer secundário tem a mesma dimensão de memóri..." alt="" coords="5,5,145,32"/>
-<area shape="rect" id="node2" href="$d5/d95/graphics_8c.html#ac50005645b76a08eff8126607633420f" title=" " alt="" coords="193,5,327,32"/>
-</map>
