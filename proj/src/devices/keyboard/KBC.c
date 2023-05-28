@@ -11,10 +11,10 @@ int read_KBC_output(uint8_t port, uint8_t *output, uint8_t mouse) {
   while (attemps) {
     read_KBC_status(&status);
 
-    if ((status & BIT(0)) != 0) {
+    if ((status & FULL_OUT_BUFFER) != 0) {
       util_sys_inb(port, output);
 
-      if ((mouse && !(status & BIT(5))) || (!mouse && (status & BIT(5))) || ((status & BIT(7)) != 0) || ((status & BIT(6)) != 0)) {
+      if ((mouse && !(status & BIT(5))) || (!mouse && (status & BIT(5))) || ((status & PARITY_ERROR) != 0) || ((status & TIMEOUT_ERROR) != 0)) {
         return 1;
       }
 

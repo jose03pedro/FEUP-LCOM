@@ -1,5 +1,5 @@
-#ifndef _LCOM_MOUSE_H_
-#define _LCOM_MOUSE_H_
+#ifndef _SRC_MOUSE_H_
+#define _SRC_MOUSE_H_
 
 #define MOUSE_MASK BIT(2)
 

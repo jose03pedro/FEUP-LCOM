@@ -1,10 +1,9 @@
-#ifndef _LCOM_I8042_MOUSE_H_
-#define _LCOM_I8042_MOUSE_H_
+#ifndef _SRC_I8042_MOUSE_H_
+#define _SRC_I8042_MOUSE_H_
 
 #define IRQ_KEYBOARD 1
 #define IRQ_MOUSE 12
 
-#define BREAK_ESC 0x81
 #define MAKE_CODE BIT(7)
 #define TWO_BYTES 0xE0
 #define ENABLE_INT BIT(0)

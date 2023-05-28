@@ -1,5 +1,5 @@
-#ifndef _LCOM_KBC_MOUSE_H_
-#define _LCOM_KBC_MOUSE_H_
+#ifndef _SRC_KBC_MOUSE_H_
+#define _SRC_KBC_MOUSE_H_
 
 #include "i8042.h"
 #include <lcom/lcf.h>

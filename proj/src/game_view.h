@@ -1,5 +1,5 @@
-#ifndef SRC_GAME_VIEW_H_
-#define SRC_GAME_VIEW_H_
+#ifndef _SRC_GAME_VIEW_H_
+#define _SRC_GAME_VIEW_H_
 
 #include "devices/mouse/mouse.h"
 #include "devices/video/graphics.h"
@@ -25,17 +25,16 @@ typedef struct {
   int bot_right_y;
 } Box;
 
-int set_frame_buffers(uint16_t mode);
-void draw_new_frame();
+void set_frame_buffers(uint16_t mode);
+void draw_new_screen();
 void draw_initial_menu();
-void draw_game_menu();
+void draw_game_background();
 void check_fell_into_water();
 void ice_melt();
 bool check_all_ice_melted();
 void reset_all_draw_counters();
 void draw_finish_menu();
 void draw_mouse();
-void swap_buffers();
-int draw_sprite(Sprite_t *sprite, int x, int y);
+void draw_sprite(Sprite_t *sp, int x, int y);
 
 #endif

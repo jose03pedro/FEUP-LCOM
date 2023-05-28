@@ -40,7 +40,7 @@ int die() {
 
 int(proj_main_loop)(int argc, char *argv[]) {
   init();
-  draw_new_frame();
+  draw_new_screen();
 
   // driver receive interrupts
   int ipc_status;
@@ -54,11 +54,11 @@ int(proj_main_loop)(int argc, char *argv[]) {
       switch (_ENDPOINT_P(msg.m_source)) {
         case HARDWARE:
           if (msg.m_notify.interrupts & TIMER_MASK)
-            update_timer_state();
+            update_timer();
           if (msg.m_notify.interrupts & KEYBOARD_MASK)
-            update_keyboard_state();
+            update_keyboard();
           if (msg.m_notify.interrupts & MOUSE_MASK)
-            update_mouse_state();
+            update_mouse();
       }
     }
   }

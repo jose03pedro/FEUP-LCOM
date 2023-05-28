@@ -1,42 +1,41 @@
-#ifndef SRC_GAME_LOGIC_H_
-#define SRC_GAME_LOGIC_H_
+#ifndef _SRC_GAME_LOGIC_H_
+#define _SRC_GAME_LOGIC_H_
 
+#include "XPMs/background_cube.xpm"
+#include "XPMs/end_screen.xpm"
+#include "XPMs/finish_button.xpm"
+#include "XPMs/ice_cube.xpm"
+#include "XPMs/key.xpm"
+#include "XPMs/level1.xpm"
+#include "XPMs/level10.xpm"
+#include "XPMs/level2.xpm"
+#include "XPMs/level3.xpm"
+#include "XPMs/level4.xpm"
+#include "XPMs/level5.xpm"
+#include "XPMs/level6.xpm"
+#include "XPMs/level7.xpm"
+#include "XPMs/level8.xpm"
+#include "XPMs/level9.xpm"
+#include "XPMs/lock.xpm"
+#include "XPMs/mouse.xpm"
+#include "XPMs/path_cube.xpm"
+#include "XPMs/player.xpm"
+#include "XPMs/quit_button.xpm"
+#include "XPMs/red_cube.xpm"
+#include "XPMs/start_button.xpm"
+#include "XPMs/thin_ice_game.xpm"
+#include "XPMs/thin_ice_start.xpm"
+#include "XPMs/water.xpm"
 #include "devices/keyboard/KBC.h"
 #include "devices/mouse/mouse.h"
 #include "devices/video/graphics.h"
 #include "game_view.h"
 #include "sprite.h"
-#include "xpm/background_cube.xpm"
-#include "xpm/end_screen.xpm"
-#include "xpm/finish_button.xpm"
-#include "xpm/ice_cube.xpm"
-#include "xpm/key.xpm"
-#include "xpm/level1.xpm"
-#include "xpm/level10.xpm"
-#include "xpm/level2.xpm"
-#include "xpm/level3.xpm"
-#include "xpm/level4.xpm"
-#include "xpm/level5.xpm"
-#include "xpm/level6.xpm"
-#include "xpm/level7.xpm"
-#include "xpm/level8.xpm"
-#include "xpm/level9.xpm"
-#include "xpm/lock.xpm"
-#include "xpm/mouse.xpm"
-#include "xpm/path_cube.xpm"
-#include "xpm/player.xpm"
-#include "xpm/quit_button.xpm"
-#include "xpm/red_cube.xpm"
-#include "xpm/start_button.xpm"
-#include "xpm/thin_ice_game.xpm"
-#include "xpm/thin_ice_start.xpm"
-#include "xpm/water.xpm"
 #include <lcom/lcf.h>
 #include <minix/sysutil.h>
 
 #define MODE 0x115
 #define FPS 60
-#define DOUBLE_BUFFER_ACTIVATED 1
 
 typedef enum {
   RUNNING,
@@ -67,10 +66,10 @@ typedef struct {
   int y;
 } PlayerPosition;
 
-void update_timer_state();
-void update_keyboard_state();
-void update_mouse_state();
-void update_start_and_finish_button_state();
+void update_timer();
+void update_keyboard();
+void update_mouse();
+void update_start_and_finish_button();
 void sprites_creation();
 
 #endif
