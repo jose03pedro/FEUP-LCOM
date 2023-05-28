@@ -39,7 +39,7 @@
 #define DOUBLE_BUFFER_ACTIVATED 1
 /**
  * @brief Define se o jogo está a correr.
- * 
+ *
  */
 typedef enum {
   RUNNING,
@@ -48,7 +48,7 @@ typedef enum {
 
 /**
  * @brief Define o menu em que o jogo se encontra.
- * 
+ *
  */
 typedef enum {
   START,
@@ -58,7 +58,7 @@ typedef enum {
 
 /**
  * @brief Define o nível em que o jogo se encontra.
- * 
+ *
  */
 typedef enum {
   LEVEL_1,
@@ -75,7 +75,7 @@ typedef enum {
 
 /**
  * @brief Define as coordenadas do player.
- * 
+ *
  */
 typedef struct {
   int x;
@@ -83,31 +83,31 @@ typedef struct {
 } PlayerPosition;
 
 /**
- * @brief 
- * 
+ * @brief
+ *
  */
-void update_timer_state();
+void update_timer();
 
 /**
  * @brief Gere os inputs do teclado e atribui funcionalidade às teclas.
- * 
+ *
  */
-void update_keyboard_state();
+void update_keyboard();
 
 /**
- * @brief Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e verificar se clicou em algo relevante. 
- * 
+ * @brief Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e verificar se clicou em algo relevante.
+ *
  */
-void update_mouse_state();
+void update_mouse();
 
 /**
  * @brief Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado do jogo consoante o botão.
- * 
+ *
  */
-void update_start_and_finish_button_state();
+void update_start_and_finish_button();
 /**
  * @brief Cria as todas as sprites necessárias para o jogo.
- * 
+ *
  */
 void sprites_creation();
 
