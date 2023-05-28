@@ -119,7 +119,7 @@ void draw_game_level1() {
   // check if player has completed the path
   if (playerPosition.x == finish_level1.top_left_x && playerPosition.y == finish_level1.top_left_y) {
     if (check_all_ice_melted()) {
-      gameLevel = LEVEL_2;
+      gameLevel = LEVEL_10;
     }
     else {
       return;
