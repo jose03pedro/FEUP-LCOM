@@ -1,5 +1,5 @@
-#ifndef SRC_SPRITE_H_
-#define SRC_SPRITE_H_
+#ifndef _SRC_SPRITE_H_
+#define _SRC_SPRITE_H_
 
 #include "devices/video/graphics.h"
 

@@ -1,12 +1,17 @@
 #include "game_logic.h"
 
+extern vbe_mode_info_t mode_info;
+extern MouseInfo mouse_info;
+extern uint8_t byte_i;
 extern uint8_t scancode;
-extern uint8_t byte_index;
 GameState gameState = RUNNING;
 MenuState menuState = START;
 GameLevel gameLevel;
-extern MouseInfo mouse_info;
-extern vbe_mode_info_t mode_info;
+
+extern uint8_t *main_fb;
+extern uint8_t *secondary_fb;
+extern uint32_t fb_size;
+
 extern Box ice_cubes[250];
 extern Box lock_cube;
 
@@ -40,7 +45,7 @@ Sprite_t *key;
 PlayerPosition playerPosition;
 PlayerPosition copy;
 
-int timer_interrupts = 0;
+int timer_counter = 0;
 
 void sprites_creation() {
   mouse = sprite_create((xpm_map_t) mouse_xpm);
@@ -70,14 +75,12 @@ void sprites_creation() {
   key = sprite_create((xpm_map_t) key_xpm);
 }
 
-void update_timer_state() {
-  if (DOUBLE_BUFFER_ACTIVATED) {
-    swap_buffers();
-  }
-  timer_interrupts++;
+void update_timer() {
+  memcpy(main_fb, secondary_fb, fb_size); // swap buffers
+  timer_counter++;
 }
 
-void update_keyboard_state() {
+void update_keyboard() {
   kbc_ih();
   switch (scancode) {
     case Q: // if player wants to close game
@@ -163,21 +166,21 @@ void update_keyboard_state() {
     default:
       break;
   }
-  draw_new_frame();
+  draw_new_screen();
 }
 
-void update_mouse_state() {
+void update_mouse() {
   (mouse_ih)();
   mouse_sync_bytes();
-  if (byte_index == 3) {
+  if (byte_i == 3) {
     mouse_sync_info();
-    update_start_and_finish_button_state();
-    draw_new_frame();
-    byte_index = 0;
+    update_start_and_finish_button();
+    draw_new_screen();
+    byte_i = 0;
   }
 }
 
-void update_start_and_finish_button_state() {
+void update_start_and_finish_button() {
   if (mouse_info.left_click) {
     if (menuState == START) {
       if (mouse_info.x >= 260 && mouse_info.x <= 385 && mouse_info.y >= 485 && mouse_info.y <= 524) {

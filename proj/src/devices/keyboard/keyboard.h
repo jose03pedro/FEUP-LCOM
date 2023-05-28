@@ -1,19 +1,19 @@
-#ifndef _LCOM_KEYBOARD_H_
-#define _LCOM_KEYBOARD_H_
+#ifndef _SRC_KEYBOARD_H_
+#define _SRC_KEYBOARD_H_
 
 #define KEYBOARD_MASK BIT(1)
 
-#include <minix/sysutil.h>
-#include <lcom/lcf.h>
-#include "i8042.h"
 #include "KBC.h"
+#include "i8042.h"
+#include <lcom/lcf.h>
+#include <minix/sysutil.h>
 
-int (keyboard_subscribe_interrupts)();
+int(keyboard_subscribe_interrupts)();
 
-int (keyboard_unsubscribe_interrupts)();
+int(keyboard_unsubscribe_interrupts)();
 
-void (kbc_ih)();
+void(kbc_ih)();
 
-int (keyboard_restore)();
+int(keyboard_restore)();
 
 #endif

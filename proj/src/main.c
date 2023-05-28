@@ -40,7 +40,7 @@ int die() {
 
 int(proj_main_loop)(int argc, char *argv[]) {
   init();
-  draw_new_frame();
+  draw_new_screen();
 
   // driver receive interrupts
   int ipc_status;

@@ -1,5 +1,5 @@
-#ifndef SRC_GAME_VIEW_H_
-#define SRC_GAME_VIEW_H_
+#ifndef _SRC_GAME_VIEW_H_
+#define _SRC_GAME_VIEW_H_
 
 #include "devices/mouse/mouse.h"
 #include "devices/video/graphics.h"

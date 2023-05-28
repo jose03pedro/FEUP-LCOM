@@ -19,27 +19,27 @@ int(timer_set_frequency)(uint8_t timer, uint32_t freq) {
   util_get_MSB(initialValue, &MSB);
   util_get_LSB(initialValue, &LSB);
 
-  uint8_t selectedTimer;
+  uint8_t selected_timer;
   switch (timer) {
     case 0:
       control |= TIMER_SEL0;
-      selectedTimer = TIMER_0;
+      selected_timer = TIMER_0;
       break;
     case 1:
       control |= TIMER_SEL1;
-      selectedTimer = TIMER_1;
+      selected_timer = TIMER_1;
       break;
     case 2:
       control |= TIMER_SEL2;
-      selectedTimer = TIMER_2;
+      selected_timer = TIMER_2;
       break;
     default:
       return 1;
   }
 
   sys_outb(TIMER_CTRL, control);
-  sys_outb(selectedTimer, LSB);
-  sys_outb(selectedTimer, MSB);
+  sys_outb(selected_timer, LSB);
+  sys_outb(selected_timer, MSB);
 
   return 0;
 }
