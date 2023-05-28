@@ -36,18 +36,30 @@
 
 #define MODE 0x115
 #define FPS 60
-
+#define DOUBLE_BUFFER_ACTIVATED 1
+/**
+ * @brief Define se o jogo está a correr.
+ *
+ */
 typedef enum {
   RUNNING,
   EXIT,
 } GameState;
 
+/**
+ * @brief Define o menu em que o jogo se encontra.
+ *
+ */
 typedef enum {
   START,
   GAME,
   FINISH
 } MenuState;
 
+/**
+ * @brief Define o nível em que o jogo se encontra.
+ *
+ */
 typedef enum {
   LEVEL_1,
   LEVEL_2,
@@ -61,15 +73,42 @@ typedef enum {
   LEVEL_10
 } GameLevel;
 
+/**
+ * @brief Define as coordenadas do player.
+ *
+ */
 typedef struct {
   int x;
   int y;
 } PlayerPosition;
 
+/**
+ * @brief Incrementa o counter das interrupções do timer e dá swap aos buffers.
+ *
+ */
 void update_timer();
+
+/**
+ * @brief Gere os inputs do teclado e atribui funcionalidade às teclas.
+ *
+ */
 void update_keyboard();
+
+/**
+ * @brief Gere os inputs do rato. Processa interrupts e chama funções para atualizar a informação do rato e verificar se clicou em algo relevante.
+ *
+ */
 void update_mouse();
+
+/**
+ * @brief Verifica se o rato clica nos botões que permitem ao jogador começar ou acabar o jogo e muda o estado do jogo consoante o botão.
+ *
+ */
 void update_start_and_finish_button();
+/**
+ * @brief Cria as todas as sprites necessárias para o jogo.
+ *
+ */
 void sprites_creation();
 
 #endif
