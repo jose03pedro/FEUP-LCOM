@@ -1,0 +1,4 @@
+<map id="init" name="init">
+<area shape="rect" id="node1" title="Calls all the functions needed to set up the environment for the game to run." alt="" coords="176,5,219,32"/>
+<area shape="rect" id="node2" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="The main loop of the game." alt="" coords="5,5,128,32"/>
+</map>

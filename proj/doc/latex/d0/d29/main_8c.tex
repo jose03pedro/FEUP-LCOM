@@ -1,0 +1,136 @@
+\hypertarget{main_8c}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/main.c File Reference}
+\label{main_8c}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/main.c@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/main.c}}
+{\ttfamily \#include \char`\"{}devices/keyboard/keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/mouse/mouse.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/timer/timer.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}devices/video/graphics.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+logic.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}game\+\_\+view.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+Include dependency graph for main.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d4/d10/main_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int() \mbox{\hyperlink{main_8c_af397c014b1ca8ac21809c7b1262fbe81}{main}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{main_8c_a05848de25ac2dbec233935058a1d24b4}{init}} ()
+\begin{DoxyCompactList}\small\item\em Calls all the functions needed to set up the environment for the game to run. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_abe328439e72153db31a7467b12f139bf}{die}} ()
+\begin{DoxyCompactList}\small\item\em Calls all the functions needed to stop execution. Exits minix graphic mode, and unsubscribes interrupts. \end{DoxyCompactList}\item 
+int() \mbox{\hyperlink{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}{proj\+\_\+main\+\_\+loop}} (int argc, char $\ast$argv\mbox{[}$\,$\mbox{]})
+\begin{DoxyCompactList}\small\item\em The main loop of the game. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} \mbox{\hyperlink{main_8c_a2706ed05d331ef3b53c728a6868bda26}{game\+State}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\begin{DoxyAuthor}{Author}
+
+\end{DoxyAuthor}
+\begin{DoxyVersion}{Version}
+0.\+1 
+\end{DoxyVersion}
+\begin{DoxyDate}{Date}
+2023-\/05-\/28
+\end{DoxyDate}
+\begin{DoxyCopyright}{Copyright}
+Copyright (c) 2023 
+\end{DoxyCopyright}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_abe328439e72153db31a7467b12f139bf}\label{main_8c_abe328439e72153db31a7467b12f139bf}} 
+\index{main.c@{main.c}!die@{die}}
+\index{die@{die}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{die()}{die()}}
+{\footnotesize\ttfamily int die (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls all the functions needed to stop execution. Exits minix graphic mode, and unsubscribes interrupts. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d29/main_8c_abe328439e72153db31a7467b12f139bf_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d0/d29/main_8c_abe328439e72153db31a7467b12f139bf_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_a05848de25ac2dbec233935058a1d24b4}\label{main_8c_a05848de25ac2dbec233935058a1d24b4}} 
+\index{main.c@{main.c}!init@{init}}
+\index{init@{init}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{init()}{init()}}
+{\footnotesize\ttfamily int init (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+Calls all the functions needed to set up the environment for the game to run. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d29/main_8c_a05848de25ac2dbec233935058a1d24b4_cgraph}
+\end{center}
+\end{figure}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=240pt]{d0/d29/main_8c_a05848de25ac2dbec233935058a1d24b4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{main_8c_af397c014b1ca8ac21809c7b1262fbe81}\label{main_8c_af397c014b1ca8ac21809c7b1262fbe81}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int() main (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}\label{main_8c_a2a16f651eccbd248e1ad3b3b924b143b}} 
+\index{main.c@{main.c}!proj\_main\_loop@{proj\_main\_loop}}
+\index{proj\_main\_loop@{proj\_main\_loop}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{proj\_main\_loop()}{proj\_main\_loop()}}
+{\footnotesize\ttfamily int() proj\+\_\+main\+\_\+loop (\begin{DoxyParamCaption}\item[{int}]{argc,  }\item[{char $\ast$}]{argv\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+
+
+The main loop of the game. 
+
+Here is the call graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d0/d29/main_8c_a2a16f651eccbd248e1ad3b3b924b143b_cgraph}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a2706ed05d331ef3b53c728a6868bda26}\label{main_8c_a2706ed05d331ef3b53c728a6868bda26}} 
+\index{main.c@{main.c}!gameState@{gameState}}
+\index{gameState@{gameState}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{gameState}{gameState}}
+{\footnotesize\ttfamily \mbox{\hyperlink{game__logic_8h_a7899b65f1ea0f655e4bbf8d2a5714285}{Game\+State}} game\+State}
+

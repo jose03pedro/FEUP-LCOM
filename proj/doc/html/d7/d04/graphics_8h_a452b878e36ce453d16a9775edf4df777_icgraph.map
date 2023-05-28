@@ -1,0 +1,6 @@
+<map id="set_fb" name="set_fb">
+<area shape="rect" id="node1" title=" " alt="" coords="455,5,517,32"/>
+<area shape="rect" id="node2" href="$de/d9d/game__view_8h.html#a48627e979207f62d7ad6322683d95abe" title="Aloca memória para os 2 buffers." alt="" coords="267,5,407,32"/>
+<area shape="rect" id="node3" href="$d0/d29/main_8c.html#a05848de25ac2dbec233935058a1d24b4" title="Calls all the functions needed to set up the environment for the game to run." alt="" coords="176,5,219,32"/>
+<area shape="rect" id="node4" href="$d0/d29/main_8c.html#a2a16f651eccbd248e1ad3b3b924b143b" title="The main loop of the game." alt="" coords="5,5,128,32"/>
+</map>

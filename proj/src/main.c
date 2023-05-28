@@ -1,3 +1,13 @@
+/**
+ * @file main.c
+ * @author
+ * @brief 
+ * @version 0.1
+ * @date 2023-05-28
+ * 
+ * @copyright Copyright (c) 2023
+ * 
+ */
 #include "devices/keyboard/keyboard.h"
 #include "devices/mouse/mouse.h"
 #include "devices/timer/timer.h"

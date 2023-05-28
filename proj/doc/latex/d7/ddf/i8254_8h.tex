@@ -1,0 +1,162 @@
+\hypertarget{i8254_8h}{}\doxysection{/mnt/c/\+Users/\+Miguel Dionísio/\+One\+Drive/\+Documentos/\+L\+C\+O\+M/\+M\+I\+N\+I\+X-\/\+L\+C\+O\+M/shared/g2/proj/src/devices/timer/i8254.h File Reference}
+\label{i8254_8h}\index{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/timer/i8254.h@{/mnt/c/Users/Miguel Dionísio/OneDrive/Documentos/LCOM/MINIX-\/LCOM/shared/g2/proj/src/devices/timer/i8254.h}}
+{\ttfamily \#include $<$lcom/lcf.\+h$>$}\newline
+{\ttfamily \#include $<$minix/sysutil.\+h$>$}\newline
+Include dependency graph for i8254.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=252pt]{d0/dd6/i8254_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{d6/d92/i8254_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a599217205dc3092c26567a2bd868ef3a}{T\+I\+M\+ER}}~0
+\item 
+\#define \mbox{\hyperlink{i8254_8h_acf926951944b6cf370b7229ebd50dd8b}{T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ}}~1193182
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a30bf84c312af248cb81bb224e09f9ba8}{T\+I\+M\+E\+R0\+\_\+\+I\+RQ}}~0
+\item 
+\#define \mbox{\hyperlink{i8254_8h_acc9ff9df4a9674a1ce9ba08fc4a4679e}{T\+I\+M\+E\+R\+\_\+0}}~0x40
+\item 
+\#define \mbox{\hyperlink{i8254_8h_ac62c99c2a9289891c1b83052242cca49}{T\+I\+M\+E\+R\+\_\+1}}~0x41
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a1f34f18ad0ab8cace46b615773b48735}{T\+I\+M\+E\+R\+\_\+2}}~0x42
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a282832448fb0281ef53d243c1cd48491}{T\+I\+M\+E\+R\+\_\+\+C\+T\+RL}}~0x43
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a6a4822642d40c248435692324a818010}{T\+I\+M\+E\+R\+\_\+\+S\+E\+L0}}~0x00
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a8349623fd8d99f9cc5d8ae29d78594fc}{T\+I\+M\+E\+R\+\_\+\+S\+E\+L1}}~B\+IT(6)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a142a255de0dbc48aeabd45fc10c33672}{T\+I\+M\+E\+R\+\_\+\+S\+E\+L2}}~B\+IT(7)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a4c2eecbfb96744a9c2af71dba75ecb18}{T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+C\+MD}}~(B\+IT(7) $\vert$ B\+IT(6))
+\item 
+\#define \mbox{\hyperlink{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}{T\+I\+M\+E\+R\+\_\+\+L\+SB}}~B\+IT(4)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}{T\+I\+M\+E\+R\+\_\+\+M\+SB}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a8c0f1933323274c765e23837e4fbc8c7}{T\+I\+M\+E\+R\+\_\+\+L\+S\+B\+\_\+\+M\+SB}}~(\mbox{\hyperlink{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}{T\+I\+M\+E\+R\+\_\+\+L\+SB}} $\vert$ \mbox{\hyperlink{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}{T\+I\+M\+E\+R\+\_\+\+M\+SB}})
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a6c248216df24b5e9d907d126d80bd195}{T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+C\+O\+U\+N\+T\+\_\+}}~B\+IT(5)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_a08b4952bb7058684a3f8f66be04dd45e}{T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+}}~B\+IT(4)
+\item 
+\#define \mbox{\hyperlink{i8254_8h_af598b17740e07842a0545af512714711}{T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+S\+EL}}(n)~B\+IT((n) + 1)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{i8254_8h_a599217205dc3092c26567a2bd868ef3a}\label{i8254_8h_a599217205dc3092c26567a2bd868ef3a}} 
+\index{i8254.h@{i8254.h}!TIMER@{TIMER}}
+\index{TIMER@{TIMER}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER}{TIMER}}
+{\footnotesize\ttfamily \#define T\+I\+M\+ER~0}
+
+\mbox{\Hypertarget{i8254_8h_a30bf84c312af248cb81bb224e09f9ba8}\label{i8254_8h_a30bf84c312af248cb81bb224e09f9ba8}} 
+\index{i8254.h@{i8254.h}!TIMER0\_IRQ@{TIMER0\_IRQ}}
+\index{TIMER0\_IRQ@{TIMER0\_IRQ}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER0\_IRQ}{TIMER0\_IRQ}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R0\+\_\+\+I\+RQ~0}
+
+\mbox{\Hypertarget{i8254_8h_acc9ff9df4a9674a1ce9ba08fc4a4679e}\label{i8254_8h_acc9ff9df4a9674a1ce9ba08fc4a4679e}} 
+\index{i8254.h@{i8254.h}!TIMER\_0@{TIMER\_0}}
+\index{TIMER\_0@{TIMER\_0}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_0}{TIMER\_0}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+0~0x40}
+
+\mbox{\Hypertarget{i8254_8h_ac62c99c2a9289891c1b83052242cca49}\label{i8254_8h_ac62c99c2a9289891c1b83052242cca49}} 
+\index{i8254.h@{i8254.h}!TIMER\_1@{TIMER\_1}}
+\index{TIMER\_1@{TIMER\_1}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_1}{TIMER\_1}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+1~0x41}
+
+\mbox{\Hypertarget{i8254_8h_a1f34f18ad0ab8cace46b615773b48735}\label{i8254_8h_a1f34f18ad0ab8cace46b615773b48735}} 
+\index{i8254.h@{i8254.h}!TIMER\_2@{TIMER\_2}}
+\index{TIMER\_2@{TIMER\_2}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_2}{TIMER\_2}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+2~0x42}
+
+\mbox{\Hypertarget{i8254_8h_a282832448fb0281ef53d243c1cd48491}\label{i8254_8h_a282832448fb0281ef53d243c1cd48491}} 
+\index{i8254.h@{i8254.h}!TIMER\_CTRL@{TIMER\_CTRL}}
+\index{TIMER\_CTRL@{TIMER\_CTRL}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_CTRL}{TIMER\_CTRL}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+C\+T\+RL~0x43}
+
+\mbox{\Hypertarget{i8254_8h_acf926951944b6cf370b7229ebd50dd8b}\label{i8254_8h_acf926951944b6cf370b7229ebd50dd8b}} 
+\index{i8254.h@{i8254.h}!TIMER\_FREQ@{TIMER\_FREQ}}
+\index{TIMER\_FREQ@{TIMER\_FREQ}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_FREQ}{TIMER\_FREQ}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+F\+R\+EQ~1193182}
+
+\mbox{\Hypertarget{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}\label{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}} 
+\index{i8254.h@{i8254.h}!TIMER\_LSB@{TIMER\_LSB}}
+\index{TIMER\_LSB@{TIMER\_LSB}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_LSB}{TIMER\_LSB}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+L\+SB~B\+IT(4)}
+
+\mbox{\Hypertarget{i8254_8h_a8c0f1933323274c765e23837e4fbc8c7}\label{i8254_8h_a8c0f1933323274c765e23837e4fbc8c7}} 
+\index{i8254.h@{i8254.h}!TIMER\_LSB\_MSB@{TIMER\_LSB\_MSB}}
+\index{TIMER\_LSB\_MSB@{TIMER\_LSB\_MSB}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_LSB\_MSB}{TIMER\_LSB\_MSB}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+L\+S\+B\+\_\+\+M\+SB~(\mbox{\hyperlink{i8254_8h_ac18cb814ebd0d67235392c330e0e3504}{T\+I\+M\+E\+R\+\_\+\+L\+SB}} $\vert$ \mbox{\hyperlink{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}{T\+I\+M\+E\+R\+\_\+\+M\+SB}})}
+
+\mbox{\Hypertarget{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}\label{i8254_8h_a2a8a6d363c612d756cd8d78480f7cd04}} 
+\index{i8254.h@{i8254.h}!TIMER\_MSB@{TIMER\_MSB}}
+\index{TIMER\_MSB@{TIMER\_MSB}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_MSB}{TIMER\_MSB}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+M\+SB~B\+IT(5)}
+
+\mbox{\Hypertarget{i8254_8h_a4c2eecbfb96744a9c2af71dba75ecb18}\label{i8254_8h_a4c2eecbfb96744a9c2af71dba75ecb18}} 
+\index{i8254.h@{i8254.h}!TIMER\_RB\_CMD@{TIMER\_RB\_CMD}}
+\index{TIMER\_RB\_CMD@{TIMER\_RB\_CMD}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_RB\_CMD}{TIMER\_RB\_CMD}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+C\+MD~(B\+IT(7) $\vert$ B\+IT(6))}
+
+\mbox{\Hypertarget{i8254_8h_a6c248216df24b5e9d907d126d80bd195}\label{i8254_8h_a6c248216df24b5e9d907d126d80bd195}} 
+\index{i8254.h@{i8254.h}!TIMER\_RB\_COUNT\_@{TIMER\_RB\_COUNT\_}}
+\index{TIMER\_RB\_COUNT\_@{TIMER\_RB\_COUNT\_}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_RB\_COUNT\_}{TIMER\_RB\_COUNT\_}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+C\+O\+U\+N\+T\+\_\+~B\+IT(5)}
+
+\mbox{\Hypertarget{i8254_8h_af598b17740e07842a0545af512714711}\label{i8254_8h_af598b17740e07842a0545af512714711}} 
+\index{i8254.h@{i8254.h}!TIMER\_RB\_SEL@{TIMER\_RB\_SEL}}
+\index{TIMER\_RB\_SEL@{TIMER\_RB\_SEL}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_RB\_SEL}{TIMER\_RB\_SEL}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+S\+EL(\begin{DoxyParamCaption}\item[{}]{n }\end{DoxyParamCaption})~B\+IT((n) + 1)}
+
+\mbox{\Hypertarget{i8254_8h_a08b4952bb7058684a3f8f66be04dd45e}\label{i8254_8h_a08b4952bb7058684a3f8f66be04dd45e}} 
+\index{i8254.h@{i8254.h}!TIMER\_RB\_STATUS\_@{TIMER\_RB\_STATUS\_}}
+\index{TIMER\_RB\_STATUS\_@{TIMER\_RB\_STATUS\_}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_RB\_STATUS\_}{TIMER\_RB\_STATUS\_}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+R\+B\+\_\+\+S\+T\+A\+T\+U\+S\+\_\+~B\+IT(4)}
+
+\mbox{\Hypertarget{i8254_8h_a6a4822642d40c248435692324a818010}\label{i8254_8h_a6a4822642d40c248435692324a818010}} 
+\index{i8254.h@{i8254.h}!TIMER\_SEL0@{TIMER\_SEL0}}
+\index{TIMER\_SEL0@{TIMER\_SEL0}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_SEL0}{TIMER\_SEL0}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+S\+E\+L0~0x00}
+
+\mbox{\Hypertarget{i8254_8h_a8349623fd8d99f9cc5d8ae29d78594fc}\label{i8254_8h_a8349623fd8d99f9cc5d8ae29d78594fc}} 
+\index{i8254.h@{i8254.h}!TIMER\_SEL1@{TIMER\_SEL1}}
+\index{TIMER\_SEL1@{TIMER\_SEL1}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_SEL1}{TIMER\_SEL1}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+S\+E\+L1~B\+IT(6)}
+
+\mbox{\Hypertarget{i8254_8h_a142a255de0dbc48aeabd45fc10c33672}\label{i8254_8h_a142a255de0dbc48aeabd45fc10c33672}} 
+\index{i8254.h@{i8254.h}!TIMER\_SEL2@{TIMER\_SEL2}}
+\index{TIMER\_SEL2@{TIMER\_SEL2}!i8254.h@{i8254.h}}
+\doxysubsubsection{\texorpdfstring{TIMER\_SEL2}{TIMER\_SEL2}}
+{\footnotesize\ttfamily \#define T\+I\+M\+E\+R\+\_\+\+S\+E\+L2~B\+IT(7)}
+
