@@ -1,12 +1,12 @@
-~/**
+/**
  * @file graphics.c
  * @author
- * @brief 
+ * @brief
  * @version 0.1
  * @date 2023-05-28
- * 
+ *
  * @copyright Copyright (c) 2023
- * 
+ *
  */
 #include "graphics.h"
 #include <lcom/lcf.h>
