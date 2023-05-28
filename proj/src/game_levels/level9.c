@@ -8,7 +8,7 @@ extern Box ice_cubes[250];
 extern Box water_path[250];
 extern int water_counter;
 extern int path_counter;
-extern MenuState menuState;
+extern GameLevel gameLevel;
 extern Sprite_t *game_screen;
 extern Sprite_t *background_cube;
 extern Sprite_t *ice_cube;
@@ -513,7 +513,7 @@ void draw_game_level9() {
   // check if player has completed the path
   if (playerPosition.x == finish_level9.top_left_x && playerPosition.y == finish_level9.top_left_y) {
     if (check_all_ice_melted()) {
-      menuState = FINISH;
+      gameLevel = LEVEL_10;
     }
     else {
       return;

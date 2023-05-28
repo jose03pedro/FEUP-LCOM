@@ -13,6 +13,7 @@ extern int level6_draw_counter;
 extern int level7_draw_counter;
 extern int level8_draw_counter;
 extern int level9_draw_counter;
+extern int level10_draw_counter;
 Box ice_cubes[250];
 Box water_path[250];
 Box lock_cube;
@@ -92,7 +93,7 @@ void draw_new_frame() {
           draw_game_level9();
           break;
         case LEVEL_10:
-          // draw_game_level10();
+          draw_game_level10();
           break;
       }
       break;
@@ -182,6 +183,7 @@ void reset_all_draw_counters() {
   level7_draw_counter = 0;
   level8_draw_counter = 0;
   level9_draw_counter = 0;
+  level10_draw_counter = 0;
 }
 
 void draw_finish_menu() {
