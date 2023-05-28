@@ -80,21 +80,21 @@ void update_timer_state() {
 void update_keyboard_state() {
   kbc_ih();
   switch (scancode) {
-    case Q:
+    case Q: // if player wants to close game
       gameState = EXIT;
       break;
-    case H:
+    case H: // if player wants to return to main menu
       menuState = START;
       reset_all_draw_counters();
       break;
-    case G:
+    case G: // if player wants to start over from the first level
       menuState = GAME;
       gameLevel = LEVEL_1;
       reset_all_draw_counters();
       break;
-    case E:
+    /*case E:  used while developing the game, the player should need to actually beat all levels to reach this screen
       menuState = FINISH;
-      reset_all_draw_counters();
+      reset_all_draw_counters(); */
     case A:
       if (menuState == GAME) {
         bool check = true;

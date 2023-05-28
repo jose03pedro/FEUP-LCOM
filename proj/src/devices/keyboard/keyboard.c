@@ -16,15 +16,15 @@ void(kbc_ih)() {
 }
 
 int(keyboard_restore)() {
-  uint8_t commandByte;
+  uint8_t control;
 
   write_KBC_command(KBC_IN_CMD, KBC_READ_CMD);
-  read_KBC_output(KBC_OUT_CMD, &commandByte, 0);
+  read_KBC_output(KBC_OUT_CMD, &control, 0);
 
-  commandByte |= ENABLE_INT;
+  control |= ENABLE_INT;
 
   write_KBC_command(KBC_IN_CMD, KBC_WRITE_CMD);
-  write_KBC_command(KBC_WRITE_CMD, commandByte);
+  write_KBC_command(KBC_WRITE_CMD, control);
 
   return 0;
 }

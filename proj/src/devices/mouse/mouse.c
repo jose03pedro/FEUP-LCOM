@@ -1,7 +1,7 @@
 #include "mouse.h"
 
 int hook_id_mouse = 2;
-uint8_t byte_index = 0;
+uint8_t byte_i = 0;
 uint8_t mouse_bytes[3];
 uint8_t current_byte;
 MouseInfo mouse_info = {0, 0, 100, 100};
@@ -20,13 +20,13 @@ void(mouse_ih)() {
 }
 
 void mouse_sync_bytes() {
-  if (byte_index == 0 && (current_byte & FIRST_BYTE)) {
-    mouse_bytes[byte_index] = current_byte;
-    byte_index++;
+  if (byte_i == 0 && (current_byte & FIRST_BYTE)) {
+    mouse_bytes[byte_i] = current_byte;
+    byte_i++;
   }
-  else if (byte_index > 0) {
-    mouse_bytes[byte_index] = current_byte;
-    byte_index++;
+  else if (byte_i > 0) {
+    mouse_bytes[byte_i] = current_byte;
+    byte_i++;
   }
 }
 
@@ -46,7 +46,7 @@ void(mouse_sync_info)() {
   mouse_info.y = delta_y;
 }
 
-int(mouse_write)(uint8_t command) {
+int(mouse_write)(uint8_t cmd) {
   uint8_t attemps = MAX_ATTEMPS;
   uint8_t mouse_response;
 
@@ -54,7 +54,7 @@ int(mouse_write)(uint8_t command) {
     attemps--;
     if (write_KBC_command(KBC_IN_CMD, WRITE_BYTE_MOUSE))
       return 1;
-    if (write_KBC_command(KBC_OUT_CMD, command))
+    if (write_KBC_command(KBC_OUT_CMD, cmd))
       return 1;
     tickdelay(micros_to_ticks(WAIT_KBC));
     if (util_sys_inb(KBC_OUT_CMD, &mouse_response))
