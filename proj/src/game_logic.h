@@ -83,7 +83,7 @@ typedef struct {
 } PlayerPosition;
 
 /**
- * @brief
+ * @brief Incrementa o counter das interrupções do timer e dá swap aos buffers.
  *
  */
 void update_timer();
